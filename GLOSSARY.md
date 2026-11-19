@@ -39,4 +39,35 @@ The system activities are read from. intervals.icu is the primary activity sourc
 Publishing the upcoming week's planned sessions to intervals.icu.
 
 **Private training data**:
-The athlete profile, plans and reviews. Kept outside the public skills repo.
+The athlete profile, athlete rules, plans and reviews. Kept outside the public skills repo.
+
+**Data folder**:
+The one place private training data lives, shared by every runtime the skills run in.
+
+**Data index**:
+The file in the data folder that tells a skill where each kind of private training data and each key file is.
+
+**Daily check**:
+The morning answer to "what is today's session and am I ready for it", ending in a readiness verdict.
+_Avoid_: Morning briefing, readiness report
+
+**Readiness verdict**:
+The daily check's conclusion about today's planned session: go, modify or skip.
+
+**Week review**:
+The assessment of a finished week: what was done against what the week plan prescribed.
+
+**Season plan**:
+The athlete-maintained plan above the month plan: goals, phases and key dates for the season.
+
+**Coaching rules**:
+The general best-practice defaults every planning and review skill applies.
+
+**Athlete rules**:
+The athlete's own rules. They are private training data and override coaching rules where the two differ.
+
+**Analysis layer**:
+The athlete's private scripts that turn raw activity data into the figures a skill reasons about.
+
+**Approval**:
+The athlete's explicit acceptance of a draft plan or plan update. Nothing is published by calendar sync before it.
