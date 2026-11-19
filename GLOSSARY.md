@@ -11,6 +11,10 @@ _Avoid_: User, client
 **Sport mode**:
 Which sports a plan covers. Triathlon (swim, bike and run in one combined plan) is the default; a single-sport mode such as run-only is the alternative.
 
+**Focus**:
+The sport given priority inside a plan: it carries the hard sessions and the progression while the other sports are held at maintenance. Separate from sport mode.
+_Avoid_: Emphasis, block type
+
 **Planned session**:
 One workout the plan prescribes for a specific day.
 _Avoid_: Workout, training (as a noun for one unit)
