@@ -16,7 +16,7 @@ Draft the coming week's plan, and after the athlete approves it, publish the wee
 - The athlete profile: anchors and their flags, availability template and dated exceptions, limitations.
 - Zones from intervals.icu.
 - The coaching rules and athlete rules.
-- The intervals.icu calendar for the week: races, notes and hand-added workouts, as context only.
+- The intervals.icu calendar for the week: races, notes and sessions added by hand, as context only.
 
 ## Writes
 
@@ -37,7 +37,7 @@ Draft the coming week's plan, and after the athlete approves it, publish the wee
 
 Next week's draft exists from Sunday. ([plan files][t10])
 
-## Reply
+## Reply shape
 
 Not prototyped; see the open points in the [README](../README.md). The decided constraints: the week day by day, the reasoning, then a request for approval. The file it produces is shown in [the example week plan](../examples/plan/weeks/2027-02-01.md).
 

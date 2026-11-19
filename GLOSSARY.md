@@ -40,7 +40,7 @@ The standing facts about the athlete that every skill reads: zones, thresholds, 
 The system activities are read from. intervals.icu is the primary activity source; Garmin is the secondary one, consulted for data intervals.icu lacks.
 
 **Calendar sync**:
-Publishing the upcoming week's planned sessions to intervals.icu.
+Publishing approved planned sessions to intervals.icu: the whole upcoming week when it is approved, and single sessions after a plan update.
 
 **Private training data**:
 The athlete profile, athlete rules, plans and reviews. Kept outside the public skills repo.

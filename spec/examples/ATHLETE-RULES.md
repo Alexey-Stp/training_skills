@@ -22,13 +22,13 @@ The athlete's own rules. They override the coaching rules where the two differ. 
 
 ## Weekly shape
 
-- Saturday club ride is fixed and counts as the long ride.
+- Saturday is the long run day.
 - Friday is always a rest day.
 - No hard session the day after the long run.
 
 ## Departures from the coaching rules
 
-- Easy week at 70% of the previous week, not 60%.
+- Easy week at 75% of the previous week, above the default range.
 - Non-focus sports during a run focus: swim twice a week, not once.
 
 ## Routines (reminders only)

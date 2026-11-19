@@ -33,7 +33,7 @@ Without asking, then commits:
 4. Report hours and load per sport, with run load on its own, and the easy/hard share. ([coaching method][t11])
 5. Show fitness, fatigue and form as context only.
 6. Summarise the week's subjective scores and flag trends, for example pain rising three days running. ([subjective log][t23])
-7. Check the week against the coaching rules and athlete rules, and name any limit or default that was passed.
+7. Give the status check that is folded into this skill: a verdict against the athlete's goal, with dated evidence from recent weeks of load and wellness. ([everyday athlete usage][t4], [skill list][t7])
 8. Suggest running `coach-setup`, without running it, when ([athlete setup flow][t25]):
    - a threshold in intervals.icu differs from the athlete profile;
    - an anchor is more than eight weeks old;
@@ -42,7 +42,7 @@ Without asking, then commits:
 
 `coach-plan-week` reads the subjective scores through this review, not directly.
 
-## Reply
+## Reply shape
 
 Not prototyped; see the open points in the [README](../README.md). The decided constraints: totals, compliance, flags, phone-sized, no tables in chat. ([everyday athlete usage][t4], [file templates][t24])
 

@@ -50,7 +50,7 @@ Figures ([session review][t14]):
 
 Anything else appears only when it explains a finding.
 
-## Reply
+## Reply shape
 
 In this order: verdict line with the session name; planned versus actual for the main set; how much of the purpose was achieved; the findings; the Next line. Phone-sized, no tables. Sample with invented numbers:
 
@@ -64,7 +64,7 @@ Purpose (time at threshold): 24 of 32 min in the target range.
 - Rep 4 slowed 11 s/km while heart rate rose 6 bpm: past threshold, not at it.
 - Load 78 planned, 74 done. Effort reported: 8/10.
 
-Next: Thursday's long run stands. If rep 4 fades again next week,
+Next: Thursday's easy run stands. If rep 4 fades again next week,
 shorten to 3 x 8 before adding volume.
 ```
 

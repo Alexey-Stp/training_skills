@@ -9,7 +9,7 @@ Every coach skill reads this file first. Written by athlete setup. All values in
 | Athlete profile | `ATHLETE.md` |
 | Athlete rules | `ATHLETE-RULES.md` |
 | Season plan | `SEASON-PLAN.md` |
-| Month plans | `plan/months/<first Monday>.md` |
+| Month plans | `plan/months/<first Monday of the block>.md` |
 | Week plans | `plan/weeks/<Monday>.md` |
 | Day plans | `plan/days/<date>.md` |
 
@@ -26,13 +26,13 @@ Each command prints JSON. A question with no command is answered from intervals.
 
 | Question | Command |
 |---|---|
-| Refresh | `python tools/refresh.py --days 3` |
+| Refresh | `python tools/refresh.py --days 3 --json` |
 | Readiness for a date | `python tools/readiness.py --date <date> --json` |
 | Activities in a date range | `python tools/activities.py --from <date> --to <date> --json` |
 | Analysis of one activity | `python tools/analyse.py --id <activity id> --json` |
 | Week summary | `python tools/week.py --monday <date> --json` |
 | Load state | `python tools/load.py --json` |
-| Name an activity (optional) | `python tools/name.py --id <activity id>` |
+| Name an activity (optional) | `python tools/name.py --id <activity id> --json` |
 
 ## Settings
 

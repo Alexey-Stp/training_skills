@@ -11,7 +11,7 @@ The athlete already runs a coaching setup in OpenClaw. This page says what the s
 | Live analysis scripts | Stay private as the analysis layer; skills call them through the data index |
 | Season plan, then week plan, then archive; "markdown is truth"; "nothing pushed before approval" | Kept; a month plan and day plans are added |
 | Documents and skills that restate anchors, goals or zones | Imported once into the athlete profile, then pointed at it or archived |
-| Existing coaching rules | Moved into the athlete rules; none dropped without the athlete saying so |
+| The athlete's existing rules | Moved into the athlete rules file; none dropped without the athlete saying so |
 | Four coaching scheduled jobs (morning, midday, evening, Sunday) | Repointed to suite skills |
 | Activity-naming skill | Retired; its live scripts remain in the analysis layer |
 | Coaching parts of the umbrella health skill | Retired; it keeps nutrition and sync |
@@ -23,14 +23,14 @@ The athlete already runs a coaching setup in OpenClaw. This page says what the s
 | Job | Runs |
 |---|---|
 | Morning, at 08:00, 09:00 and 10:00 | `coach-today`; speaks once ([today skill][t20]) |
-| Midday and evening | `coach-review-session` for any activity not yet reviewed |
+| Midday and evening | `coach-review-session` |
 | Sunday | `coach-review-week`, then `coach-plan-week`; ends with a request for approval ([skill list][t7]) |
 
 Claude Code gets no scheduled jobs of its own.
 
 ## Prerequisite
 
-One piece of private work before stage 1: a JSON mode for the six data commands of the [training data contract][t21]. Without it the skills run on basic intervals.icu figures only.
+One piece of private work before stage 1: a JSON mode for the six required data commands of the [training data contract][t21]. The seventh, naming an activity, is optional and returns nothing to read. Without it the skills run on basic intervals.icu figures only.
 
 ## Stages
 
@@ -38,7 +38,7 @@ Each stage is finished before the next starts.
 
 1. **Setup.** `coach-setup` creates the data index, the athlete profile and the athlete rules from the existing documents.
 2. **By hand.** The athlete uses session review, today and the planning skills on request while the existing scheduled jobs keep running.
-3. **Scheduled jobs.** Repointed one at a time: morning check, then midday and evening review, then Sunday planning.
+3. **Scheduled jobs.** Repointed one at a time: the morning daily check, then midday and evening review, then Sunday planning.
 4. **Retire.** Old pieces are archived.
 
 Claude Code is added after stage 3, once OpenClaw is stable: the same skills pointing at the same data folder.

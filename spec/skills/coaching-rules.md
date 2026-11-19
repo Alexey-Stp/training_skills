@@ -34,6 +34,8 @@ From [coaching method][t11].
 
 ### Limits
 
+From [coaching method][t11] and [best-practice coaching][t5].
+
 | Limit | Applies |
 |---|---|
 | Fever or systemic symptoms: no training. Return with easy sessions only. | every mode |
@@ -45,6 +47,8 @@ Plus every entry under "Limits" in the athlete rules.
 
 ### Defaults
 
+From [coaching method][t11], [best-practice coaching][t5] and [sport mode][t12].
+
 | Topic | Default | Note |
 |---|---|---|
 | Intensity | about 80% of sessions easy | counted in sessions; state the unit whenever it is quoted |
@@ -54,12 +58,14 @@ Plus every entry under "Limits" in the athlete rules.
 | Bricks | about weekly in the race-specific build | the run leg counts as run load |
 | Taper | volume down 41 to 60% progressively, intensity kept, frequency at 80% or more of normal, 1 to 3 weeks | length within the range is judgement |
 | Block shape | three load weeks, then one easy week at roughly 60 to 70% of the previous week's load | convention, used when nothing else is known |
-| Gap in training | 1 to 3 days: continue; 4 to 7: treat as the recovery week; 8 to 14: repeat the last loading week; 15 or more: step back a phase | convention |
+| Gap in training | 1 to 3 days: continue; 4 to 7: treat as the easy week; 8 to 14: repeat the last load week; 15 or more: step back a phase | convention |
 | Strength | one or two sessions a week when availability includes them; not counted as hard; not the day before a key session | planned as ordinary sessions |
 | Targets | hours and planned load per sport; run load also tracked on its own | |
 | Thresholds | use the zones in the athlete profile | which bike anchor is an athlete rule |
 
 ### Judgement
+
+From [coaching method][t11].
 
 Decided from the season plan, the athlete profile and recent week reviews, with the reasoning written into the plan:
 
@@ -82,7 +88,7 @@ From [sport mode][t12].
 
 ### Load figures
 
-Fitness, fatigue and form are shown as context. They are never a target and never the sole reason for a plan update.
+From [coaching method][t11]. The load state (fitness, fatigue and form) is shown as context. It is never a target and never the sole reason for a plan update.
 
 ### Readiness
 
@@ -98,7 +104,7 @@ From [best-practice coaching][t5]. Keep these out, or label them as convention o
 - deliberate overreaching before a taper; the "neck check"; HRV thresholds as skip triggers;
 - fitness figures as predictions of performance.
 
-## Reply
+## Reply shape
 
 None. It answers the calling skill, not the athlete.
 

@@ -8,7 +8,7 @@ From [private training data][t8]:
 
 - One shared local folder: the `training/` folder inside the athlete's OpenClaw workspace. Claude Code reads and writes the same files. No second copy, no remote.
 - A skill finds it through a one-line pointer: in OpenClaw the workspace `AGENTS.md` points at the data index; in Claude Code the user-level `CLAUDE.md` names the folder.
-- Keys sit in per-service files in the home directory (`~/.intervals-icu/credentials.json`, `~/.garmin/credentials.json`). The index records paths only, never a key.
+- Keys sit in per-service files in the home directory, outside the data folder. The index records each file's path, never a key.
 - The workspace is already a local git repository with no remote. Skills commit there after each write.
 
 ## Layout
@@ -20,14 +20,14 @@ From [plan files][t10]; examples accepted in [file templates][t24].
 | Data index | `COACH.md` | `coach-setup` | [COACH.md](examples/COACH.md) |
 | Athlete profile | `ATHLETE.md` | `coach-setup` only | [ATHLETE.md](examples/ATHLETE.md) |
 | Athlete rules | `ATHLETE-RULES.md` | `coach-setup` | [ATHLETE-RULES.md](examples/ATHLETE-RULES.md) |
-| Season plan | existing file | the athlete | none |
-| Month plan | `plan/months/<first Monday>.md` | `coach-plan-month` | [2027-01-18.md](examples/plan/months/2027-01-18.md) |
+| Season plan | existing file | the athlete; `coach-setup` replaces its goals and anchors sections with a pointer, once | none |
+| Month plan | `plan/months/<first Monday of the block>.md` | `coach-plan-month` | [2027-01-18.md](examples/plan/months/2027-01-18.md) |
 | Week plan | `plan/weeks/<Monday>.md` | `coach-plan-week`, `coach-adjust`, `coach-review-week` | [2027-02-01.md](examples/plan/weeks/2027-02-01.md) |
 | Day plan | `plan/days/<date>.md` | `coach-plan-week`, `coach-adjust`, `coach-today`, `coach-review-session` | [2027-02-02.md](examples/plan/days/2027-02-02.md) |
 
 ## Data index
 
-Sections: files; key file paths; the command for each training data question; settings (timezone, chat channel, last setup run). ([training data contract][t21], [file templates][t24])
+Sections: files; key file paths; the command for each training data question; settings, as in the accepted example. ([training data contract][t21], [file templates][t24])
 
 ## Athlete profile
 

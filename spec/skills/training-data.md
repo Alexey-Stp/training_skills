@@ -19,7 +19,7 @@ Called by other skills only, at the start of each of them.
 
 ## Writes
 
-Nothing in the data folder. Through intervals.icu it performs the writes other skills ask for: the effort score and the short review on an activity, and the fallback upload described below.
+Nothing in the data folder. The fallback upload described below is the only write to intervals.icu it describes.
 
 ## Steps
 
@@ -50,7 +50,7 @@ The normal path in a runtime that has none, such as Claude Code on another machi
 
 - Auth: HTTP Basic, username `API_KEY`, password the personal key. Athlete id `0` means the owner of the key.
 - Limits: 5000 requests a day, 2500 per rolling 15 minutes, 10 a second per address; a 429 carries `Retry-After`.
-- Activities carry `source` and `paired_event_id`, the link to the planned workout.
+- Activities carry `source` and `paired_event_id`, the link to the planned session's calendar event.
 - Wellness per day: resting heart rate, HRV, sleep, readiness, weight, subjective fields, fitness and fatigue. Form is computed, not a field.
 - Thresholds and zones per sport come from sport settings.
 
@@ -63,9 +63,17 @@ From [activity source resilience][t15]. intervals.icu stays primary and nothing 
 3. Second fallback: the analysis layer answers "analysis of one activity" directly from the Garmin file.
 4. Sleep, HRV and resting heart rate are read from Garmin directly if intervals.icu stops serving them.
 
-The Garmin route named by this spec is the official Personal API key, which is read-only. It has no Training Readiness figure, so that readiness input is optional. ([Garmin as secondary source][t3])
+Left unsolved in the first version: if planned sessions stop reaching the watch, the day plan still holds the session and the athlete loads it by hand.
 
-## Reply
+### Garmin
+
+From [Garmin as secondary source][t3] and [activity source resilience][t15].
+
+- What Garmin holds that intervals.icu does not carry: Body Battery, sleep stages, HRV status and baseline, the all-day stress score. Already in intervals.icu: sleep duration and score, one overnight HRV value, resting heart rate, weight.
+- The route named by this spec is the official Personal API key, which is read-only. It has no Training Readiness or Training Status figure, so device readiness is an optional input.
+- Moving the athlete's private scripts off unofficial sign-in is private work outside the suite.
+
+## Reply shape
 
 None to the athlete, except to say plainly when figures are basic, when a command is broken, or when an activity is an empty stub.
 

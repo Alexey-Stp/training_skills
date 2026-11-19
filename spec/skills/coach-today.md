@@ -51,7 +51,7 @@ Asked by hand before the data arrives: the same as the 10:00 fallback, plus a pr
 
 It may ask how the athlete feels at most once each morning. No answer is fine.
 
-## Reply
+## Reply shape
 
 Verdict first, then the planned session with targets, then the three or four inputs behind the verdict. Phone-sized, no tables. Sample with invented numbers:
 

@@ -29,11 +29,7 @@ After approval only, then commits:
 ## Steps
 
 1. Establish the reason and which days are affected.
-2. Apply the coaching rules ([coaching method][t11], [best-practice coaching][t5]):
-   - Missed sessions are never made up.
-   - After a gap of 1 to 3 days, continue; 4 to 7, treat it as the recovery week; 8 to 14, repeat the last loading week; 15 or more, step back a phase. This is a coaching convention.
-   - Fever or systemic symptoms: no training. Return with easy sessions only. The skill does not diagnose.
-   - No hard days back to back; the long-run cap and weekly run volume rule still hold.
+2. Apply the [coaching rules](coaching-rules.md) with the athlete rules. The ones that matter most here are the four limits and the gap-in-training default. ([coaching method][t11], [best-practice coaching][t5])
 3. Show the change as before and after for each affected day, and wait for approval. A scheduled run leaves a draft and asks in the chat channel.
 4. On approval, rewrite the day plans, add the Changes entry, and sync only the affected sessions.
 5. Never change a session on a past day, or one already paired with an activity.
@@ -42,7 +38,7 @@ Calendar differences. When a published session differs in intervals.icu from the
 
 Sport mode and focus can change inside a block only through this skill, as an approved plan update with the reason logged, for example an injury that stops running. ([sport mode][t12])
 
-## Reply
+## Reply shape
 
 Not prototyped; see the open points in the [README](../README.md). The decided constraints: before and after of the changed days, then a request for approval. The logged result is shown under "Changes" in [the example week plan](../examples/plan/weeks/2027-02-01.md).
 

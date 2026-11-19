@@ -18,7 +18,7 @@ Draft the next block of whole weeks, normally four, between the athlete's season
 
 ## Writes
 
-- A DRAFT month plan at `plan/months/<first Monday>.md`.
+- A DRAFT month plan at `plan/months/<first Monday of the block>.md`.
 - After approval: status APPROVED. Commits after each write.
 
 It publishes nothing to the calendar. Weeks are published by `coach-plan-week`.
@@ -27,15 +27,15 @@ It publishes nothing to the calendar. Weeks are published by `coach-plan-week`.
 
 1. Take the phase from the season plan. ([coaching method][t11])
 2. State the sport mode and the focus for the block. They can change at a block boundary. ([sport mode][t12])
-3. Decide the block shape. With nothing else to go on: three load weeks then one easy week, the easy week at roughly 60 to 70% of the previous week's load. Label both as convention. An athlete rule on the topic wins.
+3. Decide the block shape. With nothing else to go on, use the block-shape default in the [coaching rules](coaching-rules.md) and label it as convention. An athlete rule on the topic wins.
 4. Set each week's role, hours, planned load, per-sport volumes and key sessions, and any test.
-5. Apply what the phase shifts: base favours volume; build adds race-specific work and weekly bricks; taper follows the encoded numbers; the week after a race is easy-only.
+5. Apply what the phase shifts, as listed under "Phase" in the [coaching rules](coaching-rules.md).
 6. Write the reasoning and the block's checks.
 7. Show the draft and wait for approval.
 
 The next block is drafted during the current block's last week. ([plan files][t10])
 
-## Reply
+## Reply shape
 
 Not prototyped; see the open points in the [README](../README.md). The decided constraints: the block's structure week by week, the reasoning, then a request for approval. The file it produces is shown in [the example month plan](../examples/plan/months/2027-01-18.md).
 

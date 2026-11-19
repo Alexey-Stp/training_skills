@@ -23,25 +23,19 @@ Nothing itself. It governs what the calling skills write.
 
 ### Files
 
-- Month plan `plan/months/<first Monday>.md`; week plan `plan/weeks/<Monday>.md`; day plan `plan/days/<date>.md`. ([plan files][t10])
-- A week plan is one file from the moment it is drafted. No separate archive and no rewriting into another file; the current week is found by date.
-- Status on week and month plans: DRAFT, then APPROVED, then CLOSED. Day plans follow their week.
-- Day plans for all seven days are created when the week is drafted.
+- Paths, sections, status and how far ahead each plan is written are set out once, in [data-folder.md](../data-folder.md). The skill follows that page and the templates. ([plan files][t10])
 - Tables are fine in files. Messages to the chat channel are separate, short and table-free. ([file templates][t24])
 - Commit to the workspace's local repository after each write. ([private training data][t8])
 
 ### A planned session
 
-Fixed fields, then the workout steps:
-
-- sport, title, duration, planned load, purpose, targets, caps, calendar state;
-- the steps in intervals.icu workout text, so they can be published without retyping.
+The fixed fields and the workout steps are listed under "Day plan" in [data-folder.md](../data-folder.md).
 
 Pace targets need the sport's threshold pace to be set in intervals.icu. ([intervals.icu API][t2])
 
 ### A plan update
 
-Rewrite the affected day plans so they show the current plan cleanly. Append one entry to the week plan's Changes: when, what changed from what to what, and why.
+Rewrite the affected day plans so they show the current plan cleanly, and append one entry to the week plan's Changes, in the form given under "Week plan" in [data-folder.md](../data-folder.md).
 
 ### Calendar sync
 
@@ -52,6 +46,8 @@ From [calendar sync][t13] and [intervals.icu API][t2].
 - A new week: the whole week, Monday to Sunday, in one go. A plan update: only the affected sessions.
 - Mark every event the suite creates as its own, and edit only those. How they are marked is untested; see [unverified.md](../unverified.md).
 - Never change an event on a past day, or one already paired with an activity.
+- The markdown plan is the truth, but nothing is overwritten silently. When a published session differs in intervals.icu, the next skill that runs shows the difference and asks the athlete to either take the change into the plan, logged in the week plan's Changes, or restore the plan's version.
+- Entries the suite did not create (races, notes, sessions added by hand) are read as planning context only.
 - Record the sync state in the week plan: the time of the last successful publish, or not synced. Publishing again must create no duplicates.
 - intervals.icu forwards planned sessions to the watch itself, for the next seven days. The suite never writes to Garmin.
 - Pool swims are published like any other session. Their export to the watch has open bugs.
@@ -62,7 +58,7 @@ From the [map][map]. The skill carries, with their definitions, the terms that a
 
 athlete, sport mode, focus, planned session, activity, session review, day plan, week plan, month plan, plan update, athlete profile, athlete rules, coaching rules, daily check, readiness verdict, week review, subjective log, calendar sync, approval.
 
-## Reply
+## Reply shape
 
 None. It answers the calling skill, not the athlete.
 
@@ -70,7 +66,7 @@ None. It answers the calling skill, not the athlete.
 
 - Let a skill publish a DRAFT.
 - Let a skill edit a calendar entry the suite did not create.
-- Put a key or any private figure anywhere outside the data folder.
+- Put a key anywhere but its key file, or private training data into this public repo.
 
 ## Source tickets
 

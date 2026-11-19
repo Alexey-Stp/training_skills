@@ -17,11 +17,15 @@ Create and keep current the three standing files every other skill reads: the da
 
 ## Writes
 
+At the start of the first run, before anything is shown for approval:
+
+- `COACH.md`: paths and commands only.
+- A key file for a service that has none yet. The athlete supplies the key; the index records the path only.
+
 After approval only, then commits:
 
-- `COACH.md`, `ATHLETE.md`, `ATHLETE-RULES.md`.
-- A key file for a service that has none yet (the athlete supplies the key; the index records the path only).
-- The goals and anchors sections of the season plan, replaced by a pointer to the athlete profile, in the same commit.
+- `ATHLETE.md` and `ATHLETE-RULES.md`.
+- The goals and anchors sections of the season plan, replaced by a pointer to the athlete profile, in the same commit. This is the only edit any skill makes to the season plan.
 
 ## Steps
 
@@ -43,7 +47,7 @@ Later runs:
 - When an anchor changes: show old and new values with recalculated zones, and list the already-approved planned sessions whose targets would move. On approval, update the profile and add a change-log line. Offer `coach-adjust` for those sessions.
 - When the profile and intervals.icu differ on a threshold: show both and ask which stands. ([athlete profile contents][t9])
 
-## Reply
+## Reply shape
 
 A before-and-after of what will be written, then a request for approval. See [ATHLETE.md](../examples/ATHLETE.md), [ATHLETE-RULES.md](../examples/ATHLETE-RULES.md) and [COACH.md](../examples/COACH.md) for the files it produces.
 
