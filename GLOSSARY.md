@@ -71,3 +71,7 @@ The athlete's private scripts that turn raw activity data into the figures a ski
 
 **Approval**:
 The athlete's explicit acceptance of a draft plan or plan update. Nothing is published by calendar sync before it.
+
+**Subjective log**:
+The athlete's own scores for a day (effort, feel, soreness, pain, illness), kept in that day's day plan.
+_Avoid_: Diary, wellness log
