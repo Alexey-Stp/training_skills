@@ -6,6 +6,7 @@ The athlete's own rules. They override the coaching rules where the two differ. 
 
 - Knee pain 4 or more out of 10 on waking: no running that day.
 - Knee pain 2 or 3: easy running only, flat, at most 45 min.
+- Lower back: no aero position for more than 60 min.
 
 ## Targets
 
@@ -25,11 +26,11 @@ The athlete's own rules. They override the coaching rules where the two differ. 
 - Saturday is the long run day.
 - Friday is always a rest day.
 - No hard session the day after the long run.
+- During a run focus, swim stays at twice a week.
 
 ## Departures from the coaching rules
 
 - Easy week at 75% of the previous week, above the default range.
-- Non-focus sports during a run focus: swim twice a week, not once.
 
 ## Routines (reminders only)
 

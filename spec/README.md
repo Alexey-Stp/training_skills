@@ -20,13 +20,13 @@ Seven the athlete can start; other skills and scheduled jobs can start them too 
 
 | Skill | Triggered by | Writes | Spec |
 |---|---|---|---|
-| `coach-setup` | "set up my profile", "my FTP changed" | index, profile, rules; after approval | [coach-setup](skills/coach-setup.md) |
+| `coach-setup` | "set up my profile", "my FTP changed" | the index at the start; profile and rules after approval | [coach-setup](skills/coach-setup.md) |
 | `coach-today` | "what's today", "am I ready", "what's tomorrow" | the readiness verdict and morning feel, to the day plan | [coach-today](skills/coach-today.md) |
 | `coach-review-session` | "review my run" | the session review, without asking | [coach-review-session](skills/coach-review-session.md) |
 | `coach-review-week` | "how was my week" | Actual vs plan, without asking | [coach-review-week](skills/coach-review-week.md) |
 | `coach-plan-week` | "plan next week" | a draft week; publishes after approval | [coach-plan-week](skills/coach-plan-week.md) |
 | `coach-plan-month` | "plan the next block" | a draft month plan; after approval | [coach-plan-month](skills/coach-plan-month.md) |
-| `coach-adjust` | "I missed it", "I'm tired", "move Thursday" | a plan update, before and after; after approval | [coach-adjust](skills/coach-adjust.md) |
+| `coach-adjust` | "I missed it", "I'm tired", "move Thursday" | a plan update, after approval; a score the athlete mentions, without asking | [coach-adjust](skills/coach-adjust.md) |
 
 Three shared, called only by other skills:
 
@@ -57,7 +57,7 @@ athlete (chat) -> coach-* skill -> shared skills
 From [Pocock skills as a template][t6] and [OpenClaw skill format][t16]:
 
 - One `skills/<name>/SKILL.md` tree in this repo. Frontmatter: `name` and `description`; `user-invocable` and `disable-model-invocation` behave the same in both runtimes.
-- All ten skills can be called by the model, so no skill sets `disable-model-invocation`. A skill that another skill or a scheduled job must start has to be callable by the model, and that covers the `coach-*` skills: the Sunday job chains two of them, three hand off to `coach-adjust`, and scheduled jobs name a skill in plain language. The seven `coach-*` skills can also be started by the athlete; the three shared skills cannot. (Decided in review of this spec; on the [map][map].)
+- All ten skills can be called by the model, so no skill sets `disable-model-invocation`. A skill that another skill or a scheduled job must start has to be callable by the model, and that covers the `coach-*` skills: the Sunday job chains two of them, four hand off to `coach-adjust`, and scheduled jobs name a skill in plain language. The seven `coach-*` skills can also be started by the athlete; the three shared skills cannot. (Decided in review of this spec; on the [map][map].)
 - Keep each `SKILL.md` short. Put material only some branches need (formats, per-sport figures, sport mode branches) in sibling files behind a one-line pointer. Use skill-relative paths.
 - Write to the common subset. Do not use the OpenClaw-only `{baseDir}` and `command-dispatch`, nor the Claude Code-only `${CLAUDE_SKILL_DIR}`, `$ARGUMENTS`, inline shell commands, `context: fork` and `allowed-tools`.
 - Do not rely on `AGENTS.md`, `USER.md` or `CLAUDE.md` content. Every skill starts by reading the data index, found through the one-line pointer those files carry.
@@ -66,7 +66,7 @@ From [Pocock skills as a template][t6] and [OpenClaw skill format][t16]:
 - Skills installed either way load at the lowest precedence in OpenClaw, so a new name must not collide with an existing workspace skill. The shared `coach-` prefix is there for this.
 - Telegram command names allow only `a-z0-9_`, at most 32 characters.
 - Do not publish to ClawHub: it forces MIT-0, publishes skill by skill, and serves discovery by other people.
-- `--light-context` drops the workspace files from a scheduled job, and with them the pointer to the data index, so the suite's jobs do not use it.
+- `--light-context` drops the workspace files from a scheduled job. The pointer to the data index is in one of those files.
 
 ## Build order
 
@@ -90,10 +90,12 @@ Where a later decision changed an earlier one, the later one stands.
 | [Skill list][t7]: `coach-today` is read-only | [Today skill][t20], then [subjective log][t23] | It writes the readiness verdict and the morning feel answer to the day plan, and nothing else |
 | [Skill list][t7]: `coach-setup` shows the change and waits for approval before writing | [Athlete setup flow][t25] | The data index is written at the start of the first run; the profile and rules wait for approval |
 | [Plan files][t10]: planned session fields are sport, title, duration, planned load, targets, caps | [File templates][t24] | The accepted example adds purpose and calendar state |
-| [Coaching method][t11]: in triathlon every sport at least twice a week | [Sport mode][t12] | Once a week for non-focus sports when a focus is set |
+| [Coaching method][t11]: in triathlon every sport at least twice a week | [Sport mode][t12] | At least one easy session a week for each non-focus sport when a focus is set |
 | [Replace, absorb or coexist][t18]: week plan plus a weekly archive | [Plan files][t10] | One file per week; no separate archive |
-| [Athlete profile contents][t9]: the profile keeps a dated copy of every threshold and zone | [File templates][t24] | Thresholds are kept as dated anchors; zones are read from intervals.icu when needed and not copied |
+| [Athlete profile contents][t9]: the profile keeps a dated copy of every threshold and zone. [Coaching method][t11]: use the zones in the athlete profile | [File templates][t24] | Thresholds are kept as dated anchors; zones are read from intervals.icu when needed and not copied |
 | [Calendar sync][t13]: the next skill that runs shows a calendar difference | Review of this spec; on the [map][map] | `coach-plan-week`, `coach-adjust` and `coach-review-week` check; `coach-today` does not |
+| [Skill list][t7]: `coach-adjust` waits for approval before writing | [Subjective log][t23] | A score the athlete mentions is logged without asking; the plan update still waits for approval |
+| [Pocock skills as a template][t6]: entry points are user-invoked only, shared skills model-invoked | Review of this spec; on the [map][map] | All ten are callable by the model; the seven `coach-*` skills can also be started by the athlete |
 | Glossary: calendar sync is publishing the upcoming week | [Calendar sync][t13] | It also covers updating single sessions after a plan update; the glossary entry is widened in this change |
 | Glossary: the season plan holds goals; the athlete profile holds zones; approval is for plans | [Athlete profile contents][t9], [athlete setup flow][t25], [file templates][t24] | Goals live in the profile, zones are read from intervals.icu, and approval also covers the profile and rules; the three entries are changed in this change |
 
@@ -112,6 +114,7 @@ Gaps the decisions leave. They are listed, not filled.
 9. Links are per section, not per statement. The decision asked for every statement to link to its ticket.
 10. The session review's outcome and the daily check's outcome are both called a verdict. Only "readiness verdict" is a glossary term.
 11. Trigger phrases. Each skill's file lists only the phrases the decisions name; the skill descriptions will need more.
+12. Commits during cut-over. [Cut-over][t19] says each stage is one commit; [private training data][t8] says skills commit after each write. How a stage's commit is kept apart from those is not decided.
 
 ## Out of scope
 

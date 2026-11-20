@@ -29,7 +29,7 @@ Nothing itself. It governs what the calling skills write.
 
 ### A planned session
 
-The fixed fields and the workout steps are listed under "Day plan" in [data-folder.md](../data-folder.md).
+The fixed fields and the steps are listed under "Day plan" in [data-folder.md](../data-folder.md).
 
 Pace targets need the sport's threshold pace to be set in intervals.icu. ([intervals.icu API][t2])
 
@@ -47,7 +47,7 @@ From [calendar sync][t13] and [intervals.icu API][t2].
 - Mark every event the suite creates as its own, and edit only those. How they are marked is untested; see [unverified.md](../unverified.md).
 - Never change an event on a past day, or one already paired with an activity.
 - The markdown plan is the truth, but nothing is overwritten silently. When a published session differs in intervals.icu, that is a calendar difference: the skill that finds it shows it and asks the athlete to either take the change into the plan, logged in the week plan's Changes, or restore the plan's version. Either is carried out by `coach-adjust`.
-- Three skills look for calendar differences: `coach-plan-week` before it publishes, `coach-adjust` before it changes a session, and `coach-review-week` once a week. `coach-today` does not, so the morning message stays short. ([map][map])
+- Three skills look for calendar differences: `coach-plan-week` before it publishes, `coach-adjust` before it changes a session, and `coach-review-week` once a week. `coach-today` does not. ([map][map])
 - Entries the suite did not create (races, notes, sessions added by hand) are read as planning context only.
 - Record the sync state in the week plan: the time of the last successful publish, or not synced. Publishing again must create no duplicates.
 - intervals.icu forwards planned sessions to the watch itself, for the next seven days. The suite never writes to Garmin.

@@ -7,7 +7,7 @@ Make a plan update: change an existing plan in response to what actually happene
 ## Triggers
 
 - "I missed it", "I'm tired", "move Thursday".
-- An offer accepted from `coach-today` (modify or skip), `coach-review-session` (its Next line) or `coach-setup` (an anchor changed).
+- An offer accepted from `coach-today` (modify or skip), `coach-review-session` (its Next line), `coach-setup` (an anchor changed) or `coach-review-week` (a calendar difference).
 
 ## Reads
 
@@ -33,7 +33,7 @@ After approval only, then commits:
 
 1. Establish the reason and which days are affected. Log any score the athlete mentions.
 2. Apply the [coaching rules](coaching-rules.md) with the athlete rules. The ones that matter most here are the four limits and the gap-in-training default. ([coaching method][t11], [best-practice coaching][t5])
-3. Show the change as before and after for each affected day, and wait for approval. A scheduled job leaves a draft and asks in the chat channel.
+3. Show the change as before and after for each affected day, and wait for approval.
 4. On approval, rewrite the day plans, add the Changes entry, and sync only the affected sessions, under the calendar sync rules in [plan format](plan-format.md).
 
 Calendar differences. Before changing a session, check the affected published sessions for differences, as set out under "Calendar sync" in [plan format](plan-format.md). Settling a difference found by any skill, in either direction, is done here. ([calendar sync][t13], [map][map])

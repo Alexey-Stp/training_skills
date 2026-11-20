@@ -33,7 +33,7 @@ It publishes nothing to the calendar. Weeks are published by `coach-plan-week`.
 6. Write the reasoning and the block's checks.
 7. Show the draft and wait for approval.
 
-The next block is drafted during the current block's last week. ([plan files][t10])
+When the draft is due is set out under "How far ahead" in [data-folder.md](../data-folder.md).
 
 ## Reply shape
 

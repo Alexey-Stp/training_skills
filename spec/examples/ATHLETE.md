@@ -31,6 +31,7 @@ Written only by `coach-setup`. All values in this example are invented.
 | Bike CP / W′ | 275 W / 20 kJ | 2026-10-02 | tested (3 and 12 min) | stated by athlete | older than 8 weeks |
 | Run threshold pace | 4:10 /km | 2026-12-20 | tested (5 km time trial) | intervals.icu | |
 | Run LTHR | 168 bpm | 2026-12-20 | derived (5 km time trial) | intervals.icu | |
+| Max HR | 186 bpm | 2026-12-20 | tested (5 km time trial) | intervals.icu | |
 | Swim CSS | 1:40 /100 m | 2026-11-22 | estimated | imported: SEASON-PLAN.md | estimated, untested |
 
 ## 5. Zones
@@ -43,15 +44,15 @@ Zones are read from intervals.icu sport settings. Only what intervals.icu does n
 
 Weekly template:
 
-| Day | Time available | Fixed commitments |
-|---|---|---|
-| Mon | 60 min | |
-| Tue | 90 min | |
-| Wed | 90 min | pool closed |
-| Thu | 2 h | |
-| Fri | rest day | |
-| Sat | 3 h | |
-| Sun | 3 h | |
+| Day | Time available | Fixed commitments | Facility access |
+|---|---|---|---|
+| Mon | 60 min | | |
+| Tue | 90 min | | |
+| Wed | 90 min | | pool closed |
+| Thu | 2 h | | |
+| Fri | rest day | | |
+| Sat | 3 h | | |
+| Sun | 3 h | | |
 
 Dated exceptions:
 
@@ -59,10 +60,10 @@ Dated exceptions:
 
 ## 7. Limitations
 
-| Limitation | Since | Effect on planning |
+| Limitation | Since | Athlete rule it triggers |
 |---|---|---|
-| Right knee | 2026-08 | pain scored daily; no downhill repeats |
-| Lower back | 2026-10 | no aero position over 60 min |
+| Right knee | 2026-08 | Limits: the two knee pain rules |
+| Lower back | 2026-10 | Limits: aero position rule |
 
 Daily pain scores are logged in each day plan under "How I felt", not here.
 

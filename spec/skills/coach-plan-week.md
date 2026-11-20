@@ -11,7 +11,7 @@ Draft the coming week's plan, and after the athlete approves it, publish the wee
 
 ## Reads
 
-- The month plan's row for the week: role, hours, planned load, per-sport volumes, key sessions, sport mode and focus.
+- The month plan: its sport mode and focus, and its row for the week (role, hours, planned load, per-sport volumes, key sessions).
 - The previous week's "Actual vs plan" (and through it the subjective scores).
 - The athlete profile: anchors and their flags, availability template and dated exceptions, limitations.
 - Zones from intervals.icu.
@@ -29,13 +29,13 @@ Draft the coming week's plan, and after the athlete approves it, publish the wee
 2. Build the week within the limits and defaults of the coaching rules, with the athlete rules overriding. ([coaching method][t11])
 3. Where judgement is used (sport split, which sport carries the hard sessions) or a default is departed from, write which and why under "Why this week looks like this".
 4. Prescribe only from the latest tested anchor. Flag any anchor that is estimated or more than eight weeks old where it is used. ([athlete profile contents][t9])
-5. Write each planned session into its day plan with the fixed fields and the workout steps in intervals.icu workout text.
+5. Write each planned session into its day plan with the fixed fields and the steps in intervals.icu workout text.
 6. Add any routine from the athlete rules as a one-line reminder.
 7. Show the draft and wait for approval. A scheduled job leaves the draft and asks for approval in the chat channel.
 8. On approval, first check any of the week's sessions that are already published for calendar differences, as set out under "Calendar sync" in [plan format](plan-format.md). Then publish the whole week, Monday to Sunday, in one go: one workout event per planned session. Rest days, targets and reasoning stay in markdown. ([calendar sync][t13])
 9. Record the sync state. If publishing fails, the week stays APPROVED and is marked not synced; running the publish again is safe.
 
-Next week's draft exists from Sunday. ([plan files][t10])
+When the draft is due is set out under "How far ahead" in [data-folder.md](../data-folder.md).
 
 ## Reply shape
 

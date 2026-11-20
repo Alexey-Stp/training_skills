@@ -17,6 +17,7 @@ The athlete already runs a coaching setup in OpenClaw. This page says what the s
 | Activity-naming skill | Retired; its live scripts remain in the analysis layer |
 | Coaching parts of the umbrella health skill | Retired; it keeps nutrition and sync |
 | Readiness-verdict part of the wearable skill | Retired; it stays as a data source |
+| Stale plan and goal files | Retired |
 | Dormant race-strategy skill | Left alone, out of scope |
 
 ## Scheduled jobs after cut-over
@@ -52,11 +53,11 @@ Claude Code is added after stage 3, once OpenClaw is stable: the same skills poi
 
 ## Undo
 
-Each stage's changes to the existing setup (job definitions, pointer lines, retired pieces) are one commit in the workspace's local repository, separate from the commits skills make as they write plans and reviews. Undoing a stage is re-enabling the old job and reverting that commit.
+Each stage is one commit in the workspace's local repository. Undoing a stage is re-enabling the old job and reverting that commit. How this sits with skills committing after each write is an open point in the [README](README.md).
 
 ## Safe to retire
 
-A piece is retired after two weeks in which its replacement ran on schedule with no correction from the athlete. It moves to the archive folder; nothing is deleted. This applies to the old naming skill, the coaching parts of the health skill, the readiness part of the wearable skill, the old weekly plan file and its procedure documents.
+A piece is retired after two weeks in which its replacement ran on schedule with no correction from the athlete. It moves to the archive folder; nothing is deleted. This applies to the old naming skill, the coaching parts of the health skill, the readiness part of the wearable skill, the old weekly plan file and its procedure documents, and stale plan and goal files.
 
 [t7]: https://github.com/Alexey-Stp/training_skills/issues/7
 [t18]: https://github.com/Alexey-Stp/training_skills/issues/18

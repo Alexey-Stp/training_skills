@@ -54,14 +54,14 @@ From [coaching method][t11], [best-practice coaching][t5] and [sport mode][t12].
 | Intensity | about 80% of sessions easy | counted in sessions; state the unit whenever it is quoted |
 | Hard sessions | at most 2 a week in single-sport mode; 2 to 3 across all three sports in triathlon | hard sessions in any sport count against the same cap |
 | Weekly run volume | up 10% by default, never more than 30% | the 10% figure is a convention |
-| Triathlon | every sport at least twice a week | once for non-focus sports when a focus is set |
+| Triathlon | every sport at least twice a week | at least one easy session a week for each non-focus sport when a focus is set |
 | Bricks | about weekly in the race-specific build | the run leg counts as run load |
 | Taper | volume down 41 to 60% progressively, intensity kept, frequency at 80% or more of normal, 1 to 3 weeks | length within the range is judgement |
 | Block shape | three load weeks, then one easy week at roughly 60 to 70% of the previous week's load | convention, used when nothing else is known |
 | Gap in training | 1 to 3 days: continue; 4 to 7: treat as the easy week; 8 to 14: repeat the last load week; 15 or more: step back a phase | convention |
 | Strength | one or two sessions a week when availability includes them; not counted as hard; not the day before a key session | planned as ordinary sessions |
 | Targets | hours and planned load per sport; run load also tracked on its own | |
-| Thresholds | use the zones in the athlete profile | which bike anchor is an athlete rule |
+| Thresholds | prescribe from the athlete profile's anchors, with zones read from intervals.icu | which bike anchor is an athlete rule |
 
 ### Judgement
 

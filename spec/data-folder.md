@@ -23,7 +23,7 @@ From [plan files][t10]; examples accepted in [file templates][t24].
 | Season plan | existing file | the athlete; `coach-setup` replaces its goals and anchors sections with a pointer, once | none |
 | Month plan | `plan/months/<first Monday of the block>.md` | `coach-plan-month` | [2027-01-18.md](examples/plan/months/2027-01-18.md) |
 | Week plan | `plan/weeks/<Monday>.md` | `coach-plan-week`, `coach-adjust`, `coach-review-week` | [2027-02-01.md](examples/plan/weeks/2027-02-01.md) |
-| Day plan | `plan/days/<date>.md` | `coach-plan-week`, `coach-adjust`, `coach-today`, `coach-review-session` | [2027-02-02.md](examples/plan/days/2027-02-02.md) |
+| Day plan | `plan/days/<date>.md` | `coach-plan-week`, `coach-adjust`, `coach-today`, `coach-review-session`; any `coach-*` skill, for a score it hears | [2027-02-02.md](examples/plan/days/2027-02-02.md) |
 
 ## Data index
 
@@ -33,7 +33,7 @@ Sections: files; key file paths; the command for each training data question; se
 
 From [athlete profile contents][t9] and [athlete setup flow][t25]:
 
-- Eight sections: basics (birth year, height, timezone); sport mode; goals and target races; anchors; zones; availability; limitations; equipment. Then a change log.
+- Eight sections: basics (birth year, height, timezone); sport mode; goals and target races; anchors (bike FTP, CP and W′; run threshold pace and LTHR; swim CSS; max HR); zones; availability; limitations; equipment. Then a change log.
 - intervals.icu is authoritative for every threshold and zone it holds. The profile keeps a dated copy of each threshold, as an anchor; zones are read from intervals.icu when needed and not copied (see Amendments in the [README](README.md)). The profile is authoritative for CP and W′, goals, availability, limitations and equipment. When the two differ, the skill shows both and asks; it never overwrites either silently.
 - Weight, HRV baseline and resting-heart-rate baseline are computed from wellness data, not typed in. The profile records only how each is computed.
 - Every anchor carries value, date, method (tested, derived, estimated) and source (intervals.icu, a named imported document, or stated by the athlete). Skills prescribe only from the latest tested anchor. An anchor older than 8 weeks, or only estimated, is flagged whenever it is used.
@@ -77,7 +77,7 @@ One file per week from the moment it is drafted. No separate archive; the curren
 
 The only place a day's planned sessions are written in full. It accumulates through the day. ([plan files][t10])
 
-1. Planned sessions. Fixed fields: sport, title, duration, planned load, purpose, targets, caps, calendar state. Then the workout steps in intervals.icu workout text, so calendar sync can publish them without retyping.
+1. Planned sessions. Fixed fields: sport, title, duration, planned load, purpose, targets, caps, calendar state. Then the steps, in intervals.icu workout text, so calendar sync can publish them without retyping.
 2. Readiness verdict, with the inputs behind it. ([today skill][t20], [file templates][t24])
 3. "How I felt": the subjective log. ([subjective log][t23])
 4. Session reviews, including a planned session with no activity. ([session review][t14], [map][map])
@@ -108,7 +108,7 @@ From [subjective log][t23]. All scores are optional.
 | Note | free text | any time |
 
 - Only the effort score is also written to the matching activity in intervals.icu.
-- No dedicated skill: whichever skill hears a score writes it. A plain remark in chat is logged too.
+- No dedicated skill: whichever skill hears a score writes it, whether or not its own Writes section lists the subjective log. A plain remark in chat is logged too.
 - Asked at most once each morning and once per activity. Missing scores never block anything.
 
 ## What the suite does not touch
