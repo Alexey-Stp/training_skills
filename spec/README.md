@@ -64,7 +64,7 @@ From [Pocock skills as a template][t6] and [OpenClaw skill format][t16]:
 - Do not gate skills on environment variables; keys are in home-directory files.
 - Add a Claude Code plugin manifest (`.claude-plugin/plugin.json` with an explicit `skills` array, plus `marketplace.json`). OpenClaw installs the same directory as a linked bundle; the fallback is `skills.load.extraDirs`. Both routes are untested; see [unverified.md](unverified.md).
 - Skills installed either way load at the lowest precedence in OpenClaw, so a new name must not collide with an existing workspace skill. The shared `coach-` prefix is there for this.
-- Telegram command names allow only `a-z0-9_`, at most 32 characters.
+- Telegram command names allow only `a-z0-9_`, at most 32 characters, so `coach-today` appears there as `/coach_today`.
 - Do not publish to ClawHub: it forces MIT-0, publishes skill by skill, and serves discovery by other people.
 - `--light-context` drops the workspace files from a scheduled job. The pointer to the data index is in one of those files.
 
