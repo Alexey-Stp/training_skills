@@ -22,15 +22,16 @@ For when the data index has no command for a question, or the command fails. The
 
 - **Readiness**: there is no combined score here. Give the inputs (sleep, HRV, resting heart rate, form) and say that no score is available.
 - **Activities in a date range**: sport, duration, load from the activity list.
-- **Analysis of one activity**: summary only. Per-rep figures need the analysis layer.
+- **Analysis of one activity**: the summary, plus the activity's own laps or intervals for per-km and per-rep figures (pace or power, heart rate, cadence). Time in the target range is worked out from those; when it cannot be, name it as missing.
 - **Week summary**: sum hours and load per sport from the activity list. Leave monotony and the easy/hard share as missing.
 - **Load state**: fitness and fatigue from the latest wellness record; form computed.
 
 ## Writes
 
-A session review writes two things to its activity. Both are untested against the live API: after writing, read the activity back and check that the value is there. If it is not, tell the athlete and leave the day plan as the record.
+A session review writes up to three things to its activity. All are untested against the live API: after writing, read the activity back and check that the value is there. If it is not, tell the athlete and leave the day plan as the record.
 
 - **Effort**: the athlete's score out of 10, on the activity.
-- **Short review**: appended to the activity's description under a line reading `Coach review`. Keep whatever the description already holds. On a second write, replace the earlier `Coach review` block instead of adding another.
+- **Review**: the whole review, appended to the activity's description under a line reading `Coach review`. Keep whatever the description already holds and put the block last: it runs from that line to the end. On a second write, replace the earlier block instead of adding another.
+- **Name**: the activity's name, when the session review's "Naming" calls for it.
 
-If the data index lists a command for either, run that instead.
+If the data index lists a command for any of these, run that instead.

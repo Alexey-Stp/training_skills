@@ -27,7 +27,7 @@ Each command prints one JSON object. A value that is not known is `null`, never 
 | Refresh | none | `{ok, new_activities, wellness_days, errors[]}` |
 | Readiness for a date | date | `{date, score, inputs: {sleep_hours, sleep_score, hrv, hrv_baseline, resting_hr, resting_hr_baseline, form, device_readiness}}` |
 | Activities in a date range | from, to | `{activities: [{id, start, sport, name, duration_s, load, source, paired_event_id, stub}]}` |
-| Analysis of one activity | activity id | `{id, sport, duration_s, load, intervals: [{label, duration_s, distance_m, pace_s_per_km, pace_s_per_100m, power_w, hr_avg}], drift_pct, time_in_zones_s[], time_in_target_s, stub}` |
+| Analysis of one activity | activity id | `{id, sport, duration_s, distance_m, load, hr_avg, hr_max, cadence_avg, climb_m, power_avg_w, power_norm_w, intervals: [{label, duration_s, distance_m, pace_s_per_km, pace_s_per_100m, power_w, hr_avg, hr_max, cadence}], splits_km: [{km, pace_s_per_km, hr_avg, hr_max, cadence}], drift_pct, time_in_zones_s[], time_in_target_s, stub}` |
 | Week summary | Monday's date | `{monday, sports: {<sport>: {sessions, hours, load, distance_km}}, total: {hours, load}, easy_sessions, hard_sessions, monotony}` |
 | Load state | none | `{date, fitness, fatigue, form, ramp}` |
 | Name an activity (optional) | activity id | `{id, name}`; renames the activity in intervals.icu |
@@ -43,4 +43,4 @@ Key files live in the home directory, at the paths the index lists. Pass a key f
 - Run only commands the data index lists, and leave the analysis layer's scripts as they are. A broken command is reported, then step 4 applies.
 - A number comes from a command or from intervals.icu. When neither has it, say it is missing.
 - Garmin is read-only. Planned sessions reach the watch through intervals.icu.
-- Writes to an activity in intervals.icu (effort, the short review, the fallback upload) are listed in [intervals-icu.md](intervals-icu.md); calendar events belong to `coach-format`.
+- Writes to an activity in intervals.icu (effort, the review, the name, the fallback upload) are listed in [intervals-icu.md](intervals-icu.md); calendar events belong to `coach-format`.
