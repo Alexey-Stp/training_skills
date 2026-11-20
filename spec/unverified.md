@@ -4,7 +4,7 @@ Claims this spec relies on that nobody has tested. Check these first when buildi
 
 ## Trial checks
 
-The [trial install][t22] put a stub skill in both runtimes. The Claude Code half ran on 2026-11-19. The OpenClaw half is four checks handed to the athlete's OpenClaw agent, not yet run:
+The [trial install][t22] put a stub skill in both runtimes. The Claude Code half ran on 2026-11-19. The OpenClaw half is four checks the athlete's OpenClaw agent ran on 2026-11-20; only the watch part of check 4 is still open:
 
 1. The stub is listed, its chat command name is recorded, and it reads its sibling file.
 2. A scheduled job invokes the stub, once named in plain language and once as `/skill <name>`.
@@ -16,16 +16,16 @@ The [trial install][t22] put a stub skill in both runtimes. The Claude Code half
 | # | Claim | How to test | Status |
 |---|---|---|---|
 | 1 | A skill folder in the Claude Code user skills folder is listed under its hyphenated name and can read a sibling file by relative path | Stub skill, see [trial install][t22] | tested 2026-11-19 |
-| 2 | A skill folder in the OpenClaw workspace `skills/` folder is listed, and Telegram registers a command for it | Trial check 1 | untested |
-| 3 | Whether Telegram shows `coach-today` as `coach_today` | Trial check 1 | untested |
-| 4 | A scheduled job can invoke a skill named in plain language | Trial check 2 | untested |
-| 5 | A scheduled message starting with `/skill <name>` is expanded like a chat command | Trial check 2 | untested |
-| 6 | A scheduled job in a default isolated session receives the workspace files and the skills list | Trial check 2 | untested |
+| 2 | A skill folder in the OpenClaw workspace `skills/` folder is listed, and Telegram registers a command for it | Trial check 1 | tested 2026-11-20 |
+| 3 | Telegram turns the hyphen in a skill name into an underscore, so `coach-today` is `/coach_today`; there is no hyphen form | Trial check 1 | tested 2026-11-20 |
+| 4 | A scheduled job can invoke a skill named in plain language | Trial check 2 | tested 2026-11-20 |
+| 5 | A scheduled message starting with `/skill <name>` is expanded like a chat command | Trial check 2 ran the skill, but the run record cannot show whether the message was expanded or only understood as text. Needs a test whose result differs between the two | untested |
+| 6 | A scheduled job in a default isolated session receives the workspace files and the skills list | Trial check 2 showed the skills list arrives. The workspace files were not checked; run a job that must quote the pointer line | untested |
 | 7 | `openclaw plugins install --link <clone>` exposes this repo's skills on the installed OpenClaw version, and whether names gain a prefix | Not in the trial; needs the athlete's go-ahead because it changes OpenClaw configuration | untested |
 | 8 | How a bare skill name resolves under Claude Code plugin namespacing | Install the plugin and call one skill from another | untested |
 | 9 | The pointer line in `AGENTS.md` or the user-level `CLAUDE.md` reaches a skill, because the runtime loads that file | Start a fresh session in each runtime and run a skill that must find the data index | untested |
 | 10 | Skills installed as a bundle or through `extraDirs` load at the lowest precedence | Install one with the same name as a workspace skill and see which runs | untested |
-| 11 | A sibling file of a skill is read by skill-relative path in OpenClaw | Trial check 1 | untested |
+| 11 | A sibling file of a skill is read by skill-relative path in OpenClaw | Trial checks 1 and 2 | tested 2026-11-20 |
 
 Scheduled messages name the skill in plain language, not as `/skill <name>`, at least until 5 is tested. ([OpenClaw skill format][t16])
 
@@ -35,15 +35,17 @@ From [intervals.icu API][t2] and [calendar sync][t13]. No call was made with cre
 
 | # | Claim | How to test | Status |
 |---|---|---|---|
-| 12 | Sending an event again with the same `external_id` updates it, with a personal API key | Trial check 3 | untested |
-| 13 | `external_id` is returned when the event is read back, so the suite can recognise its own events | Trial check 3 | untested |
-| 14 | Workout text in an event's `description` is parsed into a structured workout | Trial check 3 | untested |
-| 15 | The exact workout text syntax used in [the example day plan](examples/plan/days/2027-02-02.md) | Publish it and read it back | untested |
-| 16 | Events created through the API reach the watch like ones created in the web app | Publish one for tomorrow and check the watch | untested |
-| 17 | Pool-swim sessions on the watch: pace units and timed rests | Trial check 4 | untested |
-| 18 | Units of the zone arrays in sport settings | Read sport settings and compare with the web app | untested |
-| 19 | The effort score can be written to an activity through the API | Write one and read it back | untested |
-| 20 | A short review can be written to an activity's description through the API | The athlete's existing script already does this; confirm it still works | untested |
+| 12 | Sending an event again to `POST /athlete/{id}/events` with the same `external_id` updates it, with a personal API key | Trial check 3: a second event was created | failed 2026-11-20 |
+| 13 | Sending it to `/events/bulk?upsert=true` with the same `external_id` updates the first event in place | Trial check 3 | tested 2026-11-20 |
+| 14 | `external_id` is returned when the event is read back, so the suite can recognise its own events | Trial check 3 | tested 2026-11-20 |
+| 15 | Workout text in an event's `description` is parsed into a structured workout | Trial check 3, with a single step | tested 2026-11-20 |
+| 16 | The exact workout text syntax used in [the example day plan](examples/plan/days/2027-02-02.md) | Publish it and read it back | untested |
+| 17 | Events created through the API reach the watch like ones created in the web app | Publish one for tomorrow and check the watch | untested |
+| 18 | Pool-swim sessions on the watch: pace units and timed rests | Trial check 4: the event is published; the athlete has not yet looked at the watch | untested |
+| 19 | Distances in workout text can be written as `200m`, and repeats as `4x 100m` with a rest | Trial check 4: `200m` was read as 200 minutes, and the repeats with their rest became one step. Find the notation for metres and for repeats in the intervals.icu workout text reference, publish and read back | failed 2026-11-20 |
+| 20 | Units of the zone arrays in sport settings | Read sport settings and compare with the web app | untested |
+| 21 | The effort score can be written to an activity through the API | Write one and read it back | untested |
+| 22 | A short review can be written to an activity's description through the API | The athlete's existing script already does this; confirm it still works | untested |
 
 ## If intervals.icu stops serving Garmin data
 
@@ -51,10 +53,10 @@ From [activity source resilience][t15]. The restriction was last checked on 2026
 
 | # | Claim | How to test | Status |
 |---|---|---|---|
-| 21 | Whether the restriction applies to an athlete's own API key | Watch for empty stubs on Garmin-recorded activities | untested |
-| 22 | An activity file uploaded by the athlete is served in full by the API | Upload one file and read its streams | untested |
-| 23 | An uploaded file does not duplicate the synced stub of the same activity | Same test; count activities for that day | untested |
-| 24 | Planned sessions still reach the watch after the restriction | Only observable once the restriction exists | untested |
+| 23 | Whether the restriction applies to an athlete's own API key | Watch for empty stubs on Garmin-recorded activities | untested |
+| 24 | An activity file uploaded by the athlete is served in full by the API | Upload one file and read its streams | untested |
+| 25 | An uploaded file does not duplicate the synced stub of the same activity | Same test; count activities for that day | untested |
+| 26 | Planned sessions still reach the watch after the restriction | Only observable once the restriction exists | untested |
 
 ## Garmin
 
@@ -62,11 +64,11 @@ From [Garmin as secondary source][t3]. No account was signed in to during resear
 
 | # | Claim | How to test | Status |
 |---|---|---|---|
-| 25 | The official Personal API serves sleep, HRV with baseline, resting heart rate and the original activity file | Create a key and make one read call each | untested |
-| 26 | Its rate limits are enough for a daily refresh | Read the terms behind sign-in | untested |
-| 27 | Garmin's terms of use allow automated access with a personal key | Read the terms behind sign-in | untested |
-| 28 | The athlete's watch accepts structured planned sessions for all three sports; the model was not established | Note the model under equipment in the profile and check it against Garmin's support list | untested |
-| 29 | Which wellness values the Garmin sync fills in intervals.icu today | Compare one day's wellness record in intervals.icu with the same day in Garmin | untested |
+| 27 | The official Personal API serves sleep, HRV with baseline, resting heart rate and the original activity file | Create a key and make one read call each | untested |
+| 28 | Its rate limits are enough for a daily refresh | Read the terms behind sign-in | untested |
+| 29 | Garmin's terms of use allow automated access with a personal key | Read the terms behind sign-in | untested |
+| 30 | The athlete's watch accepts structured planned sessions for all three sports; the model was not established | Note the model under equipment in the profile and check it against Garmin's support list | untested |
+| 31 | Which wellness values the Garmin sync fills in intervals.icu today | Compare one day's wellness record in intervals.icu with the same day in Garmin | untested |
 
 ## Coaching research
 
