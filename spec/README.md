@@ -143,7 +143,7 @@ Building and publishing the skills; more than one athlete; sports beyond swim, b
 | [Cut-over][t19] | decision |
 | [Today skill][t20] | decision |
 | [Training data contract][t21] | decision |
-| [Trial install][t22] | task, open |
+| [Trial install][t22] | task |
 | [Subjective log][t23] | decision |
 | [File templates][t24] | prototype |
 | [Athlete setup flow][t25] | decision |
