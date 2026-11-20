@@ -35,7 +35,7 @@ Done when the day plan holds the review and the athlete has the message.
 
 | Always | Run adds | Bike adds | Swim adds |
 |---|---|---|---|
-| duration, load, time in the target range, effort | pace and heart rate per rep | power per interval, heart-rate drift | pace per 100 m per set |
+| duration, load, time in the target range, effort | pace and heart rate per rep | power per interval, heart-rate drift | per set: distance, pace per 100 m, rest, heart rate, strokes or SWOLF, and any equipment (paddles, pull buoy, fins) |
 
 ## Unplanned activity
 
@@ -73,8 +73,8 @@ Several activities in one request: one message per activity, in the order of the
 | 🟢 🟡 🔴 | Readiness | the day's verdict with sleep, HRV against baseline, resting heart rate, and any pain score |
 | 🎯 | Goal | the planned session's purpose, targets and caps, in one line |
 | ✅ 🟡 ❌ | Execution | one line per target and cap, with the figure. ✅ met. 🟡 missed for part of the session. ❌ missed for most of it. For a cap, time in the target range is time under the cap |
-| ⏱ | Splits | reps and sets: one line each. A steady session: only the splits that show where it changed, on one or two lines; all of them only when the splits are the finding. An athlete rule can switch this off for a kind of session |
-| 🧠 | Notes | what the numbers mean: one to three findings, with a comparison to the last session of the same kind where the day plans hold one, and any athlete limit the session passed |
+| ⏱ | Splits | reps and sets: one line each. A swim: the whole session as swum, one line per set from warm-up to cool-down (see "A swim's splits"). A steady session: only the splits that show where it changed, on one or two lines; all of them only when the splits are the finding. An athlete rule can switch this off for a kind of session |
+| 🧠 | Notes | what the numbers mean: one to three findings, with a comparison to the last session of the same kind where the day plans hold one, and any athlete limit the session passed, or one it could not be checked against because a score is missing |
 | ➡️ | Next | what stands, and what to do differently next time |
 | 📍 | Context | phase and week of the block, which session of the week this was, the week so far |
 
@@ -106,12 +106,26 @@ Sample with invented numbers:
 📍 Run build 1, load week 3 · hard session 1 of 2 · week so far: swim 2.0 km
 ```
 
+### A swim's splits
+
+A swim is its sets, so the Splits section lays out all of them, in order, from the laps: what the set was, pace per 100 m (a range across the reps), rest, heart rate, and SWOLF or strokes where the laps hold them. Name drills and equipment on the set's line. Execution then judges against the plan and gives only the size of each miss (reps short, seconds off the range, beats over the cap). A set the plan did not have is named in Notes and counts toward the verdict and the caps.
+
+```
+⏱ Sets (pace per 100 m · rest · HR)
+WU 300 · 1'58 · HR 118
+4x50 drill · 2'05-2'12 · r20" · HR 110-121
+5x200 · 1'52-1'55 · r30-40" · HR 131-136 · SWOLF 38-39
+8x50 fins · 1'45-1'48 · r15" · HR 138-146
+CD 100 · 2'02 · HR 115
+```
+
 ## Naming
 
-Rename an activity only when it still has the default name its device gave it: a time of day followed by the sport, such as `Morning Run`, `Lunch Ride`, `Afternoon Swim`, `Evening Run`, `Night Ride`. Any other name was chosen by someone or by an app (a race, a MyWhoosh or Zwift session) and stays as it is.
+Rename an activity only when it still has the default name its device gave it: a time of day followed by the sport, such as `Morning Run`, `Lunch Ride`, `Afternoon Swim`, `Evening Run`, `Night Ride`, or the bare sport, such as `Pool Swim`. Any other name was chosen by someone or by an app (a race, a MyWhoosh or Zwift session) and stays as it is.
 
 - Planned: the planned session's title in title case, for example `Threshold Run`.
 - Unplanned: the sport and its character, for example `Easy Ride`.
+- A swim, planned or not: `Swim - ` and the sets as swum, in order, joined by `/`. Each set is its distance or reps, a word for a drill or equipment, and for a main set (not the warm-up, drills or cool-down) `@` with the pace per 100 m across the reps. For example `Swim - 300/4x50 drill/5x200@1'52-1'55/8x50 fins@1'45-1'48/100`. Without laps, name it like any other session.
 
 If the data index lists the naming question, run that command. Otherwise write the name to the activity in intervals.icu and read it back. The athlete can switch renaming off, for one activity or as a rule.
 
