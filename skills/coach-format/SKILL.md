@@ -39,6 +39,16 @@ Four sections, filled in as the day goes on:
 
 Fixed fields, in this order: sport, duration, planned load, purpose, targets, caps, calendar. The title is the heading, with the session's number. A session keeps its number for as long as it exists, because its calendar event is found by it: a removed session's number is not reused that day, and a new session takes the next unused one. Write `none` for an empty field. Then the steps in intervals.icu workout text, in a code block, so calendar sync publishes them as written.
 
+Between the fields and the steps, plain lines with no dash, each only when it applies:
+
+- `Where and when:` the start time and place of a session someone else organises.
+- `Fuel:` for a session longer than 90 minutes: carbohydrate per hour and when to start.
+- `Sets:` for a swim: the sets as they are to be swum, in the notation the review uses for a swim's name with the rest added as `r` and seconds, for example `Sets: 300 / 4x50 drill r20 / 5x200 @1'52-1'55 r30 / 100`. This line is the plan for the swim; the steps below it are a copy in minutes for the watch.
+
+A race is a planned session with the purpose `race, priority <A, B or C>`: its sport is the race's (`triathlon` for one), its duration the expected finishing time, and its steps one line for that duration.
+
+A session moved to another day is removed from its old day and added on the new one with that day's next unused number; its old calendar event is removed and a new one published. A brick is two sessions, each with `brick with session <n>` in its purpose.
+
 Workout text, as far as it is tested:
 
 - One step per line: `- 10m 60%` is 10 minutes at 60% of threshold.
@@ -92,6 +102,7 @@ Use these terms, with these meanings, in every file and message.
 | Sport mode | which sports a plan covers: triathlon, or a single sport |
 | Focus | the sport given priority inside a plan |
 | Planned session | one unit of training the plan prescribes for a specific day |
+| Key session | a planned session named in its week's row of the month plan |
 | Activity | one recorded, completed unit of training, as it arrives from the activity source |
 | Session review | the assessment of one activity, against its planned session where one exists |
 | Day plan, week plan, month plan | the plan at three resolutions |

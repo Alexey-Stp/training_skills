@@ -44,15 +44,15 @@ Zones are read from intervals.icu sport settings. Only what intervals.icu does n
 
 Weekly template:
 
-| Day | Time available | Fixed commitments | Facility access |
-|---|---|---|---|
-| Mon | 60 min | | |
-| Tue | 90 min | | |
-| Wed | 90 min | | pool closed |
-| Thu | 2 h | | |
-| Fri | rest day | | |
-| Sat | 3 h | | |
-| Sun | 3 h | | |
+| Day | Time available | Usual times | Fixed commitments | Facility access |
+|---|---|---|---|---|
+| Mon | 60 min | evening | | |
+| Tue | 90 min | evening | | |
+| Wed | 90 min | evening | | pool closed |
+| Thu | 2 h | lunch and evening | | pool 15 min away |
+| Fri | rest day | | | |
+| Sat | 3 h | morning | | |
+| Sun | 3 h | morning | | |
 
 Dated exceptions:
 

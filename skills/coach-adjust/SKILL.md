@@ -16,8 +16,9 @@ Every plan update is shown as before and after and waits for approval. Only a sc
 3. **Scope.** Name the reason and the days it touches. Days in the past and sessions already paired with an activity are outside every plan update: they stay as they are. If that is all the request touches, say so, write nothing, and offer `coach-review-session` when the activity has no review. If what the athlete says happened differs from the record, say what the record shows and ask before going on.
 4. **Check the calendar.** Read the affected published sessions in intervals.icu. If one differs from the plan, settle that first: see "Calendar differences".
 5. **Work out the change** with the rules. The ones that matter most here:
-   - A missed session's load is not added elsewhere. An easy one stays missed; a key session or a test may move once inside its week when every rule holds on the new day (the "Missed session" limit in `coach-rules`).
-   - Hard days about 48 hours apart; the long run within 110% of the longest in the last 30 days.
+   - A missed session's load is not added elsewhere. An easy one stays missed; a key session or a test, missed or eased by a readiness verdict before it started, may move once inside its week when every rule holds on the new day (the "Missed session" limit in `coach-rules`).
+   - Hard bike and run days about 48 hours apart and none the day after the long run, hard swims not on consecutive days; the long run within 110% of the longest in the last 30 days, with its floor and ceiling.
+   - A race keeps what its priority gives it before and after ("Races" in `coach-rules`).
    - Every limit and weekly-shape rule in `ATHLETE-RULES.md`.
    - After a gap in training, the gap default in `coach-rules`.
    - Change as little as the reason needs.
@@ -35,7 +36,7 @@ Done when the day plans, "Changes" and the calendar agree and the athlete has be
 
 | What happened | What the update does |
 |---|---|
-| A readiness verdict of MODIFY or SKIP, accepted | Today's sessions change as the verdict said. Later days stand unless a rule forces more. |
+| A readiness verdict of MODIFY or SKIP, accepted | Today's sessions change as the verdict said. A key session or test the verdict eased may move once to a later day of the week, as the "Missed session" limit allows; that day's easy session of the same sport is dropped. Other days stand unless a rule forces more. |
 | A session fell short or was missed | Nothing is added. A missed key session or test may move once inside its week, as the "Missed session" limit allows. A later session changes only if the review's Next line said it should. |
 | The athlete wants a session moved | Move it if every rule still holds on both days; otherwise step 6. |
 | Tired, sore, ill | Ease or remove what is ahead, by the rules. Fever: no training, and the return is easy sessions only. |
@@ -58,7 +59,7 @@ The athlete pastes or describes a session someone else organises, often with sev
 5. **Check the time:** the meeting and start times against that day's availability, and against the other sessions of the day.
 6. **Show it** in the message shape below, with one line before the before-and-after for the recommended option and why, and one line for each other option and why not. The athlete approves the recommendation or names another option.
 
-The rewritten session keeps its number and purpose. Its targets carry the chosen group, distance and pace; the start time and meeting place go on a plain `Where and when:` line between the fields and the steps; its steps are rewritten to match, the added part included, so the calendar copy shows the whole session.
+The rewritten session keeps its number and purpose. Its targets carry the chosen group, distance and pace; the start time and meeting place go on a plain `Where and when:` line between the fields and the steps (see "A planned session" in `coach-format`); its steps are rewritten to match, the added part included, so the calendar copy shows the whole session.
 
 ```
 Plan update: club ride offered for Sunday, start 08:30.

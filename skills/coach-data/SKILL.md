@@ -25,14 +25,14 @@ Each command prints one JSON object. A value that is not known is `null`, never 
 | Question | Arguments | Answer |
 |---|---|---|
 | Refresh | none | `{ok, new_activities, wellness_days, errors[]}` |
-| Readiness for a date | date | `{date, score, inputs: {sleep_hours, sleep_score, hrv, hrv_baseline, resting_hr, resting_hr_baseline, form, device_readiness}}` |
+| Readiness for a date | date | `{date, score, inputs: {sleep_hours, sleep_score, hrv, hrv_7d, hrv_baseline, resting_hr, resting_hr_baseline, form, device_readiness}}` |
 | Activities in a date range | from, to | `{activities: [{id, start, sport, name, duration_s, load, source, paired_event_id, stub}]}` |
 | Analysis of one activity | activity id | `{id, sport, duration_s, distance_m, load, hr_avg, hr_max, cadence_avg, climb_m, power_avg_w, power_norm_w, intervals: [{label, duration_s, distance_m, pace_s_per_km, pace_s_per_100m, power_w, hr_avg, hr_max, cadence}], splits_km: [{km, pace_s_per_km, hr_avg, hr_max, cadence}], drift_pct, time_in_zones_s[], time_in_target_s, stub}` |
 | Week summary | Monday's date | `{monday, sports: {<sport>: {sessions, hours, load, distance_km}}, total: {hours, load}, easy_sessions, hard_sessions, monotony}` |
 | Load state | none | `{date, fitness, fatigue, form, ramp}` |
 | Name an activity (optional) | activity id | `{id, name}`; renames the activity in intervals.icu |
 
-`device_readiness` is optional and often `null`. A scheduled sync on the athlete's machine is a head start; still refresh.
+`device_readiness` is optional and often `null`. `hrv_7d` is the average of the last seven nights; when a command does not give it, work it out from the wellness records in intervals.icu. A scheduled sync on the athlete's machine is a head start; still refresh.
 
 ## Keys
 
