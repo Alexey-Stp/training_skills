@@ -2,12 +2,12 @@
 
 ## Purpose
 
-Assess a finished week: what was done against what the week plan prescribed. It also carries the "am I on track" check, which has no skill of its own.
+Assess a finished week: what was done against what the week plan prescribed. It also carries the status check, the answer to "am I on track", which has no skill of its own.
 
 ## Triggers
 
 - "how was my week".
-- The scheduled Sunday run, which calls this skill and then `coach-plan-week`.
+- The scheduled Sunday job, which calls this skill and then `coach-plan-week`.
 
 ## Reads
 
@@ -16,6 +16,7 @@ Assess a finished week: what was done against what the week plan prescribed. It 
 - The month plan's row for this week.
 - The athlete profile's anchors, and the same thresholds in intervals.icu.
 - The season plan's test dates.
+- The intervals.icu calendar: published sessions still ahead, to check for calendar differences.
 - The coaching rules and athlete rules.
 
 ## Writes
@@ -33,12 +34,13 @@ Without asking, then commits:
 4. Report hours and load per sport, with run load on its own, and the easy/hard share. ([coaching method][t11])
 5. Show fitness, fatigue and form as context only.
 6. Summarise the week's subjective scores and flag trends, for example pain rising three days running. ([subjective log][t23])
-7. Give the status check that is folded into this skill: a verdict against the athlete's goal, with dated evidence from recent weeks of load and wellness. ([everyday athlete usage][t4], [skill list][t7])
-8. Suggest running `coach-setup`, without running it, when ([athlete setup flow][t25]):
+7. Give the status check: whether the athlete is on track for the goal, with dated evidence from recent weeks of load and wellness. ([everyday athlete usage][t4], [skill list][t7])
+8. Check published sessions that are still ahead for calendar differences, as set out under "Calendar sync" in [plan format](plan-format.md). Show any, and offer `coach-adjust` to settle them. ([map][map])
+9. Suggest running `coach-setup`, without running it, when ([athlete setup flow][t25]):
    - a threshold in intervals.icu differs from the athlete profile;
    - an anchor is more than eight weeks old;
    - a test date in the season plan has passed.
-9. Write "Actual vs plan" and close the week.
+10. Write "Actual vs plan" and close the week.
 
 `coach-plan-week` reads the subjective scores through this review, not directly.
 

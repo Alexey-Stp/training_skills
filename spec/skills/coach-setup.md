@@ -6,7 +6,7 @@ Create and keep current the three standing files every other skill reads: the da
 
 ## Triggers
 
-- "set up my profile", "my FTP changed", "update my availability".
+- "set up my profile", "my FTP changed".
 - A suggestion from `coach-review-week`. Setup never runs on a schedule.
 
 ## Reads

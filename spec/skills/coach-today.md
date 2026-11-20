@@ -6,8 +6,8 @@ The daily check: what is today's planned session, and is the athlete ready for i
 
 ## Triggers
 
-- "what's today", "am I ready", "should I train", "what's tomorrow".
-- The scheduled morning run.
+- "what's today", "am I ready", "what's tomorrow".
+- The scheduled morning job.
 
 ## Reads
 
@@ -38,9 +38,9 @@ To today's day plan, once per day, and nothing else ([today skill][t20], [subjec
    - Skip: rest, or 30 minutes very easy.
 5. On modify or skip, offer `coach-adjust`. The verdict itself changes no plan.
 6. Write the verdict to the day plan.
-7. If the week plan is approved but not synced, say so. ([calendar sync][t13])
+7. If the week plan is approved but not synced, say so. It does not look for calendar differences; the skills named under "Calendar sync" in [plan format](plan-format.md) do. ([calendar sync][t13])
 
-Scheduled morning run:
+Scheduled morning job:
 
 - Tries at 08:00, 09:00 and 10:00. Speaks once, as soon as last night's sleep and HRV are present.
 - At 10:00 without data: sends the session, states that no verdict is possible, and asks how the athlete feels.
@@ -58,7 +58,7 @@ Verdict first, then the planned session with targets, then the three or four inp
 ```
 GO
 
-Threshold run, 60 min: 4 x 8 min at 4:10/km, 2 min easy between.
+Threshold run, 65 min: 4 x 8 min at 4:10/km, 2 min easy between.
 Cap: heart rate under 170 in the reps.
 Then strength, 20 min.
 

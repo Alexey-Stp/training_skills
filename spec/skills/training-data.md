@@ -19,7 +19,7 @@ Called by other skills only, at the start of each of them.
 
 ## Writes
 
-Nothing in the data folder. The fallback upload described below is the only write to intervals.icu it describes.
+Nothing in the data folder. In intervals.icu, two writes: the fallback upload described below, and the rename done by the optional naming question.
 
 ## Steps
 
@@ -46,7 +46,7 @@ Any scheduled sync is a head start, not a dependency.
 
 ### Without an analysis layer
 
-The normal path in a runtime that has none, such as Claude Code on another machine. From intervals.icu directly: activity summary, wellness, fitness figures. From [intervals.icu API][t2]:
+The path when the data index lists no command for a question. From intervals.icu directly: activity summary, wellness, fitness figures. From [intervals.icu API][t2]:
 
 - Auth: HTTP Basic, username `API_KEY`, password the personal key. Athlete id `0` means the owner of the key.
 - Limits: 5000 requests a day, 2500 per rolling 15 minutes, 10 a second per address; a 429 carries `Retry-After`.
@@ -70,7 +70,7 @@ Left unsolved in the first version: if planned sessions stop reaching the watch,
 From [Garmin as secondary source][t3] and [activity source resilience][t15].
 
 - What Garmin holds that intervals.icu does not carry: Body Battery, sleep stages, HRV status and baseline, the all-day stress score. Already in intervals.icu: sleep duration and score, one overnight HRV value, resting heart rate, weight.
-- The route named by this spec is the official Personal API key, which is read-only. It has no Training Readiness or Training Status figure, so device readiness is an optional input.
+- The route named by this spec is the official Personal API key, which is read-only and lasts up to a year before it has to be replaced. It has no Training Readiness or Training Status figure, so device readiness is an optional input.
 - Moving the athlete's private scripts off unofficial sign-in is private work outside the suite.
 
 ## Reply shape

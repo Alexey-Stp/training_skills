@@ -7,7 +7,7 @@ Assess one activity against its planned session, where one exists, and say what 
 ## Triggers
 
 - "review my run", "review today's training".
-- The scheduled midday and evening runs.
+- The scheduled midday and evening jobs.
 
 ## Reads
 
@@ -52,7 +52,7 @@ Anything else appears only when it explains a finding.
 
 ## Reply shape
 
-In this order: verdict line with the session name; planned versus actual for the main set; how much of the purpose was achieved; the findings; the Next line. Phone-sized, no tables. Sample with invented numbers:
+In this order: verdict line with the session name; planned versus actual for the main set; how much of the purpose was achieved; the findings; the Next line. Phone-sized, no tables. Sample with invented numbers; the same review as stored is in [the example day plan](../examples/plan/days/2027-02-02.md):
 
 ```
 Threshold run: PARTLY DONE AS PLANNED
@@ -60,7 +60,7 @@ Threshold run: PARTLY DONE AS PLANNED
 Planned 4 x 8 min at 4:10/km. Did 4 x 8 min at 4:09, 4:10, 4:12, 4:21.
 Purpose (time at threshold): 24 of 32 min in the target range.
 
-- Reps 1-3 on target, heart rate steady.
+- Reps 1 to 3 on target, heart rate steady.
 - Rep 4 slowed 11 s/km while heart rate rose 6 bpm: past threshold, not at it.
 - Load 78 planned, 74 done. Effort reported: 8/10.
 

@@ -1,12 +1,15 @@
 # Athlete profile
 
-Written only by athlete setup. All values in this example are invented.
+Written only by `coach-setup`. All values in this example are invented.
 
 ## 1. Basics
 
 - Born: 1985
 - Height: 180 cm
-- Weight, resting heart rate and HRV baselines are computed from recent data, not stored here.
+- Timezone: Europe/London
+- Weight: computed, 7-day average of the wellness record. Not typed in.
+- HRV baseline: computed, 60-day average. Not typed in.
+- Resting heart rate baseline: computed, 30-day average. Not typed in.
 
 ## 2. Sport mode
 
@@ -42,10 +45,10 @@ Weekly template:
 
 | Day | Time available | Fixed commitments |
 |---|---|---|
-| Mon | 45 min | |
-| Tue | 90 min morning | |
-| Wed | 75 min | pool closed |
-| Thu | 75 min morning | |
+| Mon | 60 min | |
+| Tue | 90 min | |
+| Wed | 90 min | pool closed |
+| Thu | 2 h | |
 | Fri | rest day | |
 | Sat | 3 h | |
 | Sun | 3 h | |
@@ -60,6 +63,8 @@ Dated exceptions:
 |---|---|---|
 | Right knee | 2026-08 | pain scored daily; no downhill repeats |
 | Lower back | 2026-10 | no aero position over 60 min |
+
+Daily pain scores are logged in each day plan under "How I felt", not here.
 
 ## 8. Equipment
 

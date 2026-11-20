@@ -6,7 +6,7 @@ Make a plan update: change an existing plan in response to what actually happene
 
 ## Triggers
 
-- "I missed it", "I'm tired", "I'm sick", "move Thursday", "I'm travelling next week".
+- "I missed it", "I'm tired", "move Thursday".
 - An offer accepted from `coach-today` (modify or skip), `coach-review-session` (its Next line) or `coach-setup` (an anchor changed).
 
 ## Reads
@@ -19,22 +19,24 @@ Make a plan update: change an existing plan in response to what actually happene
 
 ## Writes
 
+Without asking, whether or not the change is approved:
+
+- Any score the athlete mentions ("tired", "sore"), in the day plan's subjective log. ([subjective log][t23])
+
 After approval only, then commits:
 
 - The affected day plans, rewritten to show the current plan cleanly.
 - One entry in the week plan's Changes section: when, what changed from what to what, and why. ([plan files][t10])
 - Calendar sync for the affected sessions only: updated, removed or added. ([calendar sync][t13])
-- Any score the athlete mentions ("tired", "sore"), in the day plan's subjective log. ([subjective log][t23])
 
 ## Steps
 
-1. Establish the reason and which days are affected.
+1. Establish the reason and which days are affected. Log any score the athlete mentions.
 2. Apply the [coaching rules](coaching-rules.md) with the athlete rules. The ones that matter most here are the four limits and the gap-in-training default. ([coaching method][t11], [best-practice coaching][t5])
-3. Show the change as before and after for each affected day, and wait for approval. A scheduled run leaves a draft and asks in the chat channel.
-4. On approval, rewrite the day plans, add the Changes entry, and sync only the affected sessions.
-5. Never change a session on a past day, or one already paired with an activity.
+3. Show the change as before and after for each affected day, and wait for approval. A scheduled job leaves a draft and asks in the chat channel.
+4. On approval, rewrite the day plans, add the Changes entry, and sync only the affected sessions, under the calendar sync rules in [plan format](plan-format.md).
 
-Calendar differences. When a published session differs in intervals.icu from the markdown plan, the next skill that runs shows the difference and asks the athlete to either take the change into the plan, logged in Changes, or restore the plan's version. Nothing is overwritten silently. ([calendar sync][t13])
+Calendar differences. Before changing a session, check the affected published sessions for differences, as set out under "Calendar sync" in [plan format](plan-format.md). Settling a difference found by any skill, in either direction, is done here. ([calendar sync][t13], [map][map])
 
 Sport mode and focus can change inside a block only through this skill, as an approved plan update with the reason logged, for example an injury that stops running. ([sport mode][t12])
 
@@ -63,3 +65,4 @@ Not prototyped; see the open points in the [README](../README.md). The decided c
 [t13]: https://github.com/Alexey-Stp/training_skills/issues/13
 [t20]: https://github.com/Alexey-Stp/training_skills/issues/20
 [t23]: https://github.com/Alexey-Stp/training_skills/issues/23
+[map]: https://github.com/Alexey-Stp/training_skills/issues/1

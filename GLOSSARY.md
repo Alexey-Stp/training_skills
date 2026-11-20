@@ -34,7 +34,7 @@ _Avoid_: Schedule, program
 A change to an existing plan in response to what actually happened or a change in the athlete's circumstances.
 
 **Athlete profile**:
-The standing facts about the athlete that every skill reads: zones, thresholds, availability, goals, limitations.
+The standing facts about the athlete that every skill reads: goals, thresholds (kept as dated anchors), availability, limitations, equipment. Zones are read from intervals.icu, not kept here.
 
 **Activity source**:
 The system activities are read from. intervals.icu is the primary activity source; Garmin is the secondary one, consulted for data intervals.icu lacks.
@@ -62,7 +62,7 @@ The daily check's conclusion about today's planned session: go, modify or skip.
 The assessment of a finished week: what was done against what the week plan prescribed.
 
 **Season plan**:
-The athlete-maintained plan above the month plan: goals, phases and key dates for the season.
+The athlete-maintained plan above the month plan: phases and key dates for the season. Goals live in the athlete profile.
 
 **Coaching rules**:
 The general best-practice defaults every planning and review skill applies.
@@ -74,7 +74,7 @@ The athlete's own rules. They are private training data and override coaching ru
 The athlete's private scripts that turn raw activity data into the figures a skill reasons about.
 
 **Approval**:
-The athlete's explicit acceptance of a draft plan or plan update. Nothing is published by calendar sync before it.
+The athlete's explicit acceptance of something a skill proposes to write: a draft plan, a plan update, or a change to the athlete profile or athlete rules. Nothing is published by calendar sync before it.
 
 **Subjective log**:
 The athlete's own scores for a day (effort, feel, soreness, pain, illness), kept in that day's day plan.

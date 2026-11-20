@@ -33,12 +33,12 @@ Sections: files; key file paths; the command for each training data question; se
 
 From [athlete profile contents][t9] and [athlete setup flow][t25]:
 
-- Eight sections: basics; sport mode; goals and target races; anchors; zones; availability; limitations; equipment. Then a change log.
-- intervals.icu is authoritative for every threshold and zone it holds; the profile keeps a dated copy. The profile is authoritative for CP and W′, goals, availability, limitations and equipment. When the two differ, the skill shows both and asks; it never overwrites either silently.
-- Weight, HRV baseline and resting-heart-rate baseline are computed from wellness data, not typed in.
+- Eight sections: basics (birth year, height, timezone); sport mode; goals and target races; anchors; zones; availability; limitations; equipment. Then a change log.
+- intervals.icu is authoritative for every threshold and zone it holds. The profile keeps a dated copy of each threshold, as an anchor; zones are read from intervals.icu when needed and not copied (see Amendments in the [README](README.md)). The profile is authoritative for CP and W′, goals, availability, limitations and equipment. When the two differ, the skill shows both and asks; it never overwrites either silently.
+- Weight, HRV baseline and resting-heart-rate baseline are computed from wellness data, not typed in. The profile records only how each is computed.
 - Every anchor carries value, date, method (tested, derived, estimated) and source (intervals.icu, a named imported document, or stated by the athlete). Skills prescribe only from the latest tested anchor. An anchor older than 8 weeks, or only estimated, is flagged whenever it is used.
 - Goals, target races and anchors live here. The season plan keeps phases, the macro calendar and its change log, and points here for numbers.
-- Limitations: what, since when, which athlete rule it triggers. Day-to-day scores are not profile data.
+- Limitations: what, since when, which athlete rule it triggers. Day-to-day scores are not profile data; the profile says where they are logged, which is the day plan's "How I felt".
 - Availability: a weekly template (time available, fixed commitments, facility access) plus dated exceptions.
 - Holds the default sport mode. ([sport mode][t12])
 
@@ -59,6 +59,7 @@ One block of whole weeks, normally four, Monday to Sunday. ([plan files][t10])
 - Reasoning for the block.
 - One row per week: role (load or easy), hours, planned load, per-sport volumes, key sessions.
 - Checks for the block; any test.
+- Block review. Who writes it is an open point in the [README](README.md).
 
 ## Week plan
 
@@ -85,7 +86,7 @@ Day plans have no status of their own; they follow their week.
 
 ## Status
 
-Week and month plans carry DRAFT, then APPROVED, then CLOSED. Closed means reviewed. ([plan files][t10])
+Week and month plans carry DRAFT, then APPROVED, then CLOSED. Closed means reviewed. `coach-review-week` closes a week; who closes a month plan is an open point in the [README](README.md). ([plan files][t10])
 
 ## How far ahead
 

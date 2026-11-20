@@ -1,6 +1,6 @@
 # Coach data index
 
-Every coach skill reads this file first. Written by athlete setup. All values in this example are invented.
+Every coach skill reads this file first. Written by `coach-setup`. All values in this example are invented.
 
 ## Files
 
@@ -36,6 +36,5 @@ Each command prints JSON. A question with no command is answered from intervals.
 
 ## Settings
 
-- Timezone: Europe/London
 - Chat channel for approvals: Telegram
 - Last setup run: 2027-01-10

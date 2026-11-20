@@ -10,13 +10,13 @@ Assembled from the decisions on the [wayfinder map][map]. Each section names the
 - **Two runtimes.** OpenClaw first, Claude Code second, same skill files. ([private training data][t8], [OpenClaw skill format][t16])
 - **Public skills, private data.** This repo holds skills only. The athlete profile, athlete rules, plans, reviews and keys never enter it. ([private training data][t8])
 - **Markdown is the truth.** Plans live in markdown in the data folder. intervals.icu receives a copy. ([replace, absorb or coexist][t18], [calendar sync][t13])
-- **Approval before publishing.** Nothing reaches the calendar before the athlete approves it. A scheduled run that would change a plan leaves a draft and asks in the chat channel. ([skill list][t7])
+- **Approval before publishing.** Nothing reaches the calendar before the athlete approves it. A scheduled job that would change a plan leaves a draft and asks in the chat channel. ([skill list][t7])
 - **Defaults are overridable.** Public coaching rules are best-practice defaults; the athlete's private rules override them. ([replace, absorb or coexist][t18], [coaching method][t11])
 - **Never invent a number.** Missing data is said to be missing. ([training data contract][t21])
 
 ## Skills
 
-Seven the athlete starts ([skill list][t7]):
+Seven the athlete can start; other skills and scheduled jobs can start them too ([skill list][t7]):
 
 | Skill | Triggered by | Writes | Spec |
 |---|---|---|---|
@@ -36,7 +36,7 @@ Three shared, called only by other skills:
 | Training data | finding the data folder, reading activity sources, calling the analysis layer | [training-data](skills/training-data.md) |
 | Plan format | how the files are written, calendar sync mechanics, the runtime vocabulary | [plan-format](skills/plan-format.md) |
 
-No skill in the first version for: the season plan (athlete-maintained), an "am I on track" check (folded into week review), race preparation and debrief, and "why" questions (answered in conversation from the coaching rules). ([skill list][t7])
+No skill in the first version for: the season plan (athlete-maintained), a status check, the answer to "am I on track" (folded into week review), race preparation and debrief, and "why" questions (answered in conversation from the coaching rules). ([skill list][t7])
 
 ## How the pieces fit
 
@@ -57,7 +57,7 @@ athlete (chat) -> coach-* skill -> shared skills
 From [Pocock skills as a template][t6] and [OpenClaw skill format][t16]:
 
 - One `skills/<name>/SKILL.md` tree in this repo. Frontmatter: `name` and `description`; `user-invocable` and `disable-model-invocation` behave the same in both runtimes.
-- The seven `coach-*` skills are entry points. The three shared skills are model-invoked, so other skills can call them.
+- All ten skills can be called by the model, so no skill sets `disable-model-invocation`. A skill that another skill or a scheduled job must start has to be callable by the model, and that covers the `coach-*` skills: the Sunday job chains two of them, three hand off to `coach-adjust`, and scheduled jobs name a skill in plain language. The seven `coach-*` skills can also be started by the athlete; the three shared skills cannot. (Decided in review of this spec; on the [map][map].)
 - Keep each `SKILL.md` short. Put material only some branches need (formats, per-sport figures, sport mode branches) in sibling files behind a one-line pointer. Use skill-relative paths.
 - Write to the common subset. Do not use the OpenClaw-only `{baseDir}` and `command-dispatch`, nor the Claude Code-only `${CLAUDE_SKILL_DIR}`, `$ARGUMENTS`, inline shell commands, `context: fork` and `allowed-tools`.
 - Do not rely on `AGENTS.md`, `USER.md` or `CLAUDE.md` content. Every skill starts by reading the data index, found through the one-line pointer those files carry.
@@ -65,6 +65,8 @@ From [Pocock skills as a template][t6] and [OpenClaw skill format][t16]:
 - Add a Claude Code plugin manifest (`.claude-plugin/plugin.json` with an explicit `skills` array, plus `marketplace.json`). OpenClaw installs the same directory as a linked bundle; the fallback is `skills.load.extraDirs`. Both routes are untested; see [unverified.md](unverified.md).
 - Skills installed either way load at the lowest precedence in OpenClaw, so a new name must not collide with an existing workspace skill. The shared `coach-` prefix is there for this.
 - Telegram command names allow only `a-z0-9_`, at most 32 characters.
+- Do not publish to ClawHub: it forces MIT-0, publishes skill by skill, and serves discovery by other people.
+- `--light-context` drops the workspace files from a scheduled job, and with them the pointer to the data index, so the suite's jobs do not use it.
 
 ## Build order
 
@@ -90,7 +92,10 @@ Where a later decision changed an earlier one, the later one stands.
 | [Plan files][t10]: planned session fields are sport, title, duration, planned load, targets, caps | [File templates][t24] | The accepted example adds purpose and calendar state |
 | [Coaching method][t11]: in triathlon every sport at least twice a week | [Sport mode][t12] | Once a week for non-focus sports when a focus is set |
 | [Replace, absorb or coexist][t18]: week plan plus a weekly archive | [Plan files][t10] | One file per week; no separate archive |
+| [Athlete profile contents][t9]: the profile keeps a dated copy of every threshold and zone | [File templates][t24] | Thresholds are kept as dated anchors; zones are read from intervals.icu when needed and not copied |
+| [Calendar sync][t13]: the next skill that runs shows a calendar difference | Review of this spec; on the [map][map] | `coach-plan-week`, `coach-adjust` and `coach-review-week` check; `coach-today` does not |
 | Glossary: calendar sync is publishing the upcoming week | [Calendar sync][t13] | It also covers updating single sessions after a plan update; the glossary entry is widened in this change |
+| Glossary: the season plan holds goals; the athlete profile holds zones; approval is for plans | [Athlete profile contents][t9], [athlete setup flow][t25], [file templates][t24] | Goals live in the profile, zones are read from intervals.icu, and approval also covers the profile and rules; the three entries are changed in this change |
 
 ## Open points
 
@@ -100,12 +105,13 @@ Gaps the decisions leave. They are listed, not filled.
 2. Field names of the JSON answers in the training data contract. That they are fixed was decided; the fields were not.
 3. Reply shapes for `coach-setup`, `coach-review-week`, `coach-plan-week`, `coach-plan-month` and `coach-adjust`, and what the status check inside week review contains. Only the session review and the daily check were given a shape. The decided constraints are in each skill's file.
 4. The illustrative default readiness bands the public skill carries when the athlete rules give none.
-5. Who writes the month plan's "Block review" section. The example assigns it to week review when the last week closes; no decision says so.
+5. Who writes the month plan's "Block review" section, and who sets a month plan to CLOSED. The accepted example has the section; no decision says who fills it.
 6. What `coach-review-week` does when asked mid-week.
 7. Exact wording of the pointer lines in `AGENTS.md` and the user-level `CLAUDE.md`.
 8. Whether the short review posted to the activity description is the whole review or only its verdict and Next line.
 9. Links are per section, not per statement. The decision asked for every statement to link to its ticket.
 10. The session review's outcome and the daily check's outcome are both called a verdict. Only "readiness verdict" is a glossary term.
+11. Trigger phrases. Each skill's file lists only the phrases the decisions name; the skill descriptions will need more.
 
 ## Out of scope
 
@@ -140,7 +146,7 @@ Building and publishing the skills; more than one athlete; sports beyond swim, b
 | [Athlete setup flow][t25] | decision |
 | [Spec assembly][t26] | decision |
 
-Five small points were decided in conversation without a ticket and are recorded on the [map][map]: a planned session with no activity, mobility, runtime memory notes, hand-offs, and vocabulary at runtime.
+Seven small points were decided in conversation without a ticket and are recorded on the [map][map]: a planned session with no activity, mobility, runtime memory notes, hand-offs, vocabulary at runtime, which skills the model can call, and which skills check for calendar differences.
 
 [t2]: https://github.com/Alexey-Stp/training_skills/issues/2
 [t3]: https://github.com/Alexey-Stp/training_skills/issues/3

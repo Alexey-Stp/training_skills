@@ -6,8 +6,8 @@ Draft the coming week's plan, and after the athlete approves it, publish the wee
 
 ## Triggers
 
-- "plan next week", "get me a plan for the week".
-- The scheduled Sunday run, after `coach-review-week`.
+- "plan next week".
+- The scheduled Sunday job, after `coach-review-week`.
 
 ## Reads
 
@@ -31,8 +31,8 @@ Draft the coming week's plan, and after the athlete approves it, publish the wee
 4. Prescribe only from the latest tested anchor. Flag any anchor that is estimated or more than eight weeks old where it is used. ([athlete profile contents][t9])
 5. Write each planned session into its day plan with the fixed fields and the workout steps in intervals.icu workout text.
 6. Add any routine from the athlete rules as a one-line reminder.
-7. Show the draft and wait for approval. A scheduled run leaves the draft and asks for approval in the chat channel.
-8. On approval, publish the whole week, Monday to Sunday, in one go: one workout event per planned session. Rest days, targets and reasoning stay in markdown. ([calendar sync][t13])
+7. Show the draft and wait for approval. A scheduled job leaves the draft and asks for approval in the chat channel.
+8. On approval, first check any of the week's sessions that are already published for calendar differences, as set out under "Calendar sync" in [plan format](plan-format.md). Then publish the whole week, Monday to Sunday, in one go: one workout event per planned session. Rest days, targets and reasoning stay in markdown. ([calendar sync][t13])
 9. Record the sync state. If publishing fails, the week stays APPROVED and is marked not synced; running the publish again is safe.
 
 Next week's draft exists from Sunday. ([plan files][t10])

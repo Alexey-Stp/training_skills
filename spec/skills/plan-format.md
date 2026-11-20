@@ -42,11 +42,12 @@ Rewrite the affected day plans so they show the current plan cleanly, and append
 From [calendar sync][t13] and [intervals.icu API][t2].
 
 - Publish only after approval.
-- One workout event per planned session: title, sport, duration, planned load, and the workout text in the event's description. Rest days, weekly targets and reasoning are not published.
+- One workout event per planned session: title, sport, duration, planned load, and the workout text in the event's `description`. Events are sent through `POST /athlete/{id}/events` and `/events/bulk`. Sending `workout_doc` JSON is not the supported path. Rest days, weekly targets and reasoning are not published.
 - A new week: the whole week, Monday to Sunday, in one go. A plan update: only the affected sessions.
 - Mark every event the suite creates as its own, and edit only those. How they are marked is untested; see [unverified.md](../unverified.md).
 - Never change an event on a past day, or one already paired with an activity.
-- The markdown plan is the truth, but nothing is overwritten silently. When a published session differs in intervals.icu, the next skill that runs shows the difference and asks the athlete to either take the change into the plan, logged in the week plan's Changes, or restore the plan's version.
+- The markdown plan is the truth, but nothing is overwritten silently. When a published session differs in intervals.icu, that is a calendar difference: the skill that finds it shows it and asks the athlete to either take the change into the plan, logged in the week plan's Changes, or restore the plan's version. Either is carried out by `coach-adjust`.
+- Three skills look for calendar differences: `coach-plan-week` before it publishes, `coach-adjust` before it changes a session, and `coach-review-week` once a week. `coach-today` does not, so the morning message stays short. ([map][map])
 - Entries the suite did not create (races, notes, sessions added by hand) are read as planning context only.
 - Record the sync state in the week plan: the time of the last successful publish, or not synced. Publishing again must create no duplicates.
 - intervals.icu forwards planned sessions to the watch itself, for the next seven days. The suite never writes to Garmin.

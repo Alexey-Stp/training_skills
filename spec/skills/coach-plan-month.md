@@ -6,7 +6,7 @@ Draft the next block of whole weeks, normally four, between the athlete's season
 
 ## Triggers
 
-- "plan the next block", "plan next month".
+- "plan the next block".
 
 ## Reads
 
