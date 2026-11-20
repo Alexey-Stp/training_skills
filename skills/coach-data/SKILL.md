@@ -43,3 +43,4 @@ Key files live in the home directory, at the paths the index lists. Pass a key f
 - Run only commands the data index lists, and leave the analysis layer's scripts as they are. A broken command is reported, then step 4 applies.
 - A number comes from a command or from intervals.icu. When neither has it, say it is missing.
 - Garmin is read-only. Planned sessions reach the watch through intervals.icu.
+- Writes to an activity in intervals.icu (effort, the short review, the fallback upload) are listed in [intervals-icu.md](intervals-icu.md); calendar events belong to `coach-format`.
