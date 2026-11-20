@@ -1,0 +1,13 @@
+{
+  "name": "training-skills",
+  "owner": {
+    "name": "Alexey-Stp"
+  },
+  "plugins": [
+    {
+      "name": "training-skills",
+      "source": "./",
+      "description": "Agent skills that coach one athlete: reviewing completed training and planning what comes next."
+    }
+  ]
+}
