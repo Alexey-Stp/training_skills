@@ -44,7 +44,7 @@ Workout text, as far as it is tested:
 - One step per line: `- 10m 60%` is 10 minutes at 60% of threshold.
 - `m` means minutes and `s` seconds. `200m` is 200 minutes.
 - Pace targets (`65-75% Pace`) need the sport's threshold pace set in intervals.icu.
-- Distances in metres and repeats with rests are not established. That includes the repeat form the day plan template uses (`Main set 4x`, then its steps). Until they are, the read-back check in [calendar-sync.md](calendar-sync.md) is what catches a session that was parsed wrongly.
+- Distances in metres and repeats with rests are not established, so write swim steps in minutes and put the distance in the session's targets. That includes the repeat form the day plan template uses (`Main set 4x`, then its steps). Until they are, the read-back check in [calendar-sync.md](calendar-sync.md) is what catches a session that was parsed wrongly.
 
 ## A plan update
 
