@@ -25,7 +25,7 @@ Done when every planned session of the scope has an event that reads back as pla
 ## Whose events
 
 - An event is the suite's own when its `external_id` starts with `coach-`. `external_id` is returned when an event is read.
-- Change and remove only the suite's own events.
+- Change and remove only the suite's own events. Remove one with `DELETE /api/v1/athlete/0/events/<event id>`, using the id recorded in the day plan, then read the day back to confirm it is gone.
 - Everything else on the calendar (races, notes, sessions added by hand) is planning context: read it, leave it.
 - An event on a past day, or one already paired with an activity, stays as it is.
 

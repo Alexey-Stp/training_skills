@@ -45,7 +45,7 @@ Say what it was and what it cost: sport, duration, load, and how it sits against
 
 1. Refresh.
 2. If there is still no activity, ask once: was it skipped, or has it not synced yet?
-3. Record under "Session reviews" that there was no activity, when you asked, and the answer or that there is none yet. A skipped session is counted as missed; it stays missed. "Not synced yet" is checked again at the next run.
+3. Record under "Session reviews" that there was no activity, when you asked, and the answer or that there is none yet. A skipped session is counted as missed; it stays missed. "Not synced yet" is checked again at the next run. When an activity later turns up for a session recorded as having none, review it and replace that entry.
 
 ## Scheduled jobs
 

@@ -37,7 +37,7 @@ Four sections, filled in as the day goes on:
 
 ## A planned session
 
-Fixed fields, in this order: sport, duration, planned load, purpose, targets, caps, calendar. The title is the heading. Write `none` for an empty field. Then the steps in intervals.icu workout text, in a code block, so calendar sync publishes them as written.
+Fixed fields, in this order: sport, duration, planned load, purpose, targets, caps, calendar. The title is the heading, with the session's number. A session keeps its number for as long as it exists, because its calendar event is found by it: a removed session's number is not reused that day, and a new session takes the next unused one. Write `none` for an empty field. Then the steps in intervals.icu workout text, in a code block, so calendar sync publishes them as written.
 
 Workout text, as far as it is tested:
 
