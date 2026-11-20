@@ -34,7 +34,7 @@ The limits and defaults every coach skill applies. The athlete's own rules overr
 | Topic | Default | Note |
 |---|---|---|
 | Intensity | about 80% of sessions easy | counted in sessions; say "of sessions" whenever the figure is quoted |
-| Hard sessions | at most 2 a week in single-sport mode; 2 to 3 across all sports in triathlon, never more than 3 | hard sessions in any sport count against the same cap |
+| Hard sessions | at most 2 a week in single-sport mode; 2 to 3 across all sports in triathlon, never more than 3 | hard sessions in any sport count against the same cap; a test counts, and so does a long run with a faster finish, while an all-easy long run does not |
 | Weekly run volume | up 10%, at most 30% | the 10% figure is a convention |
 | Sports per week, triathlon | without a focus: each sport at least twice. With a focus: each non-focus sport at least one easy session | |
 | Bricks | about weekly in the race-specific build | the run leg counts as run load |
