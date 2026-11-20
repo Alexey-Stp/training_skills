@@ -24,8 +24,8 @@ The limits and defaults every coach skill applies. The athlete's own rules overr
 | Limit | Detail |
 |---|---|
 | Fever or systemic symptoms | No training. The return is easy sessions only. |
-| Missed session | It stays missed: the session is not moved to another day and its load is not added elsewhere. |
-| Hard days | About 48 hours apart, in any sport. |
+| Missed session | Its load is never added to another session or day. An easy session stays missed. A key session or a test may move once, to a later day of the same week, when every limit and default holds on the new day and no other session is moved or shortened to make room. It may take the place of an easy session of the same sport already on that day, which is then dropped. Otherwise it stays missed too; any other move is passing this limit. |
+| Hard days | About 48 hours apart in any sport, which in practice means not on consecutive days, and none on the day after the long run. See "Hard sessions and hard days". |
 | Long run | At most 110% of the longest run in the previous 30 days. |
 | Athlete limits | Every entry under "Limits" in `ATHLETE-RULES.md`, as written. |
 
@@ -33,10 +33,12 @@ The limits and defaults every coach skill applies. The athlete's own rules overr
 
 | Topic | Default | Note |
 |---|---|---|
-| Intensity | about 80% of sessions easy | counted in sessions; say "of sessions" whenever the figure is quoted |
-| Hard sessions | at most 2 a week in single-sport mode; 2 to 3 across all sports in triathlon, never more than 3 | hard sessions in any sport count against the same cap; a test counts, and so does a long run with a faster finish, while an all-easy long run does not |
+| Intensity | the hard-session cap below decides how much is hard; the easy share is reported, about 80% of sessions as the usual picture | counted in swim, bike and run sessions, strength left out; say "of sessions" whenever the figure is quoted. A week inside the cap is not a departure because its share is under 80% |
+| Hard sessions | at most 2 a week in single-sport mode; 2 to 3 across all sports in triathlon, 3 at most | hard sessions in any sport count against the same cap, planned or not; what counts is under "Hard sessions and hard days" |
 | Weekly run volume | up 10%, at most 30% | the 10% figure is a convention |
-| Sports per week, triathlon | without a focus: each sport at least twice. With a focus: each non-focus sport at least one easy session | |
+| Sports per week, triathlon | without a focus: each sport at least twice. With a focus: each other sport at least one session a week, and one short hard set a week (10 to 15 minutes of work at tempo to threshold) inside one of those sessions, alternating between the other sports | the short hard set takes one place in the hard-session cap, so the focus sport plans one fewer; it keeps the other sports from fading over a block. Convention |
+| Long ride | up by at most 30 minutes or 15% on the longest ride of the previous 30 days, whichever is more | convention; looser than the run limit because there is no impact |
+| Weekly bike and swim volume | up by about 10 to 15% on the last load week | convention |
 | Bricks | about weekly in the race-specific build | the run leg counts as run load |
 | Taper | volume down 41 to 60% progressively, intensity kept, frequency at 80% or more of normal, 1 to 3 weeks | length within the range is judgement |
 | Block shape | three load weeks, then one easy week at roughly 60 to 70% of the previous week's load | convention, for when nothing else is known |
@@ -46,6 +48,14 @@ The limits and defaults every coach skill applies. The athlete's own rules overr
 | Thresholds | prescribe from the latest tested anchor in the athlete profile; read zones from intervals.icu | which bike anchor to use is an athlete rule |
 
 Flag an anchor wherever it is used if it is estimated or more than 8 weeks old.
+
+## Hard sessions and hard days
+
+- A session is **hard** when it holds sustained work at tempo or above (tempo, sweet spot, threshold or faster), a test or a race. Planned or unplanned, it counts against the weekly cap and the 48 hours.
+- A few strides or short sprints inside an easy session, up to about 3 minutes of work in all, leave it easy.
+- A long run with a faster finish is hard. An all-easy long run is not counted against the weekly cap, and counts as an easy session in the easy share. The one thing it rules out is a hard session on the day after it; the day before is judged by the 48 hours as usual.
+- An all-easy long ride is an easy session and rules nothing out. A long ride the day before the long run is allowed.
+- Strength is counted apart: it is in neither the hard cap nor the easy share.
 
 ## Judgement
 
@@ -63,8 +73,8 @@ The phase comes from the season plan. Base favours volume. Build adds race-speci
 ## Sport mode and focus
 
 - **Sport mode** is which sports a plan covers: triathlon, or a single sport. **Focus** is the sport given priority inside the plan. They are set separately.
-- With a focus: that sport gets the hard sessions and the progression. Each other sport drops to at least one easy session a week.
-- In single-sport mode: plan only that sport, with no bricks. An activity in another sport is recorded, reviewed, counted in total load and shown as unplanned.
+- With a focus: that sport gets the progression and the hard sessions, apart from the short hard set the other sports keep. Each other sport drops to at least one session a week; see "Sports per week" in the defaults.
+- In single-sport mode: plan only that sport, with no bricks. An activity in another sport is recorded, reviewed, counted in total load and shown as unplanned; when it is hard, it also counts against the hard-session cap and the 48 hours.
 
 ## Load figures
 

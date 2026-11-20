@@ -21,9 +21,9 @@ The review reports. Plans change through `coach-adjust`, the athlete profile thr
 2. **Get the figures** from `coach-data`: the week summary and the load state.
 3. **Compare** what was done against two plans: the week as first approved, and the week as it stood after its "Changes". Say both where they differ.
 4. **Count the sessions.** Each planned session is done, partly done, or missed. A planned session with no activity is missed, and is shown as missed. Missed load stays missed: the review proposes no make-up, this week or next. If the athlete asks for one, say that it stays missed and that next week is planned on its own terms.
-5. **Totals.** Hours and load per sport against target, run load on its own line, and the share of easy and hard sessions, with strength counted as easy. In single-sport mode, activities in other sports count in total load and are shown as unplanned.
+5. **Totals.** Hours and load per sport against target, run load on its own line, and the share of easy and hard sessions among swim, bike and run, with strength left out of the count. In single-sport mode, activities in other sports count in total load and are shown as unplanned.
 6. **Subjective log.** Summarise the week's scores and flag a trend, for example a pain score rising three days running, or effort high on easy days.
-   **Limits.** Check every session that was done against the limits in `coach-rules` and in `ATHLETE-RULES.md`, using that day's scores. Report each limit that was passed, plainly, with the day and the figure. Do the same for the block's checks in the month plan.
+   **Limits.** Check every session that was done against the limits in `coach-rules` and in `ATHLETE-RULES.md`, using that day's scores. Report each limit that was passed, plainly, with the day and the figure, and the hard-session cap when the week went over it, unplanned activities included. Do the same for the block's checks in the month plan.
 7. **Load state.** Give fitness, fatigue and form in one line, as context. They explain; they are not goals.
 8. **Status check.** Say whether the athlete is on track for the goal the current block serves (with several goals in the profile, the one matching the block's focus; name it): on track, behind, or ahead, with two or three dated facts from recent weeks of load and the subjective log. If the evidence does not settle it, say so.
 9. **Calendar differences.** Check published sessions still ahead, as [calendar sync](../coach-format/calendar-sync.md) in `coach-format` describes. Show any difference and offer `coach-adjust`.
@@ -53,7 +53,7 @@ As first approved: 10:00 h, load 540.
 
 Run 4:55 of 5:10, load 318 of 330. Bike 2:15 of 2:15, load 117 of 118. Swim 1:40 of 1:40. Strength 0:20 of 0:40.
 10 sessions: 8 done, 1 partly, 1 missed. Partly: Tue threshold run. Missed: Tue strength.
-Easy/hard: 7 easy, 2 hard.
+Easy/hard: 6 easy, 2 hard, strength not counted.
 
 Flags
 - Limit passed: Sat long run, 26 km with knee at 2. Your rule at 2 or 3 is easy, flat, 45 min at most.
