@@ -72,7 +72,7 @@ Fitness, fatigue and form are context. Show them; plan from hours, planned load 
 
 ## Readiness
 
-Three bands map a readiness score to go, modify or skip. The cut-offs are in `ATHLETE-RULES.md`. A low score on its own gives modify at most.
+Three bands map a readiness score to go, modify or skip. The cut-offs are in `ATHLETE-RULES.md`. When it gives none, start from 70 and above go, 50 to 69 modify, below 50 the lowest band, and say that these are a starting convention to be tuned. A low score on its own gives modify at most.
 
 ## Conventions and contested claims
 
