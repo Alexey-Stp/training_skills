@@ -25,3 +25,12 @@ For when the data index has no command for a question, or the command fails. The
 - **Analysis of one activity**: summary only. Per-rep figures need the analysis layer.
 - **Week summary**: sum hours and load per sport from the activity list. Leave monotony and the easy/hard share as missing.
 - **Load state**: fitness and fatigue from the latest wellness record; form computed.
+
+## Writes
+
+A session review writes two things to its activity. Both are untested against the live API: after writing, read the activity back and check that the value is there. If it is not, tell the athlete and leave the day plan as the record.
+
+- **Effort**: the athlete's score out of 10, on the activity.
+- **Short review**: appended to the activity's description under a line reading `Coach review`. Keep whatever the description already holds. On a second write, replace the earlier `Coach review` block instead of adding another.
+
+If the data index lists a command for either, run that instead.

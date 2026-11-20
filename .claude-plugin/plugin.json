@@ -7,6 +7,7 @@
     "./skills/coach-data",
     "./skills/coach-format",
     "./skills/coach-setup",
-    "./skills/coach-today"
+    "./skills/coach-today",
+    "./skills/coach-review-session"
   ]
 }
