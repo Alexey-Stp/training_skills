@@ -1,0 +1,10 @@
+{
+  "name": "training-skills",
+  "description": "Agent skills that coach one athlete: reviewing completed training and planning what comes next.",
+  "version": "0.1.0",
+  "skills": [
+    "./skills/coach-rules",
+    "./skills/coach-data",
+    "./skills/coach-format"
+  ]
+}
