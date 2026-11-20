@@ -8,6 +8,7 @@
     "./skills/coach-format",
     "./skills/coach-setup",
     "./skills/coach-today",
-    "./skills/coach-review-session"
+    "./skills/coach-review-session",
+    "./skills/coach-review-week"
   ]
 }
