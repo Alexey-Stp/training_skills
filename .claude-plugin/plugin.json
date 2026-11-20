@@ -9,6 +9,7 @@
     "./skills/coach-setup",
     "./skills/coach-today",
     "./skills/coach-review-session",
-    "./skills/coach-review-week"
+    "./skills/coach-review-week",
+    "./skills/coach-plan-week"
   ]
 }
