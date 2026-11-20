@@ -68,6 +68,16 @@ The athlete's own scores, under "How I felt" in the day plan. Every score is opt
 
 Whichever skill hears a score writes it, at once and without asking, including a plain remark such as "tired". Ask at most once each morning and once per activity; carry on without an answer.
 
+## Week view
+
+`scripts/week.py`, next to this file, prints the current week from the plan files with no model involved: one compact line per planned session, marked done, partly, missed or ahead. The athlete can run it at any time.
+
+After any write to a week plan or a day plan, refresh the stored copy:
+
+    python <this skill's folder>/scripts/week.py --data <data folder> --out current_week.md
+
+It reads the session headings, the `Duration` field, the steps and the review headings, so keep those exactly as the templates have them.
+
 ## Calendar sync
 
 Any skill about to publish, update or remove a calendar event reads [calendar-sync.md](calendar-sync.md) first.
