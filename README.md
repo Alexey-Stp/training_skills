@@ -60,6 +60,28 @@ Then run `coach-setup`. It proposes which of your existing documents to import f
 
 The repo also carries a Claude Code plugin manifest in `.claude-plugin/`. Installing it as a plugin, or as a linked bundle in OpenClaw, is untested.
 
+## See the week without asking
+
+A small script prints the current week straight from the plan files, with no model involved:
+
+```
+python skills/coach-format/scripts/week.py --data <your data folder>
+```
+
+```
+Week 1 to 7 Feb 2027 · APPROVED
+Planned: 9:45 h · load 528
+
+Mon  1  ✅ Easy swim: 50min @70-80%
+Tue  2  🟡 Threshold run: 65min 15@65-75%+4x(8@100%+2@65%)+10@65-75%
+        ❌ Strength: 20min core and hips
+Wed  3 ◀ today: GO  · Bike intervals: 75min 10@180+10x2@300+15@180
+Thu  4  · Easy run: 55min @65-75%
+Fri  5  Rest
+```
+
+Steps read as minutes@target, joined by `+`; `10x2@300` is ten times two minutes at 300. Add `--out current_week.md` to store the view in the data folder, and `--date` for another week. The skills refresh that file after every change to a plan.
+
 ## What you need
 
 - An [intervals.icu](https://intervals.icu) account with a personal API key. It is the primary source of activities and the calendar the plans are published to.
