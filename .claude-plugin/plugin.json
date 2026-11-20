@@ -5,6 +5,7 @@
   "skills": [
     "./skills/coach-rules",
     "./skills/coach-data",
-    "./skills/coach-format"
+    "./skills/coach-format",
+    "./skills/coach-setup"
   ]
 }
