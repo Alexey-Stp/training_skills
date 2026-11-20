@@ -4,7 +4,7 @@ Claims this spec relies on that nobody has tested. Check these first when buildi
 
 ## Trial checks
 
-The [trial install][t22] put a stub skill in both runtimes. The Claude Code half ran on 2026-11-19. The OpenClaw half is four checks the athlete's OpenClaw agent ran on 2026-11-20; only the watch part of check 4 is still open:
+The [trial install][t22] put a stub skill in both runtimes. The Claude Code half ran on 2026-11-19. The OpenClaw half is four checks the athlete's OpenClaw agent ran on 2026-11-20. The watch part of check 4 was skipped, because the test event had been written with the wrong notation:
 
 1. The stub is listed, its chat command name is recorded, and it reads its sibling file.
 2. A scheduled job invokes the stub, once named in plain language and once as `/skill <name>`.
@@ -41,7 +41,7 @@ From [intervals.icu API][t2] and [calendar sync][t13]. No call was made with cre
 | 15 | Workout text in an event's `description` is parsed into a structured workout | Trial check 3, with a single step | tested 2026-11-20 |
 | 16 | The exact workout text syntax used in [the example day plan](examples/plan/days/2027-02-02.md) | Publish it and read it back | untested |
 | 17 | Events created through the API reach the watch like ones created in the web app | Publish one for tomorrow and check the watch | untested |
-| 18 | Pool-swim sessions on the watch: pace units and timed rests | Trial check 4: the event is published; the athlete has not yet looked at the watch | untested |
+| 18 | Pool-swim sessions on the watch: pace units and timed rests | Not checked in the trial. Publish a pool swim written in the correct notation and look at it on the watch | untested |
 | 19 | Distances in workout text can be written as `200m`, and repeats as `4x 100m` with a rest | Trial check 4: `200m` was read as 200 minutes, and the repeats with their rest became one step. Find the notation for metres and for repeats in the intervals.icu workout text reference, publish and read back | failed 2026-11-20 |
 | 20 | Units of the zone arrays in sport settings | Read sport settings and compare with the web app | untested |
 | 21 | The effort score can be written to an activity through the API | Write one and read it back | untested |
