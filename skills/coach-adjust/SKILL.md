@@ -1,6 +1,6 @@
 ---
 name: coach-adjust
-description: Use when an approved plan has to change because of what happened or a change in circumstances ("I missed it", "I'm tired", "move Thursday"), when the athlete accepts a change offered by another coach skill, or when a calendar difference has to be settled. Makes a plan update.
+description: Use when an approved plan has to change because of what happened or a change in circumstances ("I missed it", "I'm tired", "move Thursday"), when the athlete is offered a session someone else organises (a group run, a club ride, a squad swim) and wants it fitted into the plan, when the athlete accepts a change offered by another coach skill, or when a calendar difference has to be settled. Makes a plan update.
 ---
 
 # Plan update
@@ -42,9 +42,39 @@ Done when the day plans, "Changes" and the calendar agree and the athlete has be
 | Back after a gap | Apply the gap default, labelled as a convention, to the days ahead. "Repeat the last load week" means bring this week to that week's targets with the smallest change; the block keeps its shape and its easy week. |
 | Availability changed (travel, a commitment) | Re-place the affected sessions inside the new availability; what does not fit is dropped, not squeezed in. |
 | An anchor changed (from `coach-setup`) | Of the sessions handed over, take those whose "Targets" actually hold a figure from that anchor. Recalculate and rewrite that field. Re-publish a session only if its steps changed; percentage steps already follow intervals.icu, so say when nothing needed sending. |
+| A session someone else organises is offered | Choose the option that fits and swap it for the planned session: see "An outside session". |
 | A sport cannot be done (injury) | Remove that sport's sessions for the period; nothing replaces them. If the focus sport is the one lost, change the focus; if only one sport is left, change the sport mode. Add a line to the month plan header: `<Sport> suspended <from> to <until> (<reason>)`. Then offer `coach-setup`, so the limitation and a dated exception reach the profile and later planning sees them. |
 
 A change that reaches beyond the current week also updates the month plan's rows for the weeks it touches, in the same approval.
+
+## An outside session
+
+The athlete pastes or describes a session someone else organises, often with several distances or pace groups. Work it out inside step 5; steps 6 to 8 apply as for any update.
+
+1. **Find what it replaces:** the planned session of the same sport on that day. With none, it is an added session, and the weekly-shape rules decide whether there is room.
+2. **Read each option against the athlete,** using the anchors in the profile: what effort that pace or power would be for them (easy, steady, threshold, harder), and the distance or duration.
+3. **Recommend one option:** the one closest to the planned session's purpose, targets and caps that stays inside every rule. Part of an option counts as a choice: where the group's distance is short of the plan, say what to add at the planned effort, before or after as the day's times allow; where it is long or turns hard, say where to turn or drop off. The group part and what is added are one session and one run for every limit.
+4. **If no option fits,** say so, name the nearest one and what it would pass, and recommend keeping the planned session. The athlete can still ask for an option; that goes through step 6.
+5. **Check the time:** the meeting and start times against that day's availability, and against the other sessions of the day.
+6. **Show it** in the message shape below, with one line before the before-and-after for the recommended option and why, and one line for each other option and why not. The athlete approves the recommendation or names another option.
+
+The rewritten session keeps its number and purpose. Its targets carry the chosen group, distance and pace; the start time and meeting place go on a plain `Where and when:` line between the fields and the steps; its steps are rewritten to match, the added part included, so the calendar copy shows the whole session.
+
+```
+Plan update: club ride offered for Sunday, start 08:30.
+
+Recommended: B group, 70 km at 27 km/h. For you that is steady endurance, the same purpose as the planned ride.
+A group, 95 km at 31 km/h: near threshold for long stretches, and Saturday is already a hard day.
+C group, 45 km at 23 km/h: easy, but 50 min short of the planned duration.
+
+Sun
+  before: endurance ride 2:45, solo
+  after:  endurance ride 2:35 with B group, 08:30 from the clubhouse
+
+Week: bike 6:15 to 6:05, load 310 to 302.
+
+Approve B group, or name another?
+```
 
 ## Calendar differences
 
