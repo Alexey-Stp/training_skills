@@ -49,7 +49,7 @@ The limits and defaults every coach skill applies. The athlete's own rules overr
 | Strength | one or two sessions a week when availability includes them; not counted as hard; not the day before a key session | planned as ordinary sessions; a week's key sessions are the ones named in its month plan row |
 | Targets | hours and planned load per sport, with run load also shown on its own | planned load is estimated as hours times the square of the intensity (the target as a share of threshold) times 100, so an hour at threshold is 100 |
 | Thresholds | prescribe from the latest tested anchor in the athlete profile; read zones from intervals.icu | which bike anchor to use is an athlete rule |
-| Tests | where an anchor in use is estimated, or will be more than 8 weeks old before a block ends, and the season plan has no test for it, the month plan proposes one: in the easy week, or in the first week when the block has none; one test per sport per block | a proposal the athlete can drop. Convention |
+| Tests | where an anchor in use is estimated, or will be more than 8 weeks old before a block ends, and the season plan marks no test for it in the block, the month plan proposes one: in the easy week, or in the first week when the block has none; one test per sport per block | a proposal the athlete can drop. The season plan marks tests ahead of that: see "Season". Convention |
 
 Flag an anchor wherever it is used if it is estimated or more than 8 weeks old.
 
@@ -78,11 +78,31 @@ What goes around it depends on the priority and on how long the race lasts. All 
 
 | Priority | Before | After |
 |---|---|---|
-| A | the taper default: 1 week for a race up to about 90 minutes, 2 for a longer one, 3 only for a race of 8 hours or more | easy sessions only: about 3 days after a race under an hour, a week after one up to about 3 hours, two weeks after a longer one |
+| A | the taper default: 1 week for a race of up to 90 minutes, 2 for a longer one, 3 only for a race of 8 hours or more | easy sessions only: about 3 days after a race under an hour, a week after one up to about 3 hours, two weeks after a longer one |
 | B | race week at about 70% of the previous week's planned load, no hard session in the 2 days before, a few short pickups the day before | easy days, then the plan resumes: 2 after a race under an hour, 4 after one of 2 hours or more, 3 in between |
 | C | trained through: the race takes the place of one hard session that week, and the day before is easy | the day after is easy |
 
-Month planning counts back from the next A or B race inside 12 weeks. The taper ends on race day, and the block around it is three to five weeks instead of four, so that an easy week does not sit directly before a taper and a load week does not land on race week.
+Month planning counts back from the next A or B race inside 12 weeks. The taper ends on race day, and the block around it is shaped as "Blocks" under "Season" says, so that an easy week does not sit directly before a taper and a load week does not land on race week. Where the season plan gives each week a role, month planning takes the roles from it: see "Season".
+
+## Season
+
+How a season is laid out in weeks. All of it is convention, and an athlete rule on any part stands.
+
+- **Week roles.** `load`, `easy`, `taper`, `race` and `recovery`. An easy week is sized by the block-shape default. Taper, race and recovery weeks follow "Races".
+- **What a race fixes.** An A race fixes its race week, the taper before it and the recovery after it, in whole weeks. The race week is the last taper week: a one-week taper is the race week alone, and each further taper week comes before it. "Races" gives the length. Recovery of a week or two is that many recovery weeks; recovery of a few days adds none, and the next week is a load week that starts easy. A B race fixes its race week, which stands in for an easy week. A C race fixes nothing and goes in its week's note.
+- **Load pattern.** Three load weeks and an easy one, the block-shape default. Two and one where an athlete rule says so, or where the third load week of each of the last two blocks came in under 90% of its planned load. One pattern for the season, unless an athlete rule gives another for a phase.
+- **Blocks.** A block is a run of load weeks and the week that ends it: an easy week, a B race week, or an A race week with its taper. A block that ends in an easy week or a B race week has two to four load weeks. A block that ends in an A race has one to three load weeks before the taper, two at most before a three-week taper. Recovery weeks open the next block and are not counted in its length; after the season's last race they close that race's block.
+- **Fill.** A stretch runs from the plan's first week, or from the week after a B race week or after an A race's recovery, to the next B race week or A race week. Fill each stretch with whole blocks, in this order:
+  1. the last block of the stretch takes the pattern's load weeks, or the largest number below that which "Blocks" allows and which lets the weeks before it be filled;
+  2. the blocks before it take the pattern's load weeks; where the weeks do not divide, some take one fewer, or one more only when one fewer cannot fill the stretch, and those go as early in the stretch as they can;
+  3. a stretch too short for any whole block is flagged, and its weeks are load weeks, apart from the weeks a race has fixed.
+  The plan says under "Why" which blocks differ from the pattern. A block that differs from a pattern an athlete rule sets is named there as a departure from that rule.
+- **Phases.** Build starts at the earliest block boundary that is 10 to 14 weeks before an A race's taper, or straight after the previous A race's recovery when there are fewer weeks than that. What lies before a build is base. A base phase with a focus may be named for it, for example a run build, and a long phase may be numbered block by block. A base or build phase starts on a block's first Monday, or after the recovery weeks that open the block. Taper with race, and recovery, are phases of their own. Sport mode is the profile's default. Focus is what the athlete or the existing season plan says; otherwise the race's sport in a build to a single-sport race, and none elsewhere. A taper keeps its build's focus.
+- **Tests.** Marked in easy weeks: each anchor that plans are prescribed from once every two or three blocks, an estimated or flagged anchor first, two tests in a week at most. None in a taper, race or recovery week, nor in a week the athlete is partly away. A B race counts as a test of its sport's anchor.
+- **A week the athlete is away.** A whole week with no training possible is an easy week, and the blocks are filled around it as around a B race week. A block that then comes out shorter than "Blocks" allows is kept and flagged.
+- **Clashes.** Flag each with a recommendation. The plan follows the profile until the athlete changes it there.
+  - Two A races with fewer than 4 load weeks between the recovery of the first and the taper of the second. Recovery weeks come first, then the taper; when no load week is left between them, say that the load week before the taper could not be planned. Recommend which race to plan as B: the one whose goal matters less to the season, or with nothing to tell them apart, the earlier.
+  - A B race inside an A race's taper or recovery: the week keeps the role the A race gave it. Recommend planning that race as C.
 
 ## Judgement
 
@@ -95,7 +115,7 @@ Decide these from the season plan, the athlete profile and recent week reviews, 
 
 ## Phase
 
-The phase comes from the season plan. Base favours volume. Build adds race-specific work and weekly bricks. Taper follows the taper default. What comes before and after a race depends on its priority: see "Races".
+The phase comes from the season plan, which `coach-plan-season` drafts. Base favours volume. Build adds race-specific work and weekly bricks. Taper follows the taper default. What comes before and after a race depends on its priority: see "Races".
 
 ## Sport mode and focus
 

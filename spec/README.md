@@ -97,6 +97,7 @@ Where a later decision changed an earlier one, the later one stands.
 | [Skill list][t7]: `coach-adjust` waits for approval before writing | [Subjective log][t23] | A score the athlete mentions is logged without asking; the plan update still waits for approval |
 | [Pocock skills as a template][t6]: entry points are user-invoked only, shared skills model-invoked | Review of this spec; on the [map][map] | All ten are callable by the model; the seven `coach-*` skills can also be started by the athlete |
 | Glossary: calendar sync is publishing the upcoming week | [Calendar sync][t13] | It also covers updating single sessions after a plan update; the glossary entry is widened in this change |
+| [Skill list][t7]: no skill for the season plan, which the athlete maintains | The season-planning change; not in the decision records | `coach-plan-season` drafts the season plan and the athlete approves it; month planning takes its weeks' roles from it |
 | Glossary: the season plan holds goals; the athlete profile holds zones; approval is for plans | [Athlete profile contents][t9], [athlete setup flow][t25], [file templates][t24] | Goals live in the profile, zones are read from intervals.icu, and approval also covers the profile and rules; the three entries are changed in this change |
 
 ## Open points

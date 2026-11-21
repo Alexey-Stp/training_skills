@@ -55,13 +55,15 @@ Cover only the section that changed. Show before and after, wait for approval, w
 
 **The profile and intervals.icu differ on a threshold** (often raised by `coach-review-week`): show both values with their dates and ask which stands. Their answer is the approval. Then write the profile, or tell the athlete to change intervals.icu, according to the answer, and continue from step 4 of "An anchor changed". Both stay as they are until the athlete answers.
 
+**A target race was added, moved, dropped or given another priority**: after the profile is written, say that the season plan was counted from the old races and offer `coach-plan-season`.
+
 **A rule changed**: show the rule before and after under its heading, then the same approval, write, commit.
 
 ## What goes where
 
 | Fact | Lives in | Notes |
 |---|---|---|
-| Goals, target races, anchors | athlete profile | the season plan keeps phases, key dates and its own change log |
+| Goals, target races, anchors | athlete profile | the season plan keeps phases, week roles, key dates and its own change log |
 | Zones | intervals.icu | read when needed |
 | Weight, HRV baseline, resting heart rate baseline | computed from wellness data | the profile states how each is computed, never a typed-in value |
 | Limitations | athlete profile: what, since when, which athlete rule it triggers | daily pain scores go in the day plan |

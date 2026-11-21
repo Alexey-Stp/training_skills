@@ -6,11 +6,11 @@ They run in OpenClaw first and Claude Code second, from the same files. Plans li
 
 ## Status
 
-Early. All ten skills exist and each was checked by dry run on invented data: an agent worked through the same situations with and without the skill. None has been through a full week on real data yet, and several API details are still untested. [`spec/unverified.md`](spec/unverified.md) lists what is not yet proven.
+Early. All eleven skills exist and each was checked by dry run on invented data: an agent worked through the same situations with and without the skill. None has been through a full week on real data yet, and several API details are still untested. [`spec/unverified.md`](spec/unverified.md) lists what is not yet proven.
 
 ## The skills
 
-Seven the athlete calls, by name or in plain words:
+Eight the athlete calls, by name or in plain words:
 
 | Skill | Ask it | What it does |
 |---|---|---|
@@ -21,6 +21,7 @@ Seven the athlete calls, by name or in plain words:
 | [`coach-plan-week`](skills/coach-plan-week/SKILL.md) | "plan next week" | Drafts the coming week; publishes it after approval |
 | [`coach-adjust`](skills/coach-adjust/SKILL.md) | "I missed it", "I'm tired", "move Thursday" | Changes an approved plan, shown as before and after |
 | [`coach-plan-month`](skills/coach-plan-month/SKILL.md) | "plan the next block" | Drafts the next block of weeks from the season plan |
+| [`coach-plan-season`](skills/coach-plan-season/SKILL.md) | "plan my season", "I added a race" | Drafts the season: phases, and every week as load, easy, taper, race or recovery, counted back from the target races |
 
 Three shared ones the others call:
 
@@ -54,9 +55,9 @@ The files a skill writes follow the templates in [`skills/coach-format/templates
 
 ## Install
 
-**OpenClaw.** Copy the ten folders under `skills/` into your workspace's `skills/` folder. They are picked up without a restart. In Telegram the commands appear with underscores, for example `/coach_setup`.
+**OpenClaw.** Copy the eleven folders under `skills/` into your workspace's `skills/` folder. They are picked up without a restart. In Telegram the commands appear with underscores, for example `/coach_setup`.
 
-**Claude Code.** Copy the ten folders into `~/.claude/skills/`.
+**Claude Code.** Copy the eleven folders into `~/.claude/skills/`.
 
 Then run `coach-setup`. It proposes which of your existing documents to import from and shows the profile and rules for approval before writing them.
 
@@ -94,7 +95,7 @@ Steps read as minutes@target, joined by `+`; `10x2@300` is ten times two minutes
 
 | Path | What |
 |---|---|
-| `skills/` | The ten skills |
+| `skills/` | The eleven skills |
 | `spec/` | The decisions the skills were built from, and what is still untested |
 | `GLOSSARY.md` | The terms the project uses |
 | `AGENTS.md` | Rules for agents working on this repo |
