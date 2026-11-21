@@ -19,6 +19,18 @@ _Avoid_: Emphasis, block type
 One workout the plan prescribes for a specific day.
 _Avoid_: Workout, training (as a noun for one unit)
 
+**Key session**:
+A planned session named in its week's row of the month plan.
+
+**Hard session**:
+A planned session or activity with enough fast work to count against the weekly cap; the figures are in the coaching rules. A hard swim is counted apart.
+
+**Brick**:
+A ride and a run planned back to back: two planned sessions that count once.
+
+**Race priority**:
+A, B or C on a target race. It sets what is planned before and after the race.
+
 **Activity**:
 One recorded, completed workout as it arrives from the activity source.
 _Avoid_: Session (when it has been done), ride/run (as the generic term)

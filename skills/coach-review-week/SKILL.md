@@ -31,7 +31,7 @@ The review reports. Plans change through `coach-adjust`, the athlete profile thr
     - a threshold in intervals.icu differs from the athlete profile;
     - an anchor is more than 8 weeks old;
     - a test date in the season plan has passed;
-    - MODIFY verdicts came on 3 or more days in each of the last two weeks with no symptom reported: the readiness bands may be set too high for this athlete.
+    - the week's MODIFY verdicts from the band alone reach the count under "Readiness" in `coach-rules`: the readiness bands may be set too high for this athlete.
 11. **Write** (full review only), without asking, then commit: "Actual vs plan" in the week plan, and the week's status to `CLOSED`. The status line reads `Status: CLOSED (<date time>)`. If this was the last week of its block, also write the month plan's "Block review" and set the month plan to `CLOSED`: per week, planned against done hours, load and volume; key sessions done or not; each block check met or passed; missed sessions; any test result. A week of the block with no "Actual vs plan" is named as not reviewed.
 12. **Send** the message in the shape below.
 

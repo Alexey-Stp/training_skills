@@ -19,7 +19,7 @@ The athlete's own rules. They override the coaching rules where the two differ. 
 |---|---|
 | 70 and above | go |
 | 50 to 69 | modify |
-| below 50 | modify; skip only with a symptom or a second poor day |
+| below 50 | modify; skip only with a symptom or a second low score running |
 
 ## Weekly shape
 

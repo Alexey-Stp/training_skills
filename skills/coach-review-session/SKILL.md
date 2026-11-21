@@ -20,7 +20,7 @@ The review advises. A planned session changes only through `coach-adjust`, after
    - `NOT DONE AS PLANNED`
 
    An activity with no planned session gets no verdict: see "Unplanned activity".
-5. **Findings.** Two to four, each carrying the figure behind it. A cap that was reached or passed is always one of them. Use the figures table; add another figure only when it explains a finding. Athlete rules about reviews apply (for example, which breakdowns to leave out). When a session planned as easy counts as hard by the rule in `coach-rules` (10 minutes or more at tempo or above, or 5 above threshold), say so with the minutes: its easy target is judged missed, and it takes a place in the week's cap.
+5. **Findings.** Two to four, each carrying the figure behind it. A cap that was reached or passed is always one of them. Use the figures table; add another figure only when it explains a finding. Athlete rules about reviews apply (for example, which breakdowns to leave out). When the activity for a planned easy session counts as hard by the rule in `coach-rules`, say so with the minutes: its easy target is judged missed, and it takes a place in the week's cap, or in the hard-swim count for a swim.
 6. **Next.** One line on what this means for the days ahead. It advises only. If a coming planned session should change, say which and offer a plan update (that is `coach-adjust`; the athlete sees "plan update", not a skill name). After a test or a race whose result gives a new anchor, offer setup so the profile takes it. A session that fell short stays as it is: the next line never proposes repeating it or adding its load elsewhere. If the athlete proposes that, say that it stays as it is and which rule says so; a change they still want goes to `coach-adjust`.
 7. **Write**, without asking, in this order: the day plan, then intervals.icu with a read-back, then commit.
    - the review, under "Session reviews" in the day plan;
@@ -43,7 +43,7 @@ Say what it was and what it cost: sport, duration, load, and how it sits against
 
 ## A race
 
-A race has a planned session with the purpose `race, priority <A, B or C>`, so it is reviewed like any other, with the goal in place of the targets: the verdict is against the goal, Execution gives the result against it and the pacing (first half against second, or each leg and transition of a triathlon), and Next gives the easy days its priority calls for ("Races" in `coach-rules`). Where a triathlon arrives as several activities, one review covers them all. A race the day plan does not hold is reviewed as unplanned, with a line saying it looks like a race and offering setup to add it to the profile.
+A race has a planned session (its form is in `coach-format`), so it is reviewed like any other, with the goal in place of the targets: the verdict is against the goal, Execution gives the result against it and the pacing (first half against second, or each leg and transition of a triathlon), and Next gives the easy days its priority calls for ("Races" in `coach-rules`). Where a triathlon arrives as several activities, one review covers them all. A race the day plan does not hold is reviewed as unplanned, with a line saying it looks like a race and offering setup to add it to the profile.
 
 A brick is two activities and two reviews; the run's Notes say that it followed the ride.
 

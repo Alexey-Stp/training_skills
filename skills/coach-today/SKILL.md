@@ -11,20 +11,22 @@ The verdict advises. The plan and the calendar change only through `coach-adjust
 
 ## Steps
 
-1. **Load.** Use `coach-data` to find the data folder and refresh. Read today's day plan, yesterday's day plan (its verdict with its inputs, "How I felt" and its session reviews), yesterday's and today's activities from `coach-data`, the week plan header, and the readiness bands and limits in `ATHLETE-RULES.md` (through `coach-rules`).
+1. **Load.** Use `coach-data` to find the data folder and refresh. Read today's day plan, yesterday's day plan (its verdict with its inputs, "How I felt" and its session reviews), yesterday's and today's activities from `coach-data`, the illness flags in the day plans of the last 14 days, the week plan header, and the readiness bands and limits in `ATHLETE-RULES.md` (through `coach-rules`).
 2. **Get readiness** for today from `coach-data`: one score and its inputs. If sleep and HRV are both missing, there is no score to judge: go to "No data yet".
-3. **Band.** Map the score to go, modify or skip with the cut-offs in `ATHLETE-RULES.md`.
-4. **Apply the safeguards**, in this order. The first that fits decides.
+3. **Band.** Map the score to go, modify or skip with the cut-offs in `ATHLETE-RULES.md`. Then apply the HRV trend rule under "Readiness" in `coach-rules`.
+4. **Apply the safeguards**, in this order. The first that fits decides, except that safeguard 2 only sets a floor.
    1. Fever or systemic symptoms reported: **SKIP**, whatever the score. Rest only.
-   2. A limit in `ATHLETE-RULES.md` is met (for example a pain score): apply it exactly as written, whatever the score. If it rules out every session planned today, the verdict is **SKIP**; if it rules out or restricts some, **MODIFY**. Say which rule decided and what it still allows.
-   3. Yesterday held a hard bike or run activity, planned or not, or the long run, and today holds a hard bike or run session: **MODIFY**, and say that the hard-days limit decided. The same for a hard swim yesterday and a hard swim today. What counts as hard is in `coach-rules`.
+   2. A return day after fever or systemic symptoms, counted as the limit in `coach-rules` says: easy sessions only, so the verdict is **MODIFY** at least when a hard session is planned. Go on down the list; a stricter verdict below stands.
+   3. A limit in `ATHLETE-RULES.md` is met (for example a pain score): apply it exactly as written, whatever the score. If it rules out every session planned today, the verdict is **SKIP**; if it rules out or restricts some, **MODIFY**. Say which rule decided and what it still allows.
    4. The score is in the lowest band: it is **SKIP** only with a reported symptom, or when yesterday's score was in the lowest band too. A MODIFY yesterday that came from a limit or from spacing does not count. Otherwise **MODIFY**.
-   5. Otherwise the band stands.
+   5. Yesterday held a hard bike or run activity, planned or not, or the long run, and today holds a hard bike or run session: **MODIFY**, and say that the hard-days limit decided. The same for a hard swim yesterday and a hard swim today. What counts as hard is in `coach-rules`.
+   6. Otherwise the band stands, as it is after the HRV trend rule.
 5. **Say what the verdict means for today's session.**
    - GO: the planned session as planned.
-   - MODIFY: a hard session becomes an easy one of the same or shorter duration; an easy session is shortened to about two thirds (a convention), and the message gives the new duration; strength stands, without heavy leg work.
-   - MODIFY or SKIP on a key session or a test: first look for a later day this week that can take it under the "Missed session" limit in `coach-rules`. If there is one, offer the earliest such day as the first choice, with today's session eased as above; otherwise say that it is eased and not moved, and why.
-   - A session already done: if an activity for one of today's sessions is recorded before the check runs, say so and leave that session out of the verdict. The verdict then speaks to the sessions still ahead; with none ahead, give the score and its inputs as information for the rest of the day.
+   - MODIFY: what "Readiness" in `coach-rules` gives for each kind of session; the message gives the new duration.
+   - MODIFY or SKIP on a key session or a test: first look for a later day this week that can take it under the "Missed session" limit in `coach-rules`. If there is one, offer the earliest such day as the first choice: the key session goes there, and that day's easy session of the same sport comes to today (shortened under MODIFY) or is dropped (under SKIP). Otherwise say that it is eased and not moved, and why.
+   - A race today: no verdict eases or moves it, and no move to a later day is offered. Safeguards 1 to 3 apply as written. Otherwise the first line of the message and the logged verdict read `RACE DAY`, with the score and its inputs as information; whether to start is the athlete's decision.
+   - An activity already recorded today: if it belongs to one of today's planned sessions, say so and leave that session out of the verdict. If it is unplanned, name it; when it was hard, a hard session still ahead today is treated as safeguard 5 treats one after a hard day. The verdict then speaks to the sessions still ahead; with none ahead, give the score and its inputs as information for the rest of the day.
    - SKIP: rest, or 30 minutes very easy. With fever or systemic symptoms: rest.
    - The verdict is for the day. On a day with several sessions, say what happens to each; a session the verdict does not touch stands.
 6. **Log.** Write to today's day plan, once per day: the verdict with the time, its inputs and what it means for each of today's sessions under "Readiness verdict", and anything the athlete said about how they feel under "How I felt". Commit. These two sections are everything this skill writes.
@@ -38,9 +40,9 @@ Done when the athlete has the message and the day plan holds the verdict.
 
 - Sleep and HRV present: run the steps above and send. Later runs that day see the verdict in the day plan and stay silent. A provisional verdict does not count: replace it with the real one and send.
 - Missing at 08:00 or 09:00: send nothing and write nothing.
-- Still missing at 10:00: send today's session, say that no verdict is possible because last night's data has not arrived, and ask how the athlete feels unless they were already asked today. Write under "Readiness verdict": no verdict at 10:00, data missing.
+- Still missing at 10:00: send today's sessions still ahead, say that no verdict is possible because last night's data has not arrived, and ask how the athlete feels unless they were already asked today. Write under "Readiness verdict": no verdict at 10:00, data missing.
 
-**Asked by the athlete before the data arrives:** send the session, say no verdict is possible yet, and ask how they feel if they have not said. From what they report, give a verdict labelled **provisional** and log it with that label: poor sleep, heavy legs or soreness give MODIFY; nothing of note gives GO. Safeguards 1 to 3 still apply in full. An answer to the 10:00 question is handled the same way.
+**Asked by the athlete before the data arrives:** send the session, say no verdict is possible yet, and ask how they feel if they have not said. From what they report, give a verdict labelled **provisional** and log it with that label: poor sleep, heavy legs or soreness give MODIFY; nothing of note gives GO. Safeguards 1 to 3 and 5 still apply in full. An answer to the 10:00 question is handled the same way.
 
 Ask how the athlete feels at most once each morning. No answer is fine.
 
