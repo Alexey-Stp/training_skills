@@ -32,19 +32,19 @@ Dates are `YYYY-MM-DD`. Each file follows its template in [templates/](templates
 Four sections, filled in as the day goes on:
 
 1. **Planned sessions**, written in full here and nowhere else.
-2. **Readiness verdict**, with the inputs behind it. One a day. A provisional verdict is replaced by the real one. A later verdict, after something new or as a correction, is added below the first with its time and its reason, and the latest one is the day's.
+2. **Readiness verdict**, with the inputs behind it. One a day. A provisional verdict is replaced by the real one. A later verdict, after something new or as a correction, is added below the first with its time and its reason, and the latest one is the day's. An anchor note from the daily check is one line below the inputs.
 3. **How I felt**: the subjective log.
 4. **Session reviews**, including a planned session that had no activity.
 
 ## A planned session
 
-Fixed fields, in this order: sport, duration, planned load, purpose, targets, caps, calendar. The title is the heading, with the session's number. A session keeps its number for as long as it stays on its day, because its calendar event is found by it: a removed session's number is not reused that day, and a new session takes the next unused one. Write `none` for an empty field.
+Fixed fields, in this order: sport, duration, planned load, purpose, targets, caps, calendar. The title is the heading, with the session's number. A session keeps its number for as long as it stays on its day, because its calendar event is found by it: a removed session's number is not reused that day, and a new session takes the next unused one. Write `none` for an empty field. Then the steps in intervals.icu workout text, in a code block, so calendar sync publishes them as written.
 
 Between the fields and the steps, plain lines with no dash, each only when it applies:
 
 - `Where and when:` the start time and place of a session someone else organises.
 - `Fuel:` where the fuelling default in `coach-rules` calls for it: carbohydrate per hour and when to start.
-- `Anchors:` for each figure in the targets, the caps or a `Sets:` line that was worked out from an anchor: what the figure is, the percentages, the anchor and its value, for example `Anchors: reps 100% of run threshold 4:10 /km; heart-rate cap 101% of LTHR 168 bpm`. "Anchors in a plan" in `coach-rules` says how the line is used.
+- `Anchors:` for each figure in the targets, the caps or a `Sets:` line that was worked out from an anchor: what the figure is, the percentages, the anchor and its value, for example `Anchors: intervals 88-94% of FTP 280 W; cap 105% of FTP 280 W`. Percentage steps in the workout text need no entry. A session with figures in watts, pace or heart rate and none from an anchor carries `Anchors: none`. "Anchors in a plan" in `coach-rules` says how the line is used.
 - `Sets:` for a swim: the sets as they are to be swum, in the notation the review uses for a swim's name with the rest added as `r` and seconds, for example `Sets: 300 / 4x50 drill r20 / 5x200 @1'52-1'55 r30 / 100`. This line is the plan for the swim; the steps below it are a copy in minutes for the watch.
 
 A race is a planned session with the purpose `race, priority <A, B or C>`: its sport is the race's (`triathlon` for one), its duration the expected finishing time, and its steps one line for that duration.
@@ -115,6 +115,9 @@ Use these terms, with these meanings, in every file and message.
 | Day plan, week plan, month plan | the plan at three resolutions |
 | Plan update | a change to an existing plan after something happened or circumstances changed |
 | Athlete profile | the standing facts about the athlete: goals, anchors, availability, limitations, equipment |
+| Anchor | a dated threshold value in the athlete profile that targets are worked out from |
+| Out of date | said of a planned session whose figures were worked out from an anchor value the profile no longer holds |
+| Anchor note | the daily check's one line saying that a session is out of date |
 | Athlete rules | the athlete's own rules; they override the coaching rules |
 | Coaching rules | the general limits and defaults |
 | Daily check | the morning answer to "what is today's session and am I ready for it" |

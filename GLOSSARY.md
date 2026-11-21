@@ -48,6 +48,17 @@ A change to an existing plan in response to what actually happened or a change i
 **Athlete profile**:
 The standing facts about the athlete that every skill reads: goals, thresholds (kept as dated anchors), availability, limitations, equipment. Zones are read from intervals.icu, not kept here.
 
+**Anchor**:
+A dated threshold value in the athlete profile that targets are worked out from, such as a tested bike power or run pace.
+_Avoid_: Benchmark, baseline
+
+**Out of date**:
+Said of a planned session whose figures were worked out from an anchor value the athlete profile no longer holds.
+_Avoid_: Stale
+
+**Anchor note**:
+The daily check's one line saying that a session is out of date, with the figures the current anchor gives.
+
 **Activity source**:
 The system activities are read from. intervals.icu is the primary activity source; Garmin is the secondary one, consulted for data intervals.icu lacks.
 

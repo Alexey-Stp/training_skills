@@ -49,7 +49,7 @@ Cover only the section that changed. Show before and after, wait for approval, w
 1. Record value, date, method and source. Ask for the method if the athlete did not give it.
 2. Read the same threshold in intervals.icu. If it differs from the new value, show both and ask which stands. When the new value stands, the athlete changes it in intervals.icu; this skill does not write thresholds there.
 3. Show old and new values. Once intervals.icu holds the new value, show the zones it calculates.
-4. List every approved planned session still ahead that the new value makes out of date, as "Anchors in a plan" in `coach-rules` defines it, and those with figures in watts, pace or heart rate and no `Anchors:` line.
+4. List every planned session still ahead, approved or draft, that the new value makes out of date, as "Anchors in a plan" in `coach-rules` defines it, for sessions with an `Anchors:` line and without.
 5. On approval, update the profile and its change log, and commit.
 6. Offer `coach-adjust` for the sessions in step 4. Their figures change there.
 

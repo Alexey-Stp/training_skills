@@ -55,18 +55,25 @@ Flag an anchor wherever it is used if it is estimated or more than 8 weeks old.
 
 ## Anchors in a plan
 
-A planned session says what its figures came from on its `Anchors:` line (the form is in `coach-format`): for each figure worked out from an anchor, the percentages, the anchor and the anchor's value. A figure with no entry there, such as a cap from an athlete rule, did not come from an anchor and never moves with one.
+A planned session says what its figures came from on its `Anchors:` line (the form is in `coach-format`): for each figure worked out from an anchor, the percentages, the anchor and the anchor's value. A figure with no entry there did not come from an anchor and never moves with one: a cap from an athlete rule, a race target from a goal.
 
-A session is **out of date** when the profile's value for a named anchor is tested, differs from the value named, and gives other figures after rounding. A value that is estimated or derived makes no session out of date, and the daily message says nothing about it. Then:
+A session is **out of date** when the profile's value for a named anchor is tested, differs from the value named, and gives other figures after rounding. A profile value that is estimated or derived makes no session out of date. For a session that is out of date:
 
-- It keeps its percentages. Its figures are worked out again from the new value and rounded to the nearest 5 W, 5 seconds per km or per 100 m, or 1 bpm; a cap rounds down. Convention.
-- A recalculated figure is held at any cap that does not move and at every athlete rule, and the message says where it was held.
+- It keeps its percentages. Its figures are worked out again from the new value and rounded to the nearest 5 W, 5 seconds per km or per 100 m, or 1 bpm; a cap rounds to the easier side. A percentage of a pace is a percentage of the speed, so more is faster, as in workout text. Convention.
+- A recalculated figure is held at any cap that does not move and at every athlete rule; say where it was held. Its entry on the line keeps its percentages, with the new value.
 - The change is a plan update through `coach-adjust`, after approval. Until then the session stands as planned.
-- On a day whose readiness verdict is MODIFY or SKIP, today's session keeps its figures: the line says that the anchor changed and that sessions from tomorrow on would change, and gives no new figure for today.
-- Where an athlete rule forbids targets from an old value, say straight after the session that the rule is not met, and that the plan's figures stand until the plan update is approved.
+- A session that today's readiness verdict eases or drops, a provisional verdict included, is given as the verdict gives it and gets no recalculated figure today, in the daily check or in the plan update: say only that the anchor changed. This holds for today; moved to a later day, it is recalculated like any session ahead. A session the verdict leaves alone is treated as on any other day.
+- Where an athlete rule forbids targets from an old value, that rule is not met until the plan update is approved, and the daily check says so on any day.
 
+**A session with no `Anchors:` line** was written before the line existed; `Anchors: none` is a line, and such a session is never out of date. Its figures in watts or pace are read like this:
 
-A session with figures in watts, pace or heart rate and no `Anchors:` line was written before the line existed. Say what whole percentages its figures are of the current value of the anchor the athlete rules name for that sport, heart rate against the sport's threshold heart rate, and that the plan does not record what they were built on. `coach-adjust` adds the line, and recalculates where the anchor has changed since the plan was approved.
+- The anchor is the one the athlete rules name for the sport, or else the sport's threshold in the profile: bike FTP, run threshold pace, swim CSS.
+- The value it was built on is the one in force when its week plan was approved (for a draft, written): the "from" value of the first entry for that anchor in the profile's change log dated on that day or later, or the current value when there is none.
+- Its share is the figure as a percentage of that value, a pace as a percentage of the speed. Recalculate from the share as it is, and write it on the line as a whole percentage.
+- With these it is out of date or not, as above. When it is, say also that the plan did not record the anchor and that the change log was used.
+- A figure that an athlete rule states, and any heart-rate figure, is left as it is and gets no entry; a session left with no entry at all gets `Anchors: none`.
+
+`coach-adjust` writes the missing line.
 
 ## Hard sessions and hard days
 
