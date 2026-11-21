@@ -48,10 +48,25 @@ The limits and defaults every coach skill applies. The athlete's own rules overr
 | Gap in training | 1 to 3 days: continue. 4 to 7: treat it as the easy week. 8 to 14: repeat the last load week. 15 or more: step back a phase | convention |
 | Strength | one or two sessions a week when availability includes them; not counted as hard; not the day before a key session | planned as ordinary sessions; a week's key sessions are the ones named in its month plan row |
 | Targets | hours and planned load per sport, with run load also shown on its own | planned load is estimated as hours times the square of the intensity (the target as a share of threshold) times 100, so an hour at threshold is 100 |
-| Thresholds | prescribe from the latest tested anchor in the athlete profile; read zones from intervals.icu | which bike anchor to use is an athlete rule. When an anchor changes, a planned session keeps its percentages of the anchor: its figures are worked out again from the new value, rounded as the plan rounded (to 5 W, or to 5 seconds per km or per 100 m), through `coach-adjust` after approval |
+| Thresholds | prescribe from the latest tested anchor in the athlete profile; read zones from intervals.icu | which bike anchor to use is an athlete rule; see "Anchors in a plan" |
 | Tests | where an anchor in use is estimated, or will be more than 8 weeks old before a block ends, and the season plan marks no test for it in the block, the month plan proposes one: in the easy week, or in the first week when the block has none; one test per sport per block | a proposal the athlete can drop. The season plan marks tests ahead of that, and the weeks "Tests" under "Season" rules out are ruled out here too. Convention |
 
 Flag an anchor wherever it is used if it is estimated or more than 8 weeks old.
+
+## Anchors in a plan
+
+A planned session says what its figures came from on its `Anchors:` line (the form is in `coach-format`): for each figure worked out from an anchor, the percentages, the anchor and the anchor's value. A figure with no entry there, such as a cap from an athlete rule, did not come from an anchor and never moves with one.
+
+A session is **out of date** when the profile's value for a named anchor is tested, differs from the value named, and gives other figures after rounding. A value that is estimated or derived makes no session out of date, and the daily message says nothing about it. Then:
+
+- It keeps its percentages. Its figures are worked out again from the new value and rounded to the nearest 5 W, 5 seconds per km or per 100 m, or 1 bpm; a cap rounds down. Convention.
+- A recalculated figure is held at any cap that does not move and at every athlete rule, and the message says where it was held.
+- The change is a plan update through `coach-adjust`, after approval. Until then the session stands as planned.
+- On a day whose readiness verdict is MODIFY or SKIP, today's session keeps its figures: the line says that the anchor changed and that sessions from tomorrow on would change, and gives no new figure for today.
+- Where an athlete rule forbids targets from an old value, say straight after the session that the rule is not met, and that the plan's figures stand until the plan update is approved.
+
+
+A session with figures in watts, pace or heart rate and no `Anchors:` line was written before the line existed. Say what whole percentages its figures are of the current value of the anchor the athlete rules name for that sport, heart rate against the sport's threshold heart rate, and that the plan does not record what they were built on. `coach-adjust` adds the line, and recalculates where the anchor has changed since the plan was approved.
 
 ## Hard sessions and hard days
 
