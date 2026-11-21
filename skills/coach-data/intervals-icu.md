@@ -32,7 +32,7 @@ For when the data index has no command for a question, or the command fails. The
 A session review writes up to three things to its activity. All are untested against the live API: after writing, read the activity back and check that the value is there. If it is not, tell the athlete and leave the day plan as the record.
 
 - **Effort**: the athlete's score out of 10, on the activity.
-- **Review**: the whole review, appended to the activity's description under a line reading `Coach review`. Keep whatever the description already holds and put the block last: it runs from that line to the end. On a second write, replace the earlier block instead of adding another.
+- **Review**: the coach's note, in the form the session review skill gives, appended to the activity's description under a line reading `Coach review`. Keep whatever the description already holds and put the block last: it runs from that line to the end. On a second write, replace the earlier block instead of adding another.
 - **Name**: the activity's name, when the session review's "Naming" calls for it.
 
 If the data index lists a command for any of these, run that instead.
