@@ -34,7 +34,7 @@ This run stops for the athlete twice at most and asks as little as it can. Whate
 
    Mark every such value `found in <document>`, `derived from <what>` or `assumed`. Ask only when none of the three gives an answer and a wrong guess would change what gets planned, and then put every question in one message.
 8. **Show everything.** First a short list of what was derived or assumed, so the athlete can correct it in the same reply. Then the whole profile, the whole rules file, each rule with keep or drop already applied as you recommend, and each threshold conflict with both values. **Gate 2: wait for approval.** A correction is applied and shown again; "ok" approves.
-9. **Write and commit.** `ATHLETE.md`, `ATHLETE-RULES.md`, and in the season plan replace the goals and anchors sections with one line pointing to the athlete profile. One commit.
+9. **Write and commit.** `ATHLETE.md`, `ATHLETE-RULES.md`, and in a hand-written season plan replace the goals and anchors sections with one line pointing to the athlete profile; a season plan with a `Status` line already has that line. One commit.
 
 Done when the three files exist, the pointer line is in place, the season plan points to the profile, and the commit is made; or when the run is stopped at a gate and the athlete has been told exactly what is waiting.
 

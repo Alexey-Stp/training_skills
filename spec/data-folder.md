@@ -20,7 +20,7 @@ From [plan files][t10]; examples accepted in [file templates][t24].
 | Data index | `COACH.md` | `coach-setup` | [COACH.md](examples/COACH.md) |
 | Athlete profile | `ATHLETE.md` | `coach-setup` only | [ATHLETE.md](examples/ATHLETE.md) |
 | Athlete rules | `ATHLETE-RULES.md` | `coach-setup` | [ATHLETE-RULES.md](examples/ATHLETE-RULES.md) |
-| Season plan | existing file | the athlete; `coach-setup` replaces its goals and anchors sections with a pointer, once | none |
+| Season plan | existing file | `coach-plan-season`, approved by the athlete (amended: see the amendments in the README). On a hand-written file `coach-setup` replaces its goals and anchors sections with a pointer, once | none |
 | Month plan | `plan/months/<first Monday of the block>.md` | `coach-plan-month` | [2027-01-18.md](examples/plan/months/2027-01-18.md) |
 | Week plan | `plan/weeks/<Monday>.md` | `coach-plan-week`, `coach-adjust`, `coach-review-week` | [2027-02-01.md](examples/plan/weeks/2027-02-01.md) |
 | Day plan | `plan/days/<date>.md` | `coach-plan-week`, `coach-adjust`, `coach-today`, `coach-review-session`; any `coach-*` skill, for a score it hears | [2027-02-02.md](examples/plan/days/2027-02-02.md) |

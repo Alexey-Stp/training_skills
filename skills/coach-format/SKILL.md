@@ -22,7 +22,7 @@ All paths are relative to the data folder; the `coach-data` skill finds it.
 Dates are `YYYY-MM-DD`. Each file follows its template in [templates/](templates/): same headings, same order, same field names. The templates hold invented data; copy the layout, never the values.
 
 - **Status.** Week and month plans carry `DRAFT`, then `APPROVED`, then `CLOSED`. Closed means reviewed. A day plan follows its week. A season plan carries `DRAFT`, then `APPROVED`.
-- **How far ahead.** Season plan: to the last recovery week after the last target race. Month plan: the current block, plus the next one drafted during the current block's last week. Week plan: the current week, plus next week's draft from Sunday. Day plans: all seven are created when the week is drafted.
+- **How far ahead.** Season plan: the span `coach-plan-season` gives. Month plan: the current block, plus the next one drafted during the current block's last week. Week plan: the current week, plus next week's draft from Sunday. Day plans: all seven are created when the week is drafted.
 - **One file per week**, from the moment it is drafted. The current week is found by date.
 - **Commit** to the workspace's local repository after each write.
 - **Tables** belong in files. A message to the athlete is short and has none.

@@ -40,7 +40,7 @@ Done when the day plans, "Changes" and the calendar agree and the athlete has be
 | A session fell short or was missed | Nothing is added. A missed key session or test may move once inside its week, as the "Missed session" limit allows. A later session changes only if the review's Next line said it should. |
 | The athlete wants a session moved | Move it if every rule still holds on both days; otherwise step 6. |
 | Tired, sore, ill | Ease or remove what is ahead, by the rules. Fever: no training, and the return as the limit in `coach-rules` gives it. |
-| Back after a gap | Apply the gap default, labelled as a convention, to the days ahead. "Repeat the last load week" means bring this week to that week's targets with the smallest change; the block keeps its shape and its easy week. |
+| Back after a gap | Apply the gap default, labelled as a convention, to the days ahead. "Repeat the last load week" means bring this week to that week's targets with the smallest change; the block keeps its shape and its easy week. After 15 days or more, also say that the season plan's weeks no longer fit and offer `coach-plan-season`. |
 | Availability changed (travel, a commitment) | Re-place the affected sessions inside the new availability; what does not fit is dropped, not squeezed in. |
 | An anchor changed (from `coach-setup`) | Of the sessions handed over, take those whose "Targets" actually hold a figure from that anchor. Recalculate and rewrite that field. Re-publish a session only if its steps changed; percentage steps already follow intervals.icu, so say when nothing needed sending. |
 | A session someone else organises is offered | Choose the option that fits and swap it for the planned session: see "An outside session". |
