@@ -17,7 +17,7 @@ The review reports. Plans change through `coach-adjust`, the athlete profile thr
 
 ## Steps
 
-1. **Load.** Use `coach-data` to find the data folder and refresh. Read the week plan with its "Changes", the week's seven day plans (planned sessions, readiness verdicts, "How I felt", session reviews), this week's row in the month plan, and the season plan's test dates. Load the rules through `coach-rules`.
+1. **Load.** Use `coach-data` to find the data folder and refresh. Read the week plan with its "Changes", the week's seven day plans (planned sessions, readiness verdicts, "How I felt", session reviews), this week's row in the month plan, and the tests the season plan marks: a note on a week, or a date in a hand-written plan. Load the rules through `coach-rules`.
 2. **Get the figures** from `coach-data`: the week summary and the load state.
 3. **Compare** what was done against two plans: the week as first approved, and the week as it stood after its "Changes". Say both where they differ.
 4. **Count the sessions.** Each planned session is done, partly done, or missed. A planned session with no activity is missed, and is shown as missed. Missed load stays missed: the review proposes no make-up, this week or next. The one exception, while the week is still running, is the single move the "Missed session" limit in `coach-rules` allows for a key session or a test. If the athlete asks for one, say that it stays missed and that next week is planned on its own terms.
@@ -30,7 +30,7 @@ The review reports. Plans change through `coach-adjust`, the athlete profile thr
 10. **Suggest `coach-setup`**, without running it, when any of these holds:
     - a threshold in intervals.icu differs from the athlete profile;
     - an anchor is more than 8 weeks old;
-    - a test date in the season plan has passed;
+    - a test the season plan marks for this week or an earlier one has no result, or its date has passed;
     - the week's MODIFY verdicts from the band alone reach the count under "Readiness" in `coach-rules`: the readiness bands may be set too high for this athlete.
 11. **Write** (full review only), without asking, then commit: "Actual vs plan" in the week plan, and the week's status to `CLOSED`. The status line reads `Status: CLOSED (<date time>)`. If this was the last week of its block, also write the month plan's "Block review" and set the month plan to `CLOSED`: per week, planned against done hours, load and volume; key sessions done or not; each block check met or passed; missed sessions; any test result. A week of the block with no "Actual vs plan" is named as not reviewed.
 12. **Send** the message in the shape below.

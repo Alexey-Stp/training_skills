@@ -74,7 +74,11 @@ The daily check's conclusion about today's planned session: go, modify or skip.
 The assessment of a finished week: what was done against what the week plan prescribed.
 
 **Season plan**:
-The athlete-maintained plan above the month plan: phases and key dates for the season. Goals live in the athlete profile.
+The plan above the month plans: the phases, and a week role for every week, counted back from the target races. Drafted by a skill and approved by the athlete. Goals and target races live in the athlete profile.
+
+**Week role**:
+What a week is for: load, easy, taper, race or recovery. The season plan sets it and the month plan carries it.
+_Avoid_: Deload. An athlete may say "hard week" for a load week; a load week is not made of hard sessions.
 
 **Coaching rules**:
 The general best-practice defaults every planning and review skill applies.

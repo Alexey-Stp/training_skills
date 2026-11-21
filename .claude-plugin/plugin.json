@@ -12,6 +12,7 @@
     "./skills/coach-review-week",
     "./skills/coach-plan-week",
     "./skills/coach-adjust",
-    "./skills/coach-plan-month"
+    "./skills/coach-plan-month",
+    "./skills/coach-plan-season"
   ]
 }

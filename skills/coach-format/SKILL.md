@@ -14,14 +14,15 @@ All paths are relative to the data folder; the `coach-data` skill finds it.
 
 | File | Path | Written by |
 |---|---|---|
+| Season plan | the path the data index gives | `coach-plan-season` |
 | Month plan | `plan/months/<first Monday of the block>.md` | `coach-plan-month` |
 | Week plan | `plan/weeks/<Monday>.md` | `coach-plan-week`, `coach-adjust`, `coach-review-week` |
 | Day plan | `plan/days/<date>.md` | `coach-plan-week`, `coach-adjust`, `coach-today`, `coach-review-session` |
 
 Dates are `YYYY-MM-DD`. Each file follows its template in [templates/](templates/): same headings, same order, same field names. The templates hold invented data; copy the layout, never the values.
 
-- **Status.** Week and month plans carry `DRAFT`, then `APPROVED`, then `CLOSED`. Closed means reviewed. A day plan follows its week.
-- **How far ahead.** Month plan: the current block, plus the next one drafted during the current block's last week. Week plan: the current week, plus next week's draft from Sunday. Day plans: all seven are created when the week is drafted.
+- **Status.** Week and month plans carry `DRAFT`, then `APPROVED`, then `CLOSED`. Closed means reviewed. A day plan follows its week. A season plan carries `DRAFT`, then `APPROVED`.
+- **How far ahead.** Season plan: the span `coach-plan-season` gives. Month plan: the current block, plus the next one drafted during the current block's last week. Week plan: the current week, plus next week's draft from Sunday. Day plans: all seven are created when the week is drafted.
 - **One file per week**, from the moment it is drafted. The current week is found by date.
 - **Commit** to the workspace's local repository after each write.
 - **Tables** belong in files. A message to the athlete is short and has none.
@@ -108,6 +109,8 @@ Use these terms, with these meanings, in every file and message.
 | Race priority | A, B or C on a target race; it sets what is planned before and after the race |
 | Activity | one recorded, completed unit of training, as it arrives from the activity source |
 | Session review | the assessment of one activity, against its planned session where one exists |
+| Season plan | the plan above the month plans: the phases, and a week role for every week |
+| Week role | what a week is for: load, easy, taper, race or recovery |
 | Day plan, week plan, month plan | the plan at three resolutions |
 | Plan update | a change to an existing plan after something happened or circumstances changed |
 | Athlete profile | the standing facts about the athlete: goals, anchors, availability, limitations, equipment |

@@ -20,7 +20,7 @@ From [plan files][t10]; examples accepted in [file templates][t24].
 | Data index | `COACH.md` | `coach-setup` | [COACH.md](examples/COACH.md) |
 | Athlete profile | `ATHLETE.md` | `coach-setup` only | [ATHLETE.md](examples/ATHLETE.md) |
 | Athlete rules | `ATHLETE-RULES.md` | `coach-setup` | [ATHLETE-RULES.md](examples/ATHLETE-RULES.md) |
-| Season plan | existing file | the athlete; `coach-setup` replaces its goals and anchors sections with a pointer, once | none |
+| Season plan | existing file | `coach-plan-season`, approved by the athlete (amended: see the amendments in the README). On a hand-written file `coach-setup` replaces its goals and anchors sections with a pointer, once | none in `spec/examples`; the template is `skills/coach-format/templates/SEASON-PLAN.md` |
 | Month plan | `plan/months/<first Monday of the block>.md` | `coach-plan-month` | [2027-01-18.md](examples/plan/months/2027-01-18.md) |
 | Week plan | `plan/weeks/<Monday>.md` | `coach-plan-week`, `coach-adjust`, `coach-review-week` | [2027-02-01.md](examples/plan/weeks/2027-02-01.md) |
 | Day plan | `plan/days/<date>.md` | `coach-plan-week`, `coach-adjust`, `coach-today`, `coach-review-session`; any `coach-*` skill, for a score it hears | [2027-02-02.md](examples/plan/days/2027-02-02.md) |
@@ -37,7 +37,7 @@ From [athlete profile contents][t9] and [athlete setup flow][t25]:
 - intervals.icu is authoritative for every threshold and zone it holds. The profile keeps a dated copy of each threshold, as an anchor; zones are read from intervals.icu when needed and not copied (see Amendments in the [README](README.md)). The profile is authoritative for CP and W′, goals, availability, limitations and equipment. When the two differ, the skill shows both and asks; it never overwrites either silently.
 - Weight, HRV baseline and resting-heart-rate baseline are computed from wellness data, not typed in. The profile records only how each is computed.
 - Every anchor carries value, date, method (tested, derived, estimated) and source (intervals.icu, a named imported document, or stated by the athlete). Skills prescribe only from the latest tested anchor. An anchor older than 8 weeks, or only estimated, is flagged whenever it is used.
-- Goals, target races and anchors live here. The season plan keeps phases, the macro calendar and its change log, and points here for numbers.
+- Goals, target races and anchors live here. The season plan keeps phases, a role for every week and its change log, and points here for numbers.
 - Limitations: what, since when, which athlete rule it triggers. Day-to-day scores are not profile data; the profile says where they are logged, which is the day plan's "How I felt".
 - Availability: a weekly template (time available, fixed commitments, facility access) plus dated exceptions.
 - Holds the default sport mode. ([sport mode][t12])

@@ -78,6 +78,7 @@ From [best-practice coaching][t5]: several sources were cited from memory or che
 
 - The session review shape was chosen from an invented activity, not a real one. ([session review][t14])
 - The six file templates use invented data. ([file templates][t24])
+- The season rules (how weeks between races are filled, the week roles, the size of a recovery week) were checked only by dry run on invented races. No season plan has been drafted from a real race calendar or lived through.
 
 How to test: during cut-over stage 2, run `coach-review-session` on real activities and `coach-plan-week` on a real week, and let the athlete react to the result.
 

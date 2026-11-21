@@ -37,6 +37,7 @@ Two states, kept apart: a **draft** is written to the files at once; the **calen
    - every limit in `coach-rules` and `ATHLETE-RULES.md`: met, with the figure (for the long run: the distance, the longest in the last 30 days, the percentage, its duration and its share of the week's run volume against the ceiling);
    - hard sessions counted by the rule: bike and run against the cap, swims against the hard-swim count;
    - every default: followed, or the departure named with its reason;
+   - the week matches its role in the month plan's row: an easy week has no more load than the row gives and no added hard session; a taper, race or recovery week is shaped as "Races" and "Week roles" under "Season" in `coach-rules` say;
    - sessions add up to the week's targets per sport, in hours and planned load;
    - every day fits its availability.
 6. **Write the draft**, then commit: the week plan with status `DRAFT`, and all seven day plans, in the `coach-format` templates. In a draft the header reads `Calendar sync: draft, nothing published` and each session `Calendar: draft`. Each planned session has its fixed fields and its steps in workout text. "Why this week looks like this" holds the reasoning, every use of judgement (sport split, which sport carries the hard sessions) and every departure. "Checks" holds the answers from step 5.

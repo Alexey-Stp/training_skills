@@ -34,7 +34,7 @@ This run stops for the athlete twice at most and asks as little as it can. Whate
 
    Mark every such value `found in <document>`, `derived from <what>` or `assumed`. Ask only when none of the three gives an answer and a wrong guess would change what gets planned, and then put every question in one message.
 8. **Show everything.** First a short list of what was derived or assumed, so the athlete can correct it in the same reply. Then the whole profile, the whole rules file, each rule with keep or drop already applied as you recommend, and each threshold conflict with both values. **Gate 2: wait for approval.** A correction is applied and shown again; "ok" approves.
-9. **Write and commit.** `ATHLETE.md`, `ATHLETE-RULES.md`, and in the season plan replace the goals and anchors sections with one line pointing to the athlete profile. One commit.
+9. **Write and commit.** `ATHLETE.md`, `ATHLETE-RULES.md`, and in a hand-written season plan replace the goals and anchors sections with one line pointing to the athlete profile; a season plan with a `Status` line already has that line. One commit.
 
 Done when the three files exist, the pointer line is in place, the season plan points to the profile, and the commit is made; or when the run is stopped at a gate and the athlete has been told exactly what is waiting.
 
@@ -55,13 +55,15 @@ Cover only the section that changed. Show before and after, wait for approval, w
 
 **The profile and intervals.icu differ on a threshold** (often raised by `coach-review-week`): show both values with their dates and ask which stands. Their answer is the approval. Then write the profile, or tell the athlete to change intervals.icu, according to the answer, and continue from step 4 of "An anchor changed". Both stay as they are until the athlete answers.
 
+**A target race was added, moved, dropped or given another priority**: after the profile is written, say that the season plan was counted from the old races and offer `coach-plan-season`.
+
 **A rule changed**: show the rule before and after under its heading, then the same approval, write, commit.
 
 ## What goes where
 
 | Fact | Lives in | Notes |
 |---|---|---|
-| Goals, target races, anchors | athlete profile | the season plan keeps phases, key dates and its own change log |
+| Goals, target races, anchors | athlete profile | the season plan keeps phases, week roles, key dates and its own change log |
 | Zones | intervals.icu | read when needed |
 | Weight, HRV baseline, resting heart rate baseline | computed from wellness data | the profile states how each is computed, never a typed-in value |
 | Limitations | athlete profile: what, since when, which athlete rule it triggers | daily pain scores go in the day plan |

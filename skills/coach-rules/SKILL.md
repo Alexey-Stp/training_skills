@@ -49,7 +49,7 @@ The limits and defaults every coach skill applies. The athlete's own rules overr
 | Strength | one or two sessions a week when availability includes them; not counted as hard; not the day before a key session | planned as ordinary sessions; a week's key sessions are the ones named in its month plan row |
 | Targets | hours and planned load per sport, with run load also shown on its own | planned load is estimated as hours times the square of the intensity (the target as a share of threshold) times 100, so an hour at threshold is 100 |
 | Thresholds | prescribe from the latest tested anchor in the athlete profile; read zones from intervals.icu | which bike anchor to use is an athlete rule |
-| Tests | where an anchor in use is estimated, or will be more than 8 weeks old before a block ends, and the season plan has no test for it, the month plan proposes one: in the easy week, or in the first week when the block has none; one test per sport per block | a proposal the athlete can drop. Convention |
+| Tests | where an anchor in use is estimated, or will be more than 8 weeks old before a block ends, and the season plan marks no test for it in the block, the month plan proposes one: in the easy week, or in the first week when the block has none; one test per sport per block | a proposal the athlete can drop. The season plan marks tests ahead of that, and the weeks "Tests" under "Season" rules out are ruled out here too. Convention |
 
 Flag an anchor wherever it is used if it is estimated or more than 8 weeks old.
 
@@ -78,11 +78,15 @@ What goes around it depends on the priority and on how long the race lasts. All 
 
 | Priority | Before | After |
 |---|---|---|
-| A | the taper default: 1 week for a race up to about 90 minutes, 2 for a longer one, 3 only for a race of 8 hours or more | easy sessions only: about 3 days after a race under an hour, a week after one up to about 3 hours, two weeks after a longer one |
+| A | the taper default: 1 week for a race of up to 90 minutes, 2 for a longer one, 3 only for a race of 8 hours or more | easy sessions only: about 3 days after a race under an hour, a week after one of up to 3 hours, two weeks after a longer one |
 | B | race week at about 70% of the previous week's planned load, no hard session in the 2 days before, a few short pickups the day before | easy days, then the plan resumes: 2 after a race under an hour, 4 after one of 2 hours or more, 3 in between |
 | C | trained through: the race takes the place of one hard session that week, and the day before is easy | the day after is easy |
 
-Month planning counts back from the next A or B race inside 12 weeks. The taper ends on race day, and the block around it is three to five weeks instead of four, so that an easy week does not sit directly before a taper and a load week does not land on race week.
+Month planning counts back from the next A or B race inside 12 weeks. The taper ends on race day, and the block around it is shaped as "Blocks" under "Season" says, so that an easy week does not sit directly before a taper and a load week does not land on race week. Where the season plan gives each week a role, month planning takes the roles from it: see "Season".
+
+## Season
+
+How a season is laid out in weeks: week roles, what a race fixes, the load pattern, blocks and how the weeks between races are filled, phases, tests and clashes. Season planning, and month planning when it takes a block from the season plan, read [season.md](season.md) first.
 
 ## Judgement
 
@@ -95,7 +99,7 @@ Decide these from the season plan, the athlete profile and recent week reviews, 
 
 ## Phase
 
-The phase comes from the season plan. Base favours volume. Build adds race-specific work and weekly bricks. Taper follows the taper default. What comes before and after a race depends on its priority: see "Races".
+The phase comes from the season plan, which `coach-plan-season` drafts. Base favours volume. Build adds race-specific work and weekly bricks. Taper follows the taper default. What comes before and after a race depends on its priority: see "Races".
 
 ## Sport mode and focus
 
