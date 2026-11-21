@@ -1,6 +1,6 @@
 # Reviewing a swim
 
-Read from `coach-review-session` before writing a swim's Splits, Execution or name.
+Read from `coach-review-session` before writing a swim's Splits, Execution or name. The examples use invented numbers.
 
 ## Splits and Execution
 
@@ -17,4 +17,4 @@ CD 100 · 2'02 · HR 115
 
 ## Name
 
-`Swim - ` and the sets as swum, in order, joined by `/`. Each set is its distance or reps, a word for a drill or equipment, and for a main set (not the warm-up, drills or cool-down) `@` with the pace per 100 m across the reps. For example `Swim - 300/4x50 drill/5x200@1'52-1'55/8x50 fins@1'45-1'48/100`. Without laps, name it like any other session.
+`Swim - ` and the sets as swum, in order, joined by `/`. Each set is its distance or reps, a word for a drill or equipment, and for a main set (not the warm-up, drills or cool-down) `@` with the pace per 100 m across the reps. For example `Swim - 300/4x50 drill/5x200@1'52-1'55/8x50 fins@1'45-1'48/100`. Without laps: the planned session's title in title case, or the sport and its character for an unplanned swim.

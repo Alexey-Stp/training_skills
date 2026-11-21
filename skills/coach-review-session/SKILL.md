@@ -1,6 +1,6 @@
 ---
 name: coach-review-session
-description: Use when the athlete asks for a review of a completed run, ride, swim or other training ("review my run", "was that ride ok"), and for the scheduled midday and evening jobs. Assesses one activity against its planned session.
+description: Use when the athlete asks for a review of a completed run, ride, swim or other training ("review my run", "review today's training", "was that ride ok"), and for the scheduled midday and evening jobs. Assesses one activity against its planned session.
 ---
 
 # Session review
@@ -13,7 +13,7 @@ The review advises. A planned session changes only through `coach-adjust`, after
 
 1. **Load.** Use `coach-data` to find the data folder and refresh. Find the activity, then read the day plan for its date (the planned session it belongs to, the readiness verdict and "How I felt"), and the week and month plan for the context line. Load the rules through `coach-rules`.
 2. **Get the figures** from `coach-data`: the analysis of the activity, the load state, and the week summary so far. For a swim, read [swim.md](swim.md) now. An empty stub is not reviewed: `coach-data` handles it, the day plan gets one line under "Session reviews" saying the review is waiting on real figures, and the athlete is told.
-3. **Effort.** If the day plan has no effort score for this activity, the review goes out with `effort not given` and ends with one question asking for effort out of 10. That is the one ask for this activity, whoever asks it. When the answer comes, write it in the places step 7 names and in the review's load line, and confirm in a line.
+3. **Effort.** If the day plan has no effort score for this activity, the review goes out with `effort not given` and ends with one question asking for effort out of 10. That is the one ask for this activity, whoever asks it. When the answer comes, write it under "How I felt" in the day plan, on the activity in intervals.icu and in the review's load line, and confirm in a line.
 4. **Verdict.** Judge the activity against the planned session's *purpose* and give one of three:
    - `DONE AS PLANNED`
    - `PARTLY DONE AS PLANNED`
@@ -29,7 +29,14 @@ The review advises. A planned session changes only through `coach-adjust`, after
    - the activity's name: see "Naming".
 8. **Send** the review in the sections of "Review shape". If the day plan's latest line under "Nutrition target" is an `estimate`, run `coach-nutrition` for that day afterwards; it sends the new target. The same after a planned session is written down as missed.
 
-Done when the day plan holds the review; the message opens with the verdict line and every line after it starts with a sign from the table, belongs to the Splits block, or is one of the closing lines "Review shape" allows; and the activity holds the coach's note or the athlete was told it could not be written.
+Done when, for each activity reviewed:
+
+- the day plan holds the review, and the effort score or the fact that it was asked for;
+- the message opens with the verdict line, or the unplanned line, and every line after it starts with a sign from the table, belongs to the Splits block, or is one of the closing lines "Review shape" allows;
+- the activity holds the coach's note and its name as "Naming" gives it, or the athlete was told what could not be written;
+- the commit is made.
+
+An empty stub ends at step 2, and an effort answer that comes later ends with its confirmation.
 
 ## Figures
 
@@ -52,6 +59,8 @@ A brick is two activities and two reviews; the run's Notes say that it followed 
 1. Refresh.
 2. If there is still no activity, ask once: was it skipped, or has it not synced yet?
 3. Record under "Session reviews" that there was no activity, when you asked, and the answer or that there is none yet. A skipped session is counted as missed. If it was a key session or a test and the "Missed session" limit in `coach-rules` still allows a move this week, offer a plan update once; otherwise it stays missed. "Not synced yet" is checked again at the next run. When an activity later turns up for a session recorded as having none, review it and replace that entry.
+
+Done when "Session reviews" records that there was no activity, with when it was asked and the answer or that there is none yet.
 
 ## Scheduled jobs
 
@@ -131,7 +140,7 @@ What goes on the activity in intervals.icu. The page there already shows the num
 - **Zones:** the zones of the message's Zones section, here with minutes and percent, one line for each set of zones. This is the one block of figures the note carries.
 - **Next:** the message's Next line, naming the planned sessions it concerns.
 
-Leave out what the page shows as its headline for the whole activity: duration, distance, averages and maximums, load, fitness and form. A figure for one block, rep or set, and heart-rate drift, may appear where a sentence needs it. Leave out a part that has nothing to say, and a sentence that only reads the zones back. Every sentence names something from this activity: a rep, a block, a figure, a planned session by its day.
+Leave out what the page shows as its headline for the whole activity: duration, distance, averages and maximums, load, fitness and form. A figure for one block, rep or set, and heart-rate drift, may appear where a sentence needs it. Leave out a part that has nothing to say, and a sentence that only reads the zones back. Every sentence is about this activity: it could only have been written under this one.
 
 Sample with invented numbers, for the run above:
 
@@ -164,4 +173,5 @@ If the data index lists the naming question, run that command. Otherwise write t
 
 ## Boundaries
 
+- The plan and the calendar's planned sessions are left as they are.
 - Every figure in a review comes from the analysis or the plan. One that is missing is named as missing.
