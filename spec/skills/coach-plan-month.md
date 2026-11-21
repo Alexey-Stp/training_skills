@@ -10,7 +10,7 @@ Draft the next block of whole weeks, normally four, between the athlete's season
 
 ## Reads
 
-- The season plan: the phase, key dates and tests for the period. The season plan is athlete-maintained; this skill only reads it.
+- The season plan: the phase, key dates and tests for the period. The season plan is athlete-maintained; this skill only reads it. (Amended: `coach-plan-season` now drafts it; see the amendments in the spec README.)
 - The athlete profile: goals and target races, default sport mode, availability exceptions, limitations.
 - The previous block's weeks and their "Actual vs plan".
 - Load state, through the training data skill.

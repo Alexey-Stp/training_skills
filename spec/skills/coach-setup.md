@@ -25,7 +25,7 @@ At the start of the first run, before anything is shown for approval:
 After approval only, then commits:
 
 - `ATHLETE.md` and `ATHLETE-RULES.md`.
-- The goals and anchors sections of the season plan, replaced by a pointer to the athlete profile, in the same commit. This is the only edit any skill makes to the season plan.
+- The goals and anchors sections of the season plan, replaced by a pointer to the athlete profile, in the same commit. This is the only edit any skill makes to the season plan. (Amended: `coach-plan-season` now drafts it; see the amendments in the spec README.)
 
 ## Steps
 

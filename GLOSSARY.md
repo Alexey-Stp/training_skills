@@ -78,7 +78,7 @@ The plan above the month plans: the phases, and a week role for every week, coun
 
 **Week role**:
 What a week is for: load, easy, taper, race or recovery. The season plan sets it and the month plan carries it.
-_Avoid_: Hard week (a load week is not made of hard sessions), deload
+_Avoid_: Deload. An athlete may say "hard week" for a load week; a load week is not made of hard sessions.
 
 **Coaching rules**:
 The general best-practice defaults every planning and review skill applies.
