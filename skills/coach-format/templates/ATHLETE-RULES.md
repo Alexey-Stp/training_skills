@@ -31,6 +31,7 @@ The athlete's own rules. They override the coaching rules where the two differ. 
 ## Departures from the coaching rules
 
 - Easy week at 75% of the previous week, above the default range.
+- Base day 2,350 kcal: derived from nine weeks of logged intake at steady weight.
 
 ## Routines (reminders only)
 

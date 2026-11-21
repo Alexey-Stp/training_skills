@@ -32,6 +32,7 @@ Each command prints JSON. A question with no command is answered from intervals.
 | Analysis of one activity | `python tools/analyse.py --id <activity id> --json` |
 | Week summary | `python tools/week.py --monday <date> --json` |
 | Load state | `python tools/load.py --json` |
+| Food intake for a date (optional) | `python tools/food.py --date <date> --json` |
 | Name an activity (optional) | `python tools/name.py --id <activity id> --json` |
 
 ## Settings

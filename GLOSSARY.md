@@ -101,6 +101,19 @@ The athlete's private scripts that turn raw activity data into the figures a ski
 **Approval**:
 The athlete's explicit acceptance of something a skill proposes to write: a draft plan, a plan update, or a change to the athlete profile or athlete rules. Nothing is published by calendar sync before it.
 
+**Nutrition target**:
+The energy, carbohydrate, protein and fat a day calls for. An estimate while a session of the day is still ahead, final once the day's training is recorded.
+_Avoid_: Calorie goal, calorie budget
+
+**Base day**:
+The energy the athlete uses on a day with no training.
+
+**Net exercise energy**:
+What a session costs above what the base day already counts for its minutes.
+
+**Load tier**:
+One of five levels of a day's load (rest, light, moderate, high, very high) that set its carbohydrate and protein.
+
 **Subjective log**:
 The athlete's own scores for a day (effort, feel, soreness, pain, illness), kept in that day's day plan.
 _Avoid_: Diary, wellness log
