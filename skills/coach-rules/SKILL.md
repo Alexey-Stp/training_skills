@@ -119,7 +119,7 @@ Read HRV as a trend where the figures allow: the average of the last seven night
 
 What a verdict does to a session:
 
-- MODIFY: a hard session becomes an easy one of the same or shorter duration; an easy session is shortened to about two thirds; strength stands, without heavy leg work. Convention.
+- MODIFY: a hard session becomes an easy one of the same or shorter duration; an easy session is shortened by about a fifth, rounded to 5 minutes; strength stands, without heavy leg work. Convention.
 - SKIP: rest, or 30 minutes very easy.
 - A key session or a test that a verdict eases may move once, as the "Missed session" limit says.
 - A race: see "Races".
