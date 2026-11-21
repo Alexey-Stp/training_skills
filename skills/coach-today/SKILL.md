@@ -29,9 +29,9 @@ The verdict advises. The plan and the calendar change only through `coach-adjust
    - An activity already recorded today: if it belongs to one of today's planned sessions, say so and leave that session out of the verdict. If it is unplanned, name it; when it was hard, a hard session still ahead today is treated as safeguard 5 treats one after a hard day. The verdict then speaks to the sessions still ahead; with none ahead, give the score and its inputs as information for the rest of the day.
    - SKIP: rest, or 30 minutes very easy. With fever or systemic symptoms: rest.
    - The verdict is for the day. On a day with several sessions, say what happens to each; a session the verdict does not touch stands.
-6. **Check the anchors** of each of today's sessions against the athlete profile, as "Anchors in a plan" in `coach-rules` says. Where a session is out of date the message gets the anchor note: one line for each anchor that changed, with what those rules give for today's sessions built on it. The note is given once a day: the log holds it, and a later message that day repeats only the offer, in a few words, unless the athlete asks about a target.
+6. **Check the anchors** of each of today's sessions against the athlete profile, as "Anchors in a plan" in `coach-rules` says. Where they call for something to be said (a session out of date, or figures in watts or pace with no `Anchors:` line), the message gets an anchor note: one line for each anchor, with what those rules give for today's sessions. The note is given once a day: the log holds it, and a later message that day repeats only the offer, in a few words, unless the athlete asks about a target or a later verdict changes the note.
 7. **Log.** Write to today's day plan, once per day (a later verdict only as [questions.md](questions.md) says): the verdict with the time, its inputs, what it means for each of today's sessions and the anchor note when there is one, under "Readiness verdict"; and anything the athlete said about how they feel under "How I felt". Commit. These two sections are everything this skill writes: no week plan, no other plan file, and no session's duration or targets.
-8. **Send the message** in the shape below. When the verdict is MODIFY or SKIP, or an anchor note is there, end with one line offering `coach-adjust`, naming what it would change: the session the verdict eased, the sessions built on the old anchor value, or both. If the week plan header says "not synced", add one line saying which session may be missing from the watch. If the week plan is still `DRAFT`, say first that this week's plan is a draft waiting for approval, and that nothing is on the watch. If an athlete limit depends on a score the athlete gives on waking and they have not given it, add one line asking for it; this is the morning's one question.
+8. **Send the message** in the shape below. When the verdict is MODIFY or SKIP, or an anchor note is there, end with one line offering `coach-adjust`, naming what it would change: the session the verdict eased, the sessions built on the old anchor value or recording none, or all of these. If the week plan header says "not synced", add one line saying which session may be missing from the watch. If the week plan is still `DRAFT`, say first that this week's plan is a draft waiting for approval, and that nothing is on the watch. If an athlete limit depends on a score the athlete gives on waking and they have not given it, add one line asking for it; this is the morning's one question.
 
 Done when the athlete has the message and the day plan holds the verdict.
 
@@ -47,7 +47,7 @@ Done when the athlete has the message and the day plan holds the verdict.
 
 Ask how the athlete feels at most once each morning. No answer is fine.
 
-The anchor check of step 6 runs on each of these paths that sends a message. With no verdict, a session is treated as one the verdict leaves alone; when a verdict comes later that day, the note is logged again as that verdict gives it.
+The anchor check of step 6 runs on each of these paths that sends a message. With no verdict, a session is treated as one the verdict leaves alone. When a verdict that comes later that day changes what the note said, the message with that verdict says so in one line (for example that the figures given earlier no longer apply today), and the note is logged as it now stands.
 
 ## Questions after the message
 
@@ -71,7 +71,7 @@ Then strength, 20 min.
 Readiness 78. Sleep 7.4 h, HRV 62 (7-night 61, baseline 60), resting HR 48.
 ```
 
-The anchor note, when step 6 calls for one, comes after the inputs: `Run threshold is now 4:05 /km (plan used 4:10): the reps would be at 4:05.` Where an athlete rule forbids targets from an old value, it comes straight after the session instead and says that the rule is not met until the plan is updated.
+The anchor note, when step 6 calls for one, comes after the inputs: `Run threshold is now 4:05 /km (plan used 4:10): the reps would be at 4:05.` For a session with no `Anchors:` line: `The plan does not record what the reps were built on: 4:10 is 98% of your run threshold now.` Where an athlete rule forbids targets from an old value, it comes straight after the session instead and says that the rule is not met until the plan is updated.
 
 A provisional verdict reads `MODIFY (provisional)`. With no verdict, the first line is `NO VERDICT YET`.
 

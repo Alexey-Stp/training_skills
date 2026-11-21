@@ -31,13 +31,14 @@ When the athlete asks what a target is, how it was worked out, or whether they m
 
 1. **Answer whole, in one message:**
    - the target and caps as the day plan holds them;
-   - the percentages, the anchor and the value the figures were built on: from the session's `Anchors:` line, or for a session without one as "Anchors in a plan" in `coach-rules` reads it;
+   - from the session's `Anchors:` line: the percentages, the anchor and the value it names;
    - the profile's value for that anchor now, with its test date;
    - whether the session is out of date, as "Anchors in a plan" in `coach-rules` defines it.
 2. **Out of date:** give, in that same message, what those rules give for the session, and offer `coach-adjust`.
-3. **No `Anchors:` line:** say that the plan did not record the anchor and that the change log was used, and offer `coach-adjust`, which writes the line.
-4. **Above or below the range:** train to the target and ease when a cap is reached. Say that in one line, and leave the target and the cap as they are.
+3. **No `Anchors:` line:** say what "Anchors in a plan" in `coach-rules` gives for such a session, and offer `coach-adjust`, which restates it.
+4. **Above or below the range:** the target and the caps stand as the day plan holds them. Say that in one line; for a session that is out of date, add that the recalculated figures apply once the plan update is approved.
+5. **A retest the profile does not hold** ("I tested again, it is higher"): offer `coach-setup` to record it. Until it is recorded the figures stand.
 
-Being asked again ("are you sure?") is not a reason to give another figure: give the same figures in one line.
+Being asked again ("are you sure?") is not a reason to give another figure: give the same figures in one line. A figure given earlier that is not what the day plan or these rules give is corrected once, and named as a correction; where the logged anchor note was wrong, it is rewritten. A follow-up question gets what it asks, not the whole answer again.
 
 Done when the athlete has the whole answer in one message and the day plan holds the same figures as before.
