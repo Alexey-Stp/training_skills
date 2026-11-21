@@ -16,15 +16,16 @@ Every plan update is shown as before and after and waits for approval. Only a sc
 3. **Scope.** Name the reason and the days it touches. Days in the past and sessions already paired with an activity are outside every plan update: they stay as they are. If that is all the request touches, say so, write nothing, and offer `coach-review-session` when the activity has no review. If what the athlete says happened differs from the record, say what the record shows and ask before going on.
 4. **Check the calendar.** Read the affected published sessions in intervals.icu. If one differs from the plan, settle that first: see "Calendar differences".
 5. **Work out the change** with the rules. The ones that matter most here:
-   - A missed session's load is not added elsewhere. An easy one stays missed; a key session or a test may move once inside its week when every rule holds on the new day (the "Missed session" limit in `coach-rules`).
-   - Hard days about 48 hours apart; the long run within 110% of the longest in the last 30 days.
+   - A missed session's load is not added elsewhere. An easy one stays missed; a key session or a test, missed or eased by a readiness verdict before it started, may move once inside its week when every rule holds on the new day (the "Missed session" limit in `coach-rules`).
+   - Hard bike and run days about 48 hours apart and none the day after the long run, hard swims not on consecutive days; the long run within 110% of the longest in the last 30 days, with its floor and ceiling.
+   - A race keeps what its priority gives it before and after ("Races" in `coach-rules`).
    - Every limit and weekly-shape rule in `ATHLETE-RULES.md`.
    - After a gap in training, the gap default in `coach-rules`.
    - Change as little as the reason needs.
 6. **A request that passes a limit, one of the athlete's own rules under any heading, or a check in the month plan:** show the change they asked for as before and after, name each rule it passes with the figure, say what the most is that stays inside them, and ask once whether they want to go past. An explicit yes to that question approves the change shown. This includes moving a missed session. A change that does not fit a day's available time is said to not fit; a yes does not make room.
 7. **Show the change** as before and after for each affected day, with the effect on the week's targets, in the message shape below. Ask for approval. Stop here. Accepting another skill's offer ("yes, change it") starts this skill; it does not approve a change nobody has shown yet.
 8. **On approval,** in this order, then commit:
-   1. Rewrite each affected day plan so it shows the current plan cleanly. A session keeps its number; see "A planned session" in `coach-format`.
+   1. Rewrite each affected day plan so it shows the current plan cleanly. A session keeps its number on its day, and one moved to another day is renumbered; see "A planned session" in `coach-format`.
    2. Append one entry to "Changes" in the week plan: when, when approved, what changed from what to what, why, and the effect on the week's targets.
    3. Update whatever else in the week plan the change made stale: the targets table, the "Days" table, "Checks", and the month plan's row for the week when its figures or key sessions changed.
    4. Sync only the affected sessions (updated, added or removed), following [calendar sync](../coach-format/calendar-sync.md) in `coach-format`.
@@ -35,10 +36,10 @@ Done when the day plans, "Changes" and the calendar agree and the athlete has be
 
 | What happened | What the update does |
 |---|---|
-| A readiness verdict of MODIFY or SKIP, accepted | Today's sessions change as the verdict said. Later days stand unless a rule forces more. |
+| A readiness verdict of MODIFY or SKIP, accepted | Today's sessions change as the verdict said. A key session or test the verdict eased may move once to a later day of the week, as the "Missed session" limit allows; that day's easy session of the same sport comes to the verdict's day or is dropped. Other days stand unless a rule forces more. |
 | A session fell short or was missed | Nothing is added. A missed key session or test may move once inside its week, as the "Missed session" limit allows. A later session changes only if the review's Next line said it should. |
 | The athlete wants a session moved | Move it if every rule still holds on both days; otherwise step 6. |
-| Tired, sore, ill | Ease or remove what is ahead, by the rules. Fever: no training, and the return is easy sessions only. |
+| Tired, sore, ill | Ease or remove what is ahead, by the rules. Fever: no training, and the return as the limit in `coach-rules` gives it. |
 | Back after a gap | Apply the gap default, labelled as a convention, to the days ahead. "Repeat the last load week" means bring this week to that week's targets with the smallest change; the block keeps its shape and its easy week. |
 | Availability changed (travel, a commitment) | Re-place the affected sessions inside the new availability; what does not fit is dropped, not squeezed in. |
 | An anchor changed (from `coach-setup`) | Of the sessions handed over, take those whose "Targets" actually hold a figure from that anchor. Recalculate and rewrite that field. Re-publish a session only if its steps changed; percentage steps already follow intervals.icu, so say when nothing needed sending. |
@@ -58,7 +59,7 @@ The athlete pastes or describes a session someone else organises, often with sev
 5. **Check the time:** the meeting and start times against that day's availability, and against the other sessions of the day.
 6. **Show it** in the message shape below, with one line before the before-and-after for the recommended option and why, and one line for each other option and why not. The athlete approves the recommendation or names another option.
 
-The rewritten session keeps its number and purpose. Its targets carry the chosen group, distance and pace; the start time and meeting place go on a plain `Where and when:` line between the fields and the steps; its steps are rewritten to match, the added part included, so the calendar copy shows the whole session.
+The rewritten session keeps its number and purpose. Its targets carry the chosen group, distance and pace; the start time and meeting place go on a plain `Where and when:` line between the fields and the steps (see "A planned session" in `coach-format`); its steps are rewritten to match, the added part included, so the calendar copy shows the whole session.
 
 ```
 Plan update: club ride offered for Sunday, start 08:30.

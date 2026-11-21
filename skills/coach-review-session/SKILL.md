@@ -20,8 +20,8 @@ The review advises. A planned session changes only through `coach-adjust`, after
    - `NOT DONE AS PLANNED`
 
    An activity with no planned session gets no verdict: see "Unplanned activity".
-5. **Findings.** Two to four, each carrying the figure behind it. A cap that was reached or passed is always one of them. Use the figures table; add another figure only when it explains a finding. Athlete rules about reviews apply (for example, which breakdowns to leave out).
-6. **Next.** One line on what this means for the days ahead. It advises only. If a coming planned session should change, say which and offer a plan update (that is `coach-adjust`; the athlete sees "plan update", not a skill name). A session that fell short stays as it is: the next line never proposes repeating it or adding its load elsewhere. If the athlete proposes that, say that it stays as it is and which rule says so; a change they still want goes to `coach-adjust`.
+5. **Findings.** Two to four, each carrying the figure behind it. A cap that was reached or passed is always one of them. Use the figures table; add another figure only when it explains a finding. Athlete rules about reviews apply (for example, which breakdowns to leave out). When the activity for a planned easy session counts as hard by the rule in `coach-rules`, say so with the minutes: its easy target is judged missed, and it takes a place in the week's cap, or in the hard-swim count for a swim.
+6. **Next.** One line on what this means for the days ahead. It advises only. If a coming planned session should change, say which and offer a plan update (that is `coach-adjust`; the athlete sees "plan update", not a skill name). After a test or a race whose result gives a new anchor, offer setup so the profile takes it. A session that fell short stays as it is: the next line never proposes repeating it or adding its load elsewhere. If the athlete proposes that, say that it stays as it is and which rule says so; a change they still want goes to `coach-adjust`.
 7. **Write**, without asking, in this order: the day plan, then intervals.icu with a read-back, then commit.
    - the review, under "Session reviews" in the day plan;
    - the effort score, under "How I felt" in the day plan and on the activity in intervals.icu;
@@ -40,6 +40,12 @@ Done when the day plan holds the review and the athlete has the message.
 ## Unplanned activity
 
 Say what it was and what it cost: sport, duration, load, and how it sits against the week so far (from the week summary). The first line reads `<Sport>: UNPLANNED`, with no verdict and no judgement of whether it "should" have happened. Effort and the Next line work as for any review. In single-sport mode an activity in another sport is treated this way. It uses the same sections, without Goal and Execution, and its first line opens with ➕. An activity is planned when the day plan holds a session for it; the week plan's table does not decide. Write it under "Session reviews" as unplanned.
+
+## A race
+
+A race has a planned session (its form is in `coach-format`), so it is reviewed like any other, with the goal in place of the targets: the verdict is against the goal, Execution gives the result against it and the pacing (first half against second, or each leg and transition of a triathlon), and Next gives the easy days its priority calls for ("Races" in `coach-rules`). Where a triathlon arrives as several activities, one review covers them all. A race the day plan does not hold is reviewed as unplanned, with a line saying it looks like a race and offering setup to add it to the profile.
+
+A brick is two activities and two reviews; the run's Notes say that it followed the ride.
 
 ## Planned session with no activity
 
@@ -108,7 +114,7 @@ Sample with invented numbers:
 
 ### A swim's splits
 
-A swim is its sets, so the Splits section lays out all of them, in order, from the laps: what the set was, pace per 100 m (a range across the reps), rest, heart rate, and SWOLF or strokes where the laps hold them. Name drills and equipment on the set's line. Execution then judges against the plan and gives only the size of each miss (reps short, seconds off the range, beats over the cap). A set the plan did not have is named in Notes and counts toward the verdict and the caps.
+A swim is its sets, so the Splits section lays out all of them, in order, from the laps: what the set was, pace per 100 m (a range across the reps), rest, heart rate, and SWOLF or strokes where the laps hold them. Name drills and equipment on the set's line. Execution then judges against the planned session's `Sets:` line, set by set (without laps, say that the sets could not be checked), and gives only the size of each miss (reps short, seconds off the range, beats over the cap). A set the plan did not have is named in Notes and counts toward the verdict and the caps.
 
 ```
 ⏱ Sets (pace per 100 m · rest · HR)

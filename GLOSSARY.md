@@ -12,12 +12,24 @@ _Avoid_: User, client
 Which sports a plan covers. Triathlon (swim, bike and run in one combined plan) is the default; a single-sport mode such as run-only is the alternative.
 
 **Focus**:
-The sport given priority inside a plan: it carries the progression and the hard sessions while the other sports are held at maintenance, each keeping a short hard set every 7 to 10 days. Separate from sport mode.
+The sport given priority inside a plan: it carries the progression and the hard sessions while the other sports are held at maintenance, which share one short hard set a week. Separate from sport mode.
 _Avoid_: Emphasis, block type
 
 **Planned session**:
 One workout the plan prescribes for a specific day.
 _Avoid_: Workout, training (as a noun for one unit)
+
+**Key session**:
+A planned session named in its week's row of the month plan.
+
+**Hard session**:
+A planned session or activity with enough fast work to count against the weekly cap; the figures are in the coaching rules. A hard swim is counted apart.
+
+**Brick**:
+A ride and a run planned back to back: two planned sessions that count once.
+
+**Race priority**:
+A, B or C on a target race. It sets what is planned before and after the race.
 
 **Activity**:
 One recorded, completed workout as it arrives from the activity source.
