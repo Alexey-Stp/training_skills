@@ -27,6 +27,7 @@ The limits and defaults every coach skill applies. The athlete's own rules overr
 | Missed session | Its load is never added to another session or day. An easy session stays missed. A key session or a test that was missed, or that a MODIFY or SKIP verdict eased before it started, may move once, to a later day of the same week, when every limit and default holds on the new day and no other session is moved or shortened to make room. It may take the place of an easy session of the same sport already on that day, which is then dropped. When a verdict eased the key session, that easy session may come to the verdict's day instead, shortened as the verdict says. Otherwise it stays missed too; any other move is passing this limit. |
 | Hard days | Hard bike and run sessions about 48 hours apart, which in practice means not on consecutive days, and none on the day after the long run. A hard swim is spaced only against another hard swim: not on consecutive days. See "Hard sessions and hard days". |
 | Long run | At most 110% of the longest run in the previous 30 days, by distance. With no run in those 30 days there is nothing to take 110% of: see "Long run". |
+| Nutrition deficit | The limit under "Holding, losing or gaining weight" in [nutrition.md](nutrition.md): how large a deficit may be and the days that take none. |
 | Athlete limits | Every entry under "Limits" in `ATHLETE-RULES.md`, as written. |
 
 ## Defaults

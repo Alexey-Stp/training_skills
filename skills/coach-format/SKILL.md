@@ -35,7 +35,7 @@ Five sections, filled in as the day goes on:
 2. **Readiness verdict**, with the inputs behind it. One a day. A provisional verdict is replaced by the real one. A later verdict, after something new or as a correction, is added below the first with its time and its reason, and the latest one is the day's. An anchor note from the daily check goes below the inputs.
 3. **How I felt**: the subjective log.
 4. **Session reviews**, including a planned session that had no activity.
-5. **Nutrition target**, present once `coach-nutrition` has given one. One line each time a target is worked out: the time, `estimate` or `final`, the kcal, the grams of carbohydrate, protein and fat, then what it was built on (the base day, each session's net energy with its source and gross, the load and its tier, the weight, and any rule that moved a figure). Lines are added, never rewritten, and the latest is the day's.
+5. **Nutrition target**, present once `coach-nutrition` has given one. One line each time a target is worked out: the time, `estimate` or `final`, the kcal, the grams of carbohydrate, protein and fat, then what it was built on (the base day, the net energy of each activity and planned session with its source and gross, the load and its tier, the weight, and any rule that moved a figure). Lines are added, never rewritten, and the latest is the day's.
 
 ## A planned session
 
@@ -127,7 +127,7 @@ Use these terms, with these meanings, in every file and message.
 | Subjective log | the athlete's own scores for a day |
 | Nutrition target | the energy, carbohydrate, protein and fat a day calls for; an estimate while a session is still ahead, final once the day's training is recorded |
 | Base day | the energy the athlete uses on a day with no training |
-| Net exercise energy | what a session costs above what the base day already counts for its minutes |
+| Net exercise energy | what an activity or a planned session costs above what the base day already counts for its minutes |
 | Load tier | one of five levels of a day's load that set its carbohydrate and protein |
 | Calendar sync | publishing approved planned sessions to intervals.icu |
 | Approval | the athlete's explicit acceptance of something a skill proposes to write |

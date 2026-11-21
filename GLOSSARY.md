@@ -109,7 +109,7 @@ _Avoid_: Calorie goal, calorie budget
 The energy the athlete uses on a day with no training.
 
 **Net exercise energy**:
-What a session costs above what the base day already counts for its minutes.
+What an activity or a planned session costs above what the base day already counts for its minutes.
 
 **Load tier**:
 One of five levels of a day's load (rest, light, moderate, high, very high) that set its carbohydrate and protein.

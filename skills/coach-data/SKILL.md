@@ -33,7 +33,7 @@ Each command prints one JSON object. A value that is not known is `null`, never 
 | Food intake for a date (optional) | date | `{date, kcal, carbs_g, protein_g, fat_g, items}` |
 | Name an activity (optional) | activity id | `{id, name}`; renames the activity in intervals.icu |
 
-`device_readiness` is optional and often `null`. `work_kj` is the work a power meter measured and `device_kcal` the recording device's own energy figure; when a command gives neither, read them from the activity in intervals.icu. Weight is not a question: work it out from the wellness records in intervals.icu, as the athlete profile says. `hrv_7d` is the average of the last seven nights; when a command does not give it, work it out from the wellness records in intervals.icu. A scheduled sync on the athlete's machine is a head start; still refresh.
+`device_readiness` is optional and often `null`. `work_kj` is the work a power meter measured and `device_kcal` the recording device's own energy figure; when a command gives neither, read them from the activity in intervals.icu. There is no command for weight: work it out from the wellness records in intervals.icu, as the athlete profile says. `hrv_7d` is the average of the last seven nights; when a command does not give it, work it out from the wellness records in intervals.icu. A scheduled sync on the athlete's machine is a head start; still refresh.
 
 ## Keys
 
