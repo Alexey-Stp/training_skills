@@ -38,7 +38,7 @@ Four sections, filled in as the day goes on:
 
 ## A planned session
 
-Fixed fields, in this order: sport, duration, planned load, purpose, targets, caps, calendar. The title is the heading, with the session's number. A session keeps its number for as long as it stays on its day, because its calendar event is found by it: a removed session's number is not reused that day, and a new session takes the next unused one. Write `none` for an empty field. Then the steps in intervals.icu workout text, in a code block, so calendar sync publishes them as written.
+Fixed fields, in this order: sport, duration, planned load, purpose, targets, caps, calendar. The title is the heading, with the session's number. A session keeps its number for as long as it stays on its day, because its calendar event is found by it: a removed session's number is not reused that day, and a new session takes the next unused one. Write `none` for an empty field. A target or a cap in watts, pace or heart rate that was worked out from an anchor names in brackets what it came from: the share, the anchor and the anchor's value, for example `reps at 4:10 /km (100% of run threshold 4:10 /km)`. The daily check compares that value with the profile. Then the steps in intervals.icu workout text, in a code block, so calendar sync publishes them as written.
 
 Between the fields and the steps, plain lines with no dash, each only when it applies:
 

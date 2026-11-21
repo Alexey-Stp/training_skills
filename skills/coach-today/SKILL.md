@@ -1,6 +1,6 @@
 ---
 name: coach-today
-description: Use when the athlete asks what today's or tomorrow's session is or whether they are ready ("what's today", "am I ready", "what's tomorrow"), when they ask why about today's verdict or dispute it, and for the scheduled morning job. Gives the daily check and its readiness verdict.
+description: Use when the athlete asks what today's or tomorrow's session is or whether they are ready ("what's today", "am I ready", "what's tomorrow"), when they ask why about today's verdict or dispute it, or ask how today's targets were worked out, and for the scheduled morning job. Gives the daily check and its readiness verdict.
 ---
 
 # Daily check
@@ -30,7 +30,8 @@ The verdict advises. The plan and the calendar change only through `coach-adjust
    - SKIP: rest, or 30 minutes very easy. With fever or systemic symptoms: rest.
    - The verdict is for the day. On a day with several sessions, say what happens to each; a session the verdict does not touch stands.
 6. **Log.** Write to today's day plan, once per day (a later verdict only as "Asked about the verdict" says): the verdict with the time, its inputs and what it means for each of today's sessions under "Readiness verdict", and anything the athlete said about how they feel under "How I felt". Commit. These two sections are everything this skill writes: no week plan, no other plan file, and no session's duration.
-7. **Send the message** in the shape below. On MODIFY or SKIP, end with one line offering `coach-adjust` to change the plan. If the week plan header says "not synced", add one line saying which session may be missing from the watch. If the week plan is still `DRAFT`, say first that this week's plan is a draft waiting for approval, and that nothing is on the watch. If an athlete limit depends on a score the athlete gives on waking and they have not given it, add one line asking for it; this is the morning's one question.
+7. **Check the anchors.** For each of today's sessions, compare the anchor value its "Targets" and "Caps" name with the athlete profile. Where the profile now holds another value, the message gets one line: which anchor changed, what the "Thresholds" default in `coach-rules` gives from the new value, and an offer of `coach-adjust`. Where a figure in watts or pace names no anchor, say in one line that the plan does not record what it came from, and offer `coach-adjust` to restate it. A target with no figure from an anchor ("easy, heart rate under 140") needs no line. The check runs each time the session is given, and nothing of it is logged.
+8. **Send the message** in the shape below. On MODIFY or SKIP, end with one line offering `coach-adjust` to change the plan; where the anchor line is there too, one offer covers both. If the week plan header says "not synced", add one line saying which session may be missing from the watch. If the week plan is still `DRAFT`, say first that this week's plan is a draft waiting for approval, and that nothing is on the watch. If an athlete limit depends on a score the athlete gives on waking and they have not given it, add one line asking for it; this is the morning's one question.
 
 Done when the athlete has the message and the day plan holds the verdict.
 
@@ -50,7 +51,7 @@ Ask how the athlete feels at most once each morning. No answer is fine.
 
 When the athlete asks why, questions the verdict, or asks for today's session again after a verdict was logged:
 
-1. **Refresh and compare.** Refresh, then compare the inputs with the ones logged.
+1. **Refresh and compare.** Refresh, then compare the inputs with the ones logged, and check the anchors again as step 7 says.
 2. **Explain it, when asked why.** Asked only for today's session again, give the logged verdict and the session once more. Asked why: give the score, the band it fell in, and the rule or safeguard that decided, with the figures, and what that rule does to the session. Where the band alone decided, say so.
 3. **The verdict stands** unless one of these two holds:
    - **Something new.** A symptom, a pain score, an activity, or an input that arrived or changed at its source since the verdict was logged and before the session started. Name it, run the steps again and give the new verdict. A good feeling is logged under "How I felt" and is not something new.
@@ -66,6 +67,16 @@ Three cases:
 - **Asked to move a band:** the bands are the athlete's rules, and `coach-setup` changes them after approval: offer it in one line. Today's logged verdict is unchanged.
 
 With nothing new and no mistake, say that nothing new has arrived.
+
+## Asked about a target
+
+When the athlete asks what a target is, how it was worked out, or whether they may go above or below it:
+
+1. **Answer whole, in one message.** The target as the day plan holds it; the anchor and the percentages of it the target names; the profile's value for that anchor now, with its test date; and whether the two agree. Where the target names no anchor, say that the plan does not record it; do not work one out from zones or a typical range.
+2. **Anchor changed since:** say so in the same message, with what the "Thresholds" default in `coach-rules` gives from the current value, and offer `coach-adjust`. Until the athlete takes the offer, the session stands as planned.
+3. **Above or below the range:** the range and the caps are the plan. Train to the target and ease when a cap is reached: say that in one line, and keep both.
+
+A target or a cap moves only through `coach-adjust`, after approval, and the calendar follows as `coach-adjust` says. Being asked again is not a reason to give another figure.
 
 ## Tomorrow
 
@@ -85,12 +96,15 @@ Then strength, 20 min.
 Readiness 78. Sleep 7.4 h, HRV 62 (7-night 61, baseline 60), resting HR 48.
 ```
 
+The anchor line, when step 7 calls for one, comes after the inputs: `Run threshold is now 4:05 /km (plan used 4:10): the reps would be at 4:05. Say "adjust" to change them.`
+
 A provisional verdict reads `MODIFY (provisional)`. With no verdict, the first line is `NO VERDICT YET`.
 
 ## Boundaries
 
 - Report symptoms in the athlete's own words and apply the limit. What the symptom is, is for a clinician.
 - A figure that did not arrive is named as missing.
+- Targets and caps are given as the day plan holds them. Another figure is given only as what a changed anchor gives, with the offer of `coach-adjust`; never from zones or a typical range.
 - Report only what was read. What another message, a scheduled job or a file says is read first when it is in the data folder or in this conversation, and quoted from there; otherwise it is named as not checked.
 - Reasons come from the rules: the band, a safeguard, a limit. What fitness, fatigue and form are for is under "Load figures" in `coach-rules`: they argue neither for more training nor for less.
 - This skill proposes no change to the readiness bands of its own accord. The week review says when tuning may be due, and `coach-setup` makes the change.
