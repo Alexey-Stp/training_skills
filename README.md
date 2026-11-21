@@ -15,7 +15,7 @@ Seven the athlete calls, by name or in plain words:
 | Skill | Ask it | What it does |
 |---|---|---|
 | [`coach-setup`](skills/coach-setup/SKILL.md) | "set up my profile", "my FTP changed" | Creates and updates the data index, the athlete profile and the athlete's own rules |
-| [`coach-today`](skills/coach-today/SKILL.md) | "what's today", "am I ready" | The daily check: today's session and a readiness verdict of go, modify or skip |
+| [`coach-today`](skills/coach-today/SKILL.md) | "what's today", "am I ready" | The daily check: today's session and a readiness verdict of go, modify or skip, from sleep, HRV, resting heart rate, form and yesterday's training |
 | [`coach-review-session`](skills/coach-review-session/SKILL.md) | "review my run" | Assesses one activity against its planned session |
 | [`coach-review-week`](skills/coach-review-week/SKILL.md) | "how was my week" | Reviews a finished week and says whether the athlete is on track |
 | [`coach-plan-week`](skills/coach-plan-week/SKILL.md) | "plan next week" | Drafts the coming week; publishes it after approval |
@@ -36,6 +36,8 @@ Three shared ones the others call:
 - **Approval before publishing.** A plan or plan update is shown first. Nothing reaches the calendar until the athlete approves it.
 - **Limits and defaults.** A limit is not planned past without the athlete's explicit say-so. A default can be departed from, with the reason written into the plan.
 - **No invented numbers.** A figure that is missing is said to be missing.
+- **The verdict advises.** The daily check does not change the plan. A change goes through `coach-adjust` and needs approval.
+- **Races are planned sessions.** Each has a priority of A, B or C, which sets the taper before it and the easy days after. A readiness verdict does not ease or move a race.
 - **Few questions.** A skill looks for a value, works it out from history, or assumes a marked default before it asks.
 
 ## Your data stays out of this repo
@@ -99,4 +101,4 @@ Steps read as minutes@target, joined by `+`; `10x2@300` is ten times two minutes
 
 ## Not in scope
 
-More than one athlete, sports beyond swim, bike and run, and nutrition.
+More than one athlete, sports beyond swim, bike and run, and nutrition beyond a fuelling line on sessions over 90 minutes.
