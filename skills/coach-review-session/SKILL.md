@@ -1,6 +1,6 @@
 ---
 name: coach-review-session
-description: Use when the athlete asks for a review of a completed run, ride, swim or other training ("review my run", "review today's training"), and for the scheduled midday and evening jobs. Assesses one activity against its planned session.
+description: Use when the athlete asks for a review of a completed run, ride, swim or other training ("review my run", "was that ride ok"), and for the scheduled midday and evening jobs. Assesses one activity against its planned session.
 ---
 
 # Session review
@@ -12,24 +12,24 @@ The review advises. A planned session changes only through `coach-adjust`, after
 ## Steps
 
 1. **Load.** Use `coach-data` to find the data folder and refresh. Find the activity, then read the day plan for its date (the planned session it belongs to, the readiness verdict and "How I felt"), and the week and month plan for the context line. Load the rules through `coach-rules`.
-2. **Get the figures** from `coach-data`: the analysis of the activity, the load state, and the week summary so far. An empty stub is not reviewed: `coach-data` handles it, the day plan gets one line under "Session reviews" saying the review is waiting on real figures, and the athlete is told.
-3. **Effort.** If the day plan has no effort score for this activity, the review goes out with "Effort: not given" and ends with one question asking for effort out of 10. That is the one ask for this activity, whoever asks it. When the answer comes, write it in the three places of step 7 and confirm in a line.
+2. **Get the figures** from `coach-data`: the analysis of the activity, the load state, and the week summary so far. For a swim, read [swim.md](swim.md) now. An empty stub is not reviewed: `coach-data` handles it, the day plan gets one line under "Session reviews" saying the review is waiting on real figures, and the athlete is told.
+3. **Effort.** If the day plan has no effort score for this activity, the review goes out with `effort not given` and ends with one question asking for effort out of 10. That is the one ask for this activity, whoever asks it. When the answer comes, write it in the places step 7 names and in the review's load line, and confirm in a line.
 4. **Verdict.** Judge the activity against the planned session's *purpose* and give one of three:
    - `DONE AS PLANNED`
    - `PARTLY DONE AS PLANNED`
    - `NOT DONE AS PLANNED`
 
    An activity with no planned session gets no verdict: see "Unplanned activity".
-5. **Findings.** Two to four, each carrying the figure behind it. A cap that was reached or passed is always one of them. Use the figures table; add another figure only when it explains a finding. Athlete rules about reviews apply (for example, which breakdowns to leave out). When the activity for a planned easy session counts as hard by the rule in `coach-rules`, say so with the minutes: its easy target is judged missed, and it takes a place in the week's cap, or in the hard-swim count for a swim.
-6. **Next.** One line on what this means for the days ahead. It advises only. If a coming planned session should change, say which and offer a plan update (that is `coach-adjust`; the athlete sees "plan update", not a skill name). After a test or a race whose result gives a new anchor, offer setup so the profile takes it. A session that fell short stays as it is: the next line never proposes repeating it or adding its load elsewhere. If the athlete proposes that, say that it stays as it is and which rule says so; a change they still want goes to `coach-adjust`.
+5. **Findings.** Two to four, each carrying the figure behind it. A cap that was reached or passed is always one of them. Use the figures table; add another figure only when it explains a finding. Athlete rules about reviews apply (for example, which breakdowns to leave out). When the activity for a planned easy session counts as hard by "Hard sessions and hard days" in `coach-rules`, say so with the minutes: its easy target is judged missed, and it takes a place in the week's cap, or in the hard-swim count for a swim.
+6. **Next.** One line on what this means for the days ahead. If a coming planned session should change, say which and offer a plan update (that is `coach-adjust`; the athlete sees "plan update", not a skill name). After a test or a race whose result gives a new anchor, offer setup so the profile takes it. A session that fell short stays as it is: the next line never proposes repeating it or adding its load elsewhere. If the athlete proposes that, say that it stays as it is and which rule says so; a change they still want goes to `coach-adjust`.
 7. **Write**, without asking, in this order: the day plan, then intervals.icu with a read-back, then commit.
    - the review, under "Session reviews" in the day plan;
    - the effort score, under "How I felt" in the day plan and on the activity in intervals.icu;
    - the coach's note to the activity's description in intervals.icu, as described under "Writes" in `coach-data`'s `intervals-icu.md`;
    - the activity's name: see "Naming".
-8. **Send** the review, section by section as "Review shape" gives it, each section opened by its sign. If the day plan's latest line under "Nutrition target" is an `estimate`, run `coach-nutrition` for that day afterwards; it sends the new target. The same after a planned session is written down as missed.
+8. **Send** the review in the sections of "Review shape". If the day plan's latest line under "Nutrition target" is an `estimate`, run `coach-nutrition` for that day afterwards; it sends the new target. The same after a planned session is written down as missed.
 
-Done when the day plan holds the review, the athlete has the message in its sections, and the activity holds the coach's note or the athlete was told it could not be written.
+Done when the day plan holds the review; the message opens with the verdict line and every line after it starts with a sign from the table, belongs to the Splits block, or is one of the closing lines "Review shape" allows; and the activity holds the coach's note or the athlete was told it could not be written.
 
 ## Figures
 
@@ -75,12 +75,12 @@ Several activities in one request: one message per activity, in the order of the
 | Sign | Section | Holds |
 |---|---|---|
 | ✅ 🟡 ❌ | Verdict line | session name and verdict: done, partly, not done as planned. Unplanned: ➕ |
-| 📏 | Figures | the headline numbers on one line: duration, distance where the sport has one, average power with normalised power, or average pace, average and maximum heart rate, and for a steady ride or run the heart-rate drift |
-| 📊 | Load and state | load done against planned; effort out of 10, or "effort not given"; fitness and form, as context |
+| 📏 | Figures | the headline numbers on one line: duration, distance where the sport has one, average power with normalised power, or average pace (per 100 m for a swim), average and maximum heart rate, and for a steady ride or run the heart-rate drift |
+| 📊 | Load and state | load done against planned; effort out of 10, or `effort not given`; fitness and form, as context |
 | 🟢 🟡 🔴 | Readiness | the day's verdict with sleep, HRV against baseline, resting heart rate, and any pain score |
 | 🎯 | Goal | the planned session's purpose, targets and caps, in one line |
 | ✅ 🟡 ❌ | Execution | one line per target and cap, with the figure. ✅ met. 🟡 missed for part of the session. ❌ missed for most of it. For a cap, time in the target range is time under the cap |
-| ⏱ | Splits | reps and sets: one line each. A swim: the whole session as swum, one line per set from warm-up to cool-down (see "A swim's splits"). A steady session: only the splits that show where it changed, on one or two lines; all of them only when the splits are the finding. An athlete rule can switch this off for a kind of session |
+| ⏱ | Splits | reps and sets: one line each. A swim: as `swim.md` gives them. A steady session: only the splits that show where it changed, on one or two lines; all of them only when the splits are the finding. An athlete rule can switch this off for a kind of session |
 | 📶 | Zones | one line: the share of the time in each zone, in percent, for power or pace zones and then for heart-rate zones. Leave out a zone under 2%, and a set of zones the analysis does not give |
 | 🧠 | Notes | the coach's read, one to three lines: what went well, what to work on and how, and what it means for the block where the figures show that; with a comparison to the last session of the same kind where the day plans hold one, and any athlete limit the session passed, or one it could not be checked against because a score is missing |
 | ➡️ | Next | what stands, and what to do differently next time |
@@ -131,7 +131,7 @@ What goes on the activity in intervals.icu. The page there already shows the num
 - **Zones:** the zones of the message's Zones section, here with minutes and percent, one line for each set of zones. This is the one block of figures the note carries.
 - **Next:** the message's Next line, naming the planned sessions it concerns.
 
-Leave out what the page shows as its headline for the whole activity: duration, distance, averages and maximums, load, fitness and form. A figure for one block, rep or set, and heart-rate drift, may appear where a sentence needs it. Leave out a part that has nothing to say, and a sentence that only reads the zones back. Every sentence is about this activity. The test: it could not stand under another one, as a reminder to sleep or "productive session" could.
+Leave out what the page shows as its headline for the whole activity: duration, distance, averages and maximums, load, fitness and form. A figure for one block, rep or set, and heart-rate drift, may appear where a sentence needs it. Leave out a part that has nothing to say, and a sentence that only reads the zones back. Every sentence names something from this activity: a rep, a block, a figure, a planned session by its day.
 
 Sample with invented numbers, for the run above:
 
@@ -152,30 +152,16 @@ Zones, heart rate: Z2 31 min (47%) · Z3 10 (15%) · Z4 25 (38%)
 Next: Thursday's easy run stands. If rep 4 fades again next week, shorten to 3 x 8 before adding volume.
 ```
 
-### A swim's splits
-
-A swim is its sets, so the Splits section lays out all of them, in order, from the laps: what the set was, pace per 100 m (a range across the reps), rest, heart rate, and SWOLF or strokes where the laps hold them. Name drills and equipment on the set's line. Execution then judges against the planned session's `Sets:` line, set by set (without laps, say that the sets could not be checked), and gives only the size of each miss (reps short, seconds off the range, beats over the cap). A set the plan did not have is named in Notes and counts toward the verdict and the caps.
-
-```
-⏱ Sets (pace per 100 m · rest · HR)
-WU 300 · 1'58 · HR 118
-4x50 drill · 2'05-2'12 · r20" · HR 110-121
-5x200 · 1'52-1'55 · r30-40" · HR 131-136 · SWOLF 38-39
-8x50 fins · 1'45-1'48 · r15" · HR 138-146
-CD 100 · 2'02 · HR 115
-```
-
 ## Naming
 
 Rename an activity only when it still has the default name its device gave it: a time of day followed by the sport, such as `Morning Run`, `Lunch Ride`, `Afternoon Swim`, `Evening Run`, `Night Ride`, or the bare sport, such as `Pool Swim`. Any other name was chosen by someone or by an app (a race, a MyWhoosh or Zwift session) and stays as it is.
 
 - Planned: the planned session's title in title case, for example `Threshold Run`.
 - Unplanned: the sport and its character, for example `Easy Ride`.
-- A swim, planned or not: `Swim - ` and the sets as swum, in order, joined by `/`. Each set is its distance or reps, a word for a drill or equipment, and for a main set (not the warm-up, drills or cool-down) `@` with the pace per 100 m across the reps. For example `Swim - 300/4x50 drill/5x200@1'52-1'55/8x50 fins@1'45-1'48/100`. Without laps, name it like any other session.
+- A swim, planned or not: named from its sets, as [swim.md](swim.md) gives it.
 
 If the data index lists the naming question, run that command. Otherwise write the name to the activity in intervals.icu and read it back. The athlete can switch renaming off, for one activity or as a rule.
 
 ## Boundaries
 
 - Every figure in a review comes from the analysis or the plan. One that is missing is named as missing.
-- The plan and the calendar's planned sessions are left as they are.
