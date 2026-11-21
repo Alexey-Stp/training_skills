@@ -25,17 +25,17 @@ The review advises. A planned session changes only through `coach-adjust`, after
 7. **Write**, without asking, in this order: the day plan, then intervals.icu with a read-back, then commit.
    - the review, under "Session reviews" in the day plan;
    - the effort score, under "How I felt" in the day plan and on the activity in intervals.icu;
-   - the whole review to the activity's description in intervals.icu, as described under "Writes" in `coach-data`'s `intervals-icu.md`;
+   - the coach's note to the activity's description in intervals.icu, as described under "Writes" in `coach-data`'s `intervals-icu.md`;
    - the activity's name: see "Naming".
-8. **Send** the review. If the day plan's latest line under "Nutrition target" is an `estimate`, run `coach-nutrition` for that day afterwards; it sends the new target. The same after a planned session is written down as missed.
+8. **Send** the review, section by section as "Review shape" gives it, each section opened by its sign. If the day plan's latest line under "Nutrition target" is an `estimate`, run `coach-nutrition` for that day afterwards; it sends the new target. The same after a planned session is written down as missed.
 
-Done when the day plan holds the review and the athlete has the message.
+Done when the day plan holds the review, the athlete has the message in its sections, and the activity holds the coach's note or the athlete was told it could not be written.
 
 ## Figures
 
 | Always | Run adds | Bike adds | Swim adds |
 |---|---|---|---|
-| duration, load, time in the target range, effort | pace and heart rate per rep | power per interval, heart-rate drift | per set: distance, pace per 100 m, rest, heart rate, strokes or SWOLF, and any equipment (paddles, pull buoy, fins) |
+| duration, distance where the sport has one, average and maximum heart rate, load, time in zones, time in the target range, effort | average pace; pace and heart rate per rep; heart-rate drift for a steady run | average and normalised power; power per interval; heart-rate drift for a steady ride | per set: distance, pace per 100 m, rest, heart rate, strokes or SWOLF, and any equipment (paddles, pull buoy, fins) |
 
 ## Unplanned activity
 
@@ -61,26 +61,28 @@ A brick is two activities and two reviews; the run's Notes say that it followed 
 
 ## Review shape
 
-One review, in fixed sections, used in three places: the message to the athlete, "Session reviews" in the day plan, and the activity's description. Plain lines, no tables.
+One review in two forms. The message to the athlete and "Session reviews" in the day plan take the fixed sections below: plain lines, no tables. The activity's description takes the coach's note, further down.
 
-Two rules decide what goes in:
+Two rules decide what goes in the sections:
 
-- **Add, don't repeat.** The activity page already shows distance, time, average pace or power, average heart rate, cadence and climb. Leave those out unless a finding needs one. Give what the page cannot: the plan, the comparison, the meaning.
-- **Say each fact once.** A figure given under Execution is not given again under Splits or Notes.
+- **The message stands alone.** The athlete reading it does not have the activity page open, so the Figures line carries the headline numbers once. Everything after it gives what the page cannot: the plan, the comparison, the meaning.
+- **Say each fact once.** The Figures line gives numbers for the whole activity, Execution one per target and cap, Splits one per rep or set. The same number for the same thing is given in one of them, and comes back in Notes only where a line there says what it means.
 
-Sections, in this order, each opened by its sign. Leave a section out when it has nothing to add. The message alone may end with two more lines: the effort question, and `ℹ️ Basic figures` when the data came straight from intervals.icu.
+Sections, in this order, each opened by its sign. Leave a section out when it has nothing to add. The message alone may end with up to three more lines: the effort question, `ℹ️ Basic figures` when the data came straight from intervals.icu, and `⚠️ Note not saved to intervals.icu` when the coach's note could not be written after one retry.
 
-Several activities in one request: one message per activity, in the order of the day. The readiness line appears once, on the first. The effort question and the `ℹ️` line come once, at the end of the last message, and the question names each activity still without a score.
+Several activities in one request: one message per activity, in the order of the day. The readiness line, fitness and form, and the Context line appear once, on the first. The effort question and the `ℹ️` line come once, at the end of the last message, and the question names each activity still without a score.
 
 | Sign | Section | Holds |
 |---|---|---|
 | ✅ 🟡 ❌ | Verdict line | session name and verdict: done, partly, not done as planned. Unplanned: ➕ |
+| 📏 | Figures | the headline numbers on one line: duration, distance where the sport has one, average power with normalised power, or average pace, average and maximum heart rate, and for a steady ride or run the heart-rate drift |
 | 📊 | Load and state | load done against planned; effort out of 10, or "effort not given"; fitness and form, as context |
 | 🟢 🟡 🔴 | Readiness | the day's verdict with sleep, HRV against baseline, resting heart rate, and any pain score |
 | 🎯 | Goal | the planned session's purpose, targets and caps, in one line |
 | ✅ 🟡 ❌ | Execution | one line per target and cap, with the figure. ✅ met. 🟡 missed for part of the session. ❌ missed for most of it. For a cap, time in the target range is time under the cap |
 | ⏱ | Splits | reps and sets: one line each. A swim: the whole session as swum, one line per set from warm-up to cool-down (see "A swim's splits"). A steady session: only the splits that show where it changed, on one or two lines; all of them only when the splits are the finding. An athlete rule can switch this off for a kind of session |
-| 🧠 | Notes | what the numbers mean: one to three findings, with a comparison to the last session of the same kind where the day plans hold one, and any athlete limit the session passed, or one it could not be checked against because a score is missing |
+| 📶 | Zones | one line: the share of the time in each zone, in percent, for power or pace zones and then for heart-rate zones. Leave out a zone under 2%, and a set of zones the analysis does not give |
+| 🧠 | Notes | the coach's read, one to three lines: what went well, what to work on and how, and what it means for the block where the figures show that; with a comparison to the last session of the same kind where the day plans hold one, and any athlete limit the session passed, or one it could not be checked against because a score is missing |
 | ➡️ | Next | what stands, and what to do differently next time |
 | 📍 | Context | phase and week of the block, which session of the week this was, the week so far |
 
@@ -89,6 +91,7 @@ Sample with invented numbers:
 ```
 🟡 Threshold run: PARTLY DONE AS PLANNED
 
+📏 66 min · 13.3 km · 4:58/km · HR avg 151, max 170
 📊 Load 74 of 78 · effort 8/10 · fitness 61 · form -6
 🟢 GO · sleep 7.4 h · HRV 62 (60) · RHR 48 · knee 1/10
 🎯 32 min at threshold: 4 x 8 min at 4:10/km, HR under 170
@@ -104,12 +107,49 @@ Sample with invented numbers:
 3 · 4:12 · 164
 4 · 4:21 · 170
 
-🧠 Rep 4 slowed while HR rose 6 bpm: past threshold, not at it.
-🧠 Same fade as last week, when rep 4 was 4:19.
+📶 Pace Z2 52% · Z3 12% · Z4 36% | HR Z2 47% · Z3 15% · Z4 38%
+
+🧠 Reps 1 to 3 were threshold work done properly: on pace, HR flat.
+🧠 Rep 4 slowed while HR rose 6 bpm: past threshold, not at it. When HR reaches 168 in a rep, ease 5 s/km and finish it.
+🧠 Same fade as last week, when rep 4 was 4:19: the fourth rep is the limit for now.
 
 ➡️ Thursday's easy run stands. If rep 4 fades again next week, shorten to 3 x 8 before adding volume.
 
 📍 Run build 1, load week 3 · hard session 1 of 2 · week so far: swim 2.0 km
+```
+
+A ride's two lines look like this: `📏 2:01 · 61 km · 184 W avg, 186 NP · HR avg 131, max 148 · drift 3.9%` and `📶 Power Z1 5% · Z2 89% · Z3 6% | HR Z1 58% · Z2 36% · Z3 6%`.
+
+### The coach's note
+
+What goes on the activity in intervals.icu. The page there already shows the numbers, so the note is the coach talking to the athlete about this one activity, in plain sentences and "you".
+
+- **First line:** the verdict in words, and in one sentence whether the session did what it was for. For an unplanned activity: what it was and what it cost.
+- **What went well:** one thing, with the figure or two that show it.
+- **What to work on:** one thing, with its figure, why it matters, and what to do next time in terms the athlete can act on mid-session ("when heart rate reaches 168, ease 5 s/km").
+- **Against last time:** the comparison with the last session of the same kind, where the day plans hold one, and what the two together say.
+- **Zones:** the zones of the message's Zones section, here with minutes and percent, one line for each set of zones. This is the one block of figures the note carries.
+- **Next:** the message's Next line, naming the planned sessions it concerns.
+
+Leave out what the page shows as its headline for the whole activity: duration, distance, averages and maximums, load, fitness and form. A figure for one block, rep or set, and heart-rate drift, may appear where a sentence needs it. Leave out a part that has nothing to say, and a sentence that only reads the zones back. Every sentence is about this activity. The test: it could not stand under another one, as a reminder to sleep or "productive session" could.
+
+Sample with invented numbers, for the run above:
+
+```
+Coach review
+
+Partly done as planned. Three of the four reps were on pace and under the heart-rate cap; the fourth is where it got away from you.
+
+What went well: reps 1 to 3 sat within 2 s/km of target with heart rate flat at 162 to 164. That is threshold work done properly.
+
+What to work on: in rep 4 you slowed by 11 s/km while heart rate climbed to the cap. That is the effort going past threshold while the pace falls short of it. Next time, when heart rate reaches 168 in a rep, ease 5 s/km and finish the rep.
+
+Against last time: the same fade, rep 4 at 4:19 then and 4:21 now. Twice running says the fourth rep is the limit for now, not a bad day.
+
+Zones, pace: Z2 34 min (52%) · Z3 8 (12%) · Z4 24 (36%)
+Zones, heart rate: Z2 31 min (47%) · Z3 10 (15%) · Z4 25 (38%)
+
+Next: Thursday's easy run stands. If rep 4 fades again next week, shorten to 3 x 8 before adding volume.
 ```
 
 ### A swim's splits

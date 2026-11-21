@@ -21,7 +21,7 @@ Without asking, then commits:
 
 - The session review, in the day plan under "Session reviews".
 - The effort score, in the day plan's subjective log and on the matching activity in intervals.icu.
-- A short version of the review to the activity's description in intervals.icu.
+- The coach's note, a form of the review in plain sentences with the time in zones, to the activity's description in intervals.icu.
 - The activity's name, only if the data index lists the optional naming question.
 
 ## Steps

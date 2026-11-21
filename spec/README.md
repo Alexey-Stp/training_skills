@@ -112,7 +112,7 @@ Gaps the decisions leave. They are listed, not filled.
 5. Who writes the month plan's "Block review" section, and who sets a month plan to CLOSED. The accepted example has the section; no decision says who fills it.
 6. What `coach-review-week` does when asked mid-week.
 7. Exact wording of the pointer lines in `AGENTS.md` and the user-level `CLAUDE.md`.
-8. Whether the short review posted to the activity description is the whole review or only its verdict and Next line.
+8. Settled: the activity description takes neither the whole review nor only its verdict and Next line, but the coach's note, a form of its own given in `coach-review-session`.
 9. Links are per section, not per statement. The decision asked for every statement to link to its ticket.
 10. The session review's outcome and the daily check's outcome are both called a verdict. Only "readiness verdict" is a glossary term.
 11. Trigger phrases. Each skill's file lists only the phrases the decisions name; the skill descriptions will need more.

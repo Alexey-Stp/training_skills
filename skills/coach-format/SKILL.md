@@ -111,6 +111,7 @@ Use these terms, with these meanings, in every file and message.
 | Race priority | A, B or C on a target race; it sets what is planned before and after the race |
 | Activity | one recorded, completed unit of training, as it arrives from the activity source |
 | Session review | the assessment of one activity, against its planned session where one exists |
+| Coach's note | the form of a session review written to the activity's description: plain sentences, with the time in zones |
 | Season plan | the plan above the month plans: the phases, and a week role for every week |
 | Week role | what a week is for: load, easy, taper, race or recovery |
 | Day plan, week plan, month plan | the plan at three resolutions |

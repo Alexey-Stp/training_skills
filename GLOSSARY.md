@@ -38,6 +38,9 @@ _Avoid_: Session (when it has been done), ride/run (as the generic term)
 **Session review**:
 The assessment of one activity, against its planned session where one exists.
 
+**Coach's note**:
+The form of a session review written to the activity's description: the coach's read in plain sentences, with the time in zones and without the headline figures the activity page already shows.
+
 **Day plan / Week plan / Month plan**:
 The plan at three resolutions. A month plan sets the shape of its weeks, a week plan sets its days, a day plan holds that day's planned sessions.
 _Avoid_: Schedule, program
