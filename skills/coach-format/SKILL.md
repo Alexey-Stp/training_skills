@@ -32,7 +32,7 @@ Dates are `YYYY-MM-DD`. Each file follows its template in [templates/](templates
 Four sections, filled in as the day goes on:
 
 1. **Planned sessions**, written in full here and nowhere else.
-2. **Readiness verdict**, with the inputs behind it.
+2. **Readiness verdict**, with the inputs behind it. One a day. A provisional verdict is replaced by the real one. A later verdict, after something new or as a correction, is added below the first with its time and its reason, and the latest one is the day's.
 3. **How I felt**: the subjective log.
 4. **Session reviews**, including a planned session that had no activity.
 

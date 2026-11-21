@@ -1,6 +1,6 @@
 ---
 name: coach-today
-description: Use when the athlete asks what today's or tomorrow's session is or whether they are ready ("what's today", "am I ready", "what's tomorrow"), and for the scheduled morning job. Gives the daily check and its readiness verdict.
+description: Use when the athlete asks what today's or tomorrow's session is or whether they are ready ("what's today", "am I ready", "what's tomorrow"), when they ask why about today's verdict or dispute it, and for the scheduled morning job. Gives the daily check and its readiness verdict.
 ---
 
 # Daily check
@@ -29,7 +29,7 @@ The verdict advises. The plan and the calendar change only through `coach-adjust
    - An activity already recorded today: if it belongs to one of today's planned sessions, say so and leave that session out of the verdict. If it is unplanned, name it; when it was hard, a hard session still ahead today is treated as safeguard 5 treats one after a hard day. The verdict then speaks to the sessions still ahead; with none ahead, give the score and its inputs as information for the rest of the day.
    - SKIP: rest, or 30 minutes very easy. With fever or systemic symptoms: rest.
    - The verdict is for the day. On a day with several sessions, say what happens to each; a session the verdict does not touch stands.
-6. **Log.** Write to today's day plan, the first verdict once per day and a later one only as "Asked about the verdict" says: the verdict with the time, its inputs and what it means for each of today's sessions under "Readiness verdict", and anything the athlete said about how they feel under "How I felt". Commit. These two sections are everything this skill writes: no week plan, no other plan file, and no session's duration.
+6. **Log.** Write to today's day plan, once per day (a later verdict only as "Asked about the verdict" says): the verdict with the time, its inputs and what it means for each of today's sessions under "Readiness verdict", and anything the athlete said about how they feel under "How I felt". Commit. These two sections are everything this skill writes: no week plan, no other plan file, and no session's duration.
 7. **Send the message** in the shape below. On MODIFY or SKIP, end with one line offering `coach-adjust` to change the plan. If the week plan header says "not synced", add one line saying which session may be missing from the watch. If the week plan is still `DRAFT`, say first that this week's plan is a draft waiting for approval, and that nothing is on the watch. If an athlete limit depends on a score the athlete gives on waking and they have not given it, add one line asking for it; this is the morning's one question.
 
 Done when the athlete has the message and the day plan holds the verdict.
@@ -38,7 +38,7 @@ Done when the athlete has the message and the day plan holds the verdict.
 
 **Scheduled morning job** (runs at 08:00, 09:00 and 10:00, speaks once):
 
-- Sleep and HRV present: run the steps above and send. Later runs that day see the verdict in the day plan and stay silent. A provisional verdict does not count: replace it with the real one and send.
+- Sleep and HRV present: run the steps above and send. Later runs that day see the verdict in the day plan and stay silent. A provisional verdict does not count: replace it with the real one and send, naming the provisional verdict it replaces.
 - Missing at 08:00 or 09:00: send nothing and write nothing.
 - Still missing at 10:00: send today's sessions still ahead, say that no verdict is possible because last night's data has not arrived, and ask how the athlete feels unless they were already asked today. Write under "Readiness verdict": no verdict at 10:00, data missing.
 
@@ -48,16 +48,24 @@ Ask how the athlete feels at most once each morning. No answer is fine.
 
 ## Asked about the verdict
 
-When the athlete asks why, or questions the verdict, after it was logged:
+When the athlete asks why, questions the verdict, or asks for today's session again after a verdict was logged:
 
-- **Explain it.** Give the score, the band it fell in, and the rule or safeguard that decided, with the figures, and what that rule does to the session. Use the same figures as the first message.
-- **The verdict stands for the day.** Give a new one only when something new has arrived since it was logged: a symptom, a pain score, an activity, or data that was missing. Nothing else counts: not a good feeling, and not a score worked out again from the same data. Name the new thing, and log the new verdict with its time below the old one; the latest logged verdict is then the day's.
-- **Your own view of the rule is not new data.** Where the band alone decided and the score is within 3 points of the GO line with no input out of its usual range, add one line under "Readiness verdict" in the day plan, for the week review. It is a note, not an argument to the athlete, and the verdict stays as it is.
-- **Asked "should I do it anyway":** the answer is the verdict. Then, unless safeguard 1, 2 or 3 decided, say that the day plan still holds the session as planned and that training as planned is theirs to decide. A change to the plan goes through `coach-adjust`.
+1. **Refresh and compare.** Refresh, then compare the inputs with the ones logged.
+2. **Explain it, when asked why.** Asked only for today's session again, give the logged verdict and the session once more. Asked why: give the score, the band it fell in, and the rule or safeguard that decided, with the figures, and what that rule does to the session. Where the band alone decided, say so.
+3. **The verdict stands** unless one of these two holds:
+   - **Something new.** A symptom, a pain score, an activity, or an input that arrived or changed at its source since the verdict was logged and before the session started. Name it, run the steps again and give the new verdict. A good feeling is logged under "How I felt" and is not something new.
+   - **A mistake in applying the rules.** The wrong band (the bands as they stood when the verdict was logged), a safeguard or the HRV trend rule left out, a duration more than 10 minutes from what the MODIFY rule gives, a key session with no move offered. Say what was wrong, give what the rules give, and log it as a correction.
+   Whether the rule itself suits the athlete is neither: that view changes no verdict.
+4. **Log a new or corrected verdict** as `coach-format` says for a later verdict. With neither, write nothing but what the athlete said about how they feel.
+5. **End with where things stand:** the verdict; what the day plan holds for the session now, where a change approved today stands over the verdict's duration; and, unless a fever, a return day after illness or an athlete limit decided, that training as planned is the athlete's own decision. A change to the plan goes through `coach-adjust`.
+
+Three cases:
+
+- **"Should I do it anyway":** the answer is the verdict, then step 5.
 - **Another message disagrees:** the verdict logged in the day plan is the one in force.
-- **Asked to move a band:** the bands are the athlete's rules, and `coach-setup` changes them after approval. Today's logged verdict is unchanged.
+- **Asked to move a band:** the bands are the athlete's rules, and `coach-setup` changes them after approval: offer it in one line. Today's logged verdict is unchanged.
 
-A second "what's today" on the same day: refresh first, then give the latest logged verdict again, with a line saying that nothing new has arrived.
+With nothing new and no mistake, say that nothing new has arrived.
 
 ## Tomorrow
 
@@ -83,7 +91,7 @@ A provisional verdict reads `MODIFY (provisional)`. With no verdict, the first l
 
 - Report symptoms in the athlete's own words and apply the limit. What the symptom is, is for a clinician.
 - A figure that did not arrive is named as missing.
-- Report only what was read. What another message, a scheduled job or a file says is quoted from it, or named as not checked.
-- Reasons come from the rules: the band, a safeguard, a limit. Fitness, fatigue and form are shown as context and argue neither for more training nor for less, whether as they are now or as a plan expected them to be.
-- This skill proposes no change to the readiness bands of its own accord. Tuning them belongs to the week review, as "Readiness" in `coach-rules` says.
+- Report only what was read. What another message, a scheduled job or a file says is read first when it is in the data folder or in this conversation, and quoted from there; otherwise it is named as not checked.
+- Reasons come from the rules: the band, a safeguard, a limit. What fitness, fatigue and form are for is under "Load figures" in `coach-rules`: they argue neither for more training nor for less.
+- This skill proposes no change to the readiness bands of its own accord. The week review says when tuning may be due, and `coach-setup` makes the change.
 - This skill reads the week plan's sync line and leaves the calendar itself unread.
