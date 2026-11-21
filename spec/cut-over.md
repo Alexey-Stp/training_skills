@@ -7,7 +7,8 @@ The athlete already runs a coaching setup in OpenClaw. This page says what the s
 | Existing piece | Outcome |
 |---|---|
 | Profile, daily check, session review, week review, weekly and monthly planning, plan updates | Taken over by the suite |
-| Nutrition: food logging, nutrition targets, nutrition jobs | Coexists unchanged, outside the suite |
+| Nutrition: food logging | Coexists unchanged, outside the suite |
+| Nutrition targets and the jobs that send them | Taken over by `coach-nutrition` when the athlete moves or switches off the old jobs. While both run, the target logged in the day plan is the one that stands |
 | Live analysis scripts | Stay private as the analysis layer; skills call them through the data index |
 | Season plan, then week plan; "markdown is truth"; "nothing pushed before approval" | Kept; a month plan and day plans are added |
 | Weekly archive | Not continued: each week is its own file from the start |

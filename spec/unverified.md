@@ -79,6 +79,7 @@ From [best-practice coaching][t5]: several sources were cited from memory or che
 - The session review shape was chosen from an invented activity, not a real one. ([session review][t14])
 - The six file templates use invented data. ([file templates][t24])
 - The season rules (how weeks between races are filled, the week roles, the size of a recovery week) were checked only by dry run on invented races. No season plan has been drafted from a real race calendar or lived through.
+- The nutrition target was checked only by dry run on invented days. Its base day, load cut-offs and rough rates have not been compared with a real athlete's weight over time, and the intervals.icu fields it reads for work and device energy (`icu_joules`, `calories`) are taken from use, not from the API's documentation. Whether a device's energy figure for an activity includes resting energy has not been checked; the target assumes it does.
 
 How to test: during cut-over stage 2, run `coach-review-session` on real activities and `coach-plan-week` on a real week, and let the athlete react to the result.
 

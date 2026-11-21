@@ -27,7 +27,7 @@ The review advises. A planned session changes only through `coach-adjust`, after
    - the effort score, under "How I felt" in the day plan and on the activity in intervals.icu;
    - the whole review to the activity's description in intervals.icu, as described under "Writes" in `coach-data`'s `intervals-icu.md`;
    - the activity's name: see "Naming".
-8. **Send** the review.
+8. **Send** the review. If the day plan's latest line under "Nutrition target" is an `estimate`, run `coach-nutrition` for that day afterwards; it sends the new target. The same after a planned session is written down as missed.
 
 Done when the day plan holds the review and the athlete has the message.
 

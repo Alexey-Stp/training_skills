@@ -115,7 +115,7 @@ From [subjective log][t23]. All scores are optional.
 
 From [replace, absorb or coexist][t18] and the [map][map]:
 
-- Nutrition files and jobs. A nutrition job may read the day plan for the day's planned load; the suite reads nothing from nutrition.
+- Nutrition files and jobs. A nutrition job may read the day plan for the day's planned load and its nutrition target. The suite reads one thing from nutrition: the day's food intake, through an optional command of the data index.
 - The runtime's daily memory notes. The day plan replaces them for coaching; coach skills neither read nor write them.
 - The private analysis scripts, except to run the commands the index lists.
 - Calendar entries the suite did not create.
