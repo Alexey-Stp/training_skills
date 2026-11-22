@@ -104,6 +104,10 @@ The athlete's private scripts that turn raw activity data into the figures a ski
 **Approval**:
 The athlete's explicit acceptance of something a skill proposes to write: a draft plan, a plan update, or a change to the athlete profile or athlete rules. Nothing is published by calendar sync before it.
 
+**Prediction**:
+The time the athlete's fitness today supports for a race, given with a range and what it rests on. For a triathlon: each leg, the transitions and the total.
+_Avoid_: Forecast, projection
+
 **Nutrition target**:
 The energy, carbohydrate, protein and fat a day calls for. An estimate while a session of the day is still ahead, final once the day's training is recorded.
 _Avoid_: Calorie goal, calorie budget
