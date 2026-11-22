@@ -29,8 +29,8 @@ Each command prints one JSON object. A value that is not known is `null`, never 
 | Activities in a date range | from, to | `{activities: [{id, start, sport, name, duration_s, distance_m, load, work_kj, device_kcal, source, paired_event_id, stub}]}` |
 | Analysis of one activity | activity id | `{id, sport, duration_s, distance_m, load, hr_avg, hr_max, cadence_avg, climb_m, power_avg_w, power_norm_w, intervals: [{label, duration_s, distance_m, pace_s_per_km, pace_s_per_100m, power_w, hr_avg, hr_max, cadence}], splits_km: [{km, pace_s_per_km, hr_avg, hr_max, cadence}], drift_pct, time_in_zones_s[], hr_time_in_zones_s[], time_in_target_s, stub}` |
 | Week summary | Monday's date | `{monday, sports: {<sport>: {sessions, hours, load, distance_km}}, total: {hours, load}, easy_sessions, hard_sessions, monotony}` |
-| Load state | none | `{date, fitness, fatigue, form, ramp}` |
-| Best efforts in a date range (optional) | sport, from, to | `{efforts: [{activity_id, date, distance_m, time_s, power_w}]}`: the fastest time for each standard distance, or the best power for a duration |
+| Load state | date (optional; today when left out) | `{date, fitness, fatigue, form, ramp}` |
+| Best efforts in a date range (optional) | sport, from, to | `{efforts: [{activity_id, date, distance_m, time_s}]}`: the fastest time for each standard distance |
 | Food intake for a date (optional) | date | `{date, kcal, carbs_g, protein_g, fat_g, items}` |
 | Name an activity (optional) | activity id | `{id, name}`; renames the activity in intervals.icu |
 
