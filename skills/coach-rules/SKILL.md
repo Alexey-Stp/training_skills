@@ -46,9 +46,10 @@ The limits and defaults every coach skill applies. The athlete's own rules overr
 | Taper | before an A race: volume down 41 to 60% progressively from the average of the last two load weeks, intensity kept, frequency at 80% or more of normal, 1 to 3 weeks | the length follows the race's duration, and the other priorities have their own shape: see "Races" |
 | Fuelling | a session longer than 90 minutes carries a fuelling line (its form is in `coach-format`): carbohydrate per hour, starting within the first 30 minutes, 60 to 90 g an hour on the bike and 40 to 60 g running as a starting point | convention; an athlete rule replaces the figures |
 | Nutrition target | a day's energy, carbohydrate, protein and fat: every figure is in [nutrition.md](nutrition.md) | read it before giving any calorie or macro figure; used by `coach-nutrition` |
+| Race preparation | the taper by week, race week by day, rest and form in the taper, the last long sessions, choosing priorities, illness before a race: every figure is in [race-prep.md](race-prep.md) | read it before planning or changing a taper or a race week; used by `coach-race` and the planning skills |
 | Prediction | the time the athlete could race today: every figure is in [prediction.md](prediction.md) | read it before giving any predicted time; used by `coach-predict` |
 | Block shape | three load weeks, then one easy week at roughly 60 to 70% of the previous week's load | convention, for when nothing else is known |
-| Gap in training | 1 to 3 days: continue. 4 to 7: treat it as the easy week. 8 to 14: repeat the last load week. 15 or more: step back a phase | convention |
+| Gap in training | 1 to 3 days: continue. 4 to 7: treat it as the easy week. 8 to 14: repeat the last load week. 15 or more: step back a phase | convention; not in the three weeks before an A or B race, where [race-prep.md](race-prep.md) decides |
 | Strength | one or two sessions a week when availability includes them; not counted as hard; not the day before a key session | planned as ordinary sessions; a week's key sessions are the ones named in its month plan row |
 | Targets | hours and planned load per sport, with run load also shown on its own | planned load is estimated as hours times the square of the intensity (the target as a share of threshold) times 100, so an hour at threshold is 100 |
 | Thresholds | prescribe from the latest tested anchor in the athlete profile; read zones from intervals.icu | which bike anchor to use is an athlete rule. For a plan built on an old value see "Anchors in a plan" |
@@ -89,7 +90,7 @@ A session is **out of date** when the profile's value for an anchor its line nam
 
 ## Races
 
-A race in the athlete profile is planned like a session. It has a planned session in its day plan, in the form `coach-format` gives, with targets from the goal; a triathlon is one session. It is a hard session for the cap and the spacing. A readiness verdict does not ease or move a race: only the fever limit and the athlete's own limits stop one. A race with no priority in the profile is treated as B, and the plan says so.
+A race in the athlete profile is planned like a session. It has a planned session in its day plan, in the form `coach-format` gives, with targets from the goal; a triathlon is one session. It is a hard session for the cap and the spacing. A readiness verdict does not ease or move a race: only the fever limit and the athlete's own limits stop one. A race with no priority in the profile is treated as B, and the plan says so, until `coach-race` has recommended one and the athlete has agreed.
 
 What goes around it depends on the priority and on how long the race lasts. All of it is convention:
 

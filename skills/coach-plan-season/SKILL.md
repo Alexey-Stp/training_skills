@@ -81,5 +81,6 @@ Approve this season?
 
 ## Boundaries
 
+- When `coach-race` runs this skill, it drafts from the races as `coach-race` states them, the draft is shown in its message, and the approval given there is this skill's approval.
 - Target races and goals are read from the athlete profile and written only by `coach-setup`.
 - The roles, patterns and phase lengths are conventions. Call them that wherever they appear, and let an athlete rule stand over them.

@@ -24,7 +24,7 @@ Eleven the athlete calls, by name or in plain words:
 | [`coach-plan-season`](skills/coach-plan-season/SKILL.md) | "plan my season", "I added a race" | Drafts the season: phases, and every week as load, easy, taper, race or recovery, counted back from the target races |
 | [`coach-nutrition`](skills/coach-nutrition/SKILL.md) | "what's my calorie target", "how much should I eat today" | Gives the day's nutrition target in kcal, carbohydrate, protein and fat: an estimate while a session is still ahead, final once the training is recorded |
 | [`coach-predict`](skills/coach-predict/SKILL.md) | "predict my 10k", "what's my half-distance triathlon time" | Gives a prediction for a run or a triathlon: a time with a range, the pace or the legs behind it, and what it rests on |
-| [`coach-race`](skills/coach-race/SKILL.md) | "prepare me for my 10k", "it's race week", "which race should be my A" | Prepares one race: checks the plans against it, lays out the taper and race week by day, and hands each change to the skill that owns the plan |
+| [`coach-race`](skills/coach-race/SKILL.md) | "prepare me for my 10k", "it's race week", "which race should be my A" | Prepares one race: the season's weeks when it is far, the block when it is weeks away, the taper and race week by day when it is close, with one approval |
 
 Three shared ones the others call:
 
