@@ -1,23 +1,23 @@
 ---
 name: coach-nutrition
-description: Use when the athlete asks how much to eat, or for a calorie, carbohydrate, protein or fat target for today, tomorrow or another day ("what's my calorie target", "how much should I eat today"), asks how a target was worked out or why it differs from one given earlier, or asks how what they ate compares with it; after a session review on a day whose target is still an estimate; and for a scheduled job that sends a target. Gives the day's nutrition target, an estimate while a session is still ahead and final once the day's training is recorded.
+description: Use when the athlete asks how much to eat or for a calorie, carbohydrate, protein or fat target for today, tomorrow or another day ("what's my calorie target"), how a target was worked out or why it differs from one given earlier, or how what they ate compares with it; after a session review while the day's target is an estimate; and for a scheduled job that sends a target. Gives the day's nutrition target.
 ---
 
 # Nutrition target
 
 How much energy, carbohydrate, protein and fat a day calls for, from the base day and the training done or still planned.
 
-Every figure and formula is in `nutrition.md` in `coach-rules`. Read it before giving any figure, and take nothing from memory or from an earlier message.
+Every figure and formula is in `nutrition.md` in `coach-rules`. Read it in this run before giving any figure, on every path below; nothing comes from memory or from an earlier message.
 
 ## Steps
 
-1. **Load.** Use `coach-data` to find the data folder and refresh. Read the day's day plan (planned sessions, readiness verdict, the lines under "Nutrition target"), the activities of that day and of the day before from `coach-data`, the athlete's weight, the athlete rules through `coach-rules`, and `nutrition.md` in `coach-rules`.
+1. **Load.** Use `coach-data` to find the data folder and refresh. Read the day's day plan (planned sessions, readiness verdict, the lines under "Nutrition target"), the activities of that day and of the day before from `coach-data`, the athlete's weight, and the athlete rules through `coach-rules`.
 2. **Sort the day's training.**
    - *Done*: an activity is recorded. A planned session and its activity count once, as the activity. An unplanned activity counts too.
    - *Still ahead*: a planned session of today or a later day with no activity. Where today's readiness verdict eased or dropped it, take the minutes and the intensity the verdict gives.
    - *Missed*: the athlete said so, its review says so, or the day is over. It counts nothing.
-3. **Same as before?** If the day plan already holds a target and the sort gives the same activities and planned sessions with the same figures, give that target again, add no line, and go to step 8. A target is worked out again only when something it was built on changed.
-4. **Work out the energy**: the base day, then gross and net exercise energy for each activity and each planned session still ahead, as "Exercise energy" in `nutrition.md` says. Keep the source of each figure, in the four words that file gives. An activity with no work and no device figure takes the next row that gives one at once; nothing waits for it.
+3. **Same as before?** If the day plan already holds a target and the sort gives the same activities and planned sessions with the same figures, give that target again, add no line, and go to step 8.
+4. **Work out the energy**: the base day, then gross and net exercise energy for each activity and each planned session still ahead, as "Exercise energy" in `nutrition.md` says. Keep the source of each figure, in that file's words for it. An activity with no work and no device figure takes the next row that gives one at once; nothing waits for it.
 5. **Work out the target**: the load tier with its recovery floor, protein, carbohydrate, fat, and the sum. Where "Before a race" or an athlete rule on weight applies, apply it and say so.
 6. **Set the status.** `estimate` while a planned session is still ahead. `final` when none is: each is done or missed, or the day had none. A target from "Before a race" is `final` when given and is not worked out again, since no activity changes it.
 7. **Log** for today or a past day: add one line under "Nutrition target" in the day plan, as `coach-format` gives it, and commit. A target for a later day is not logged.
@@ -27,15 +27,19 @@ Every figure and formula is in `nutrition.md` in `coach-rules`. Read it before g
    - Whatever `nutrition.md` asks to be said is said: an assumed base day, a rough rate, a rule that moved a figure.
    - A base day that is derived or assumed, or one the weight check finds off, is offered to `coach-setup` in one closing line, once.
 
-Done when the athlete has the message and, for today or a past day, the day plan holds the line.
+Done when the athlete has a message that gives the target, its status and one line per part of the energy, and, for today or a past day, the day plan holds the line.
 
 ## Asked how it was worked out
 
 Give the working in the order of step 4 and step 5, one line each: the base day and where it comes from, each activity and planned session with gross, net and source, the day's load and tier, the grams per kg, then the sum. Explain the target that was given; where the steps would now give another, say so after the explanation.
 
+Done when the athlete has each line of the working and the sum.
+
 ## Asked which figure is correct
 
 Run the steps first; the target they give is the day's. Say that first, then the earlier figure, its status, and what changed between them, in two or three lines. An estimate that turned out low or high was not an error: say what it was built on. A figure given earlier that these rules do not give is corrected once, and named as a correction.
+
+Done when the athlete has the day's target, the earlier figure and what changed between them.
 
 ## Against what was eaten
 
