@@ -126,6 +126,8 @@ Use these terms, with these meanings, in every file and message.
 | Readiness verdict | the daily check's conclusion: go, modify or skip |
 | Week review | the assessment of a finished week against its week plan |
 | Subjective log | the athlete's own scores for a day |
+| Prediction | the time the athlete could race today, given with a range and what it rests on; for a triathlon each leg, the transitions and the total |
+| Result | a race or a test with its time and distance; the strongest evidence for a prediction |
 | Nutrition target | the energy, carbohydrate, protein and fat a day calls for; an estimate while a session is still ahead, final once the day's training is recorded |
 | Base day | the energy the athlete uses on a day with no training |
 | Net exercise energy | what an activity or a planned session costs above what the base day already counts for its minutes |

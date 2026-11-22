@@ -81,6 +81,7 @@ From [best-practice coaching][t5]: several sources were cited from memory or che
 - The season rules (how weeks between races are filled, the week roles, the size of a recovery week) were checked only by dry run on invented races. No season plan has been drafted from a real race calendar or lived through.
 - The nutrition target was checked only by dry run on invented days. Its base day, load cut-offs and rough rates have not been compared with a real athlete's weight over time, and the intervals.icu fields it reads for work and device energy (`icu_joules`, `calories`) are taken from use, not from the API's documentation. Whether a device's energy figure for an activity includes resting energy has not been checked; the target assumes it does.
 - The zone times a session review reads from an activity in intervals.icu (`icu_zone_times`, `pace_zone_times`, `icu_hr_zone_times`) are named from use, not checked against the API's documentation.
+- The prediction formulas were checked only by dry run on invented athletes. No prediction has been compared with a real race result, and the bike leg's assumed speed, the run-off-the-bike factors and the ranges are conventions.
 
 How to test: during cut-over stage 2, run `coach-review-session` on real activities and `coach-plan-week` on a real week, and let the athlete react to the result.
 

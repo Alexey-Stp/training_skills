@@ -23,9 +23,10 @@ For when the data index has no command for a question, or the command fails. The
 - **Readiness**: there is no combined score here. Give the inputs (sleep, HRV, resting heart rate, form) and say that no score is available.
 - **Activities in a date range**: sport, duration, distance and load from the activity list; work from `icu_joules` (in joules, so divide by 1,000) and the device's energy from `calories`.
 - **Food intake**: not held here. Say that it is missing.
+- **Best efforts**: not read from here. Say that they are missing.
 - **Analysis of one activity**: the summary, plus the activity's own laps or intervals for per-km and per-rep figures (pace or power, heart rate, cadence). Time in the target range is worked out from those; when it cannot be, name it as missing. Time in zones: the activity's own zone times, `icu_zone_times` for power, `pace_zone_times` for pace and `icu_hr_zone_times` for heart rate.
 - **Week summary**: sum hours and load per sport from the activity list. Leave monotony and the easy/hard share as missing.
-- **Load state**: fitness and fatigue from the latest wellness record; form computed.
+- **Load state**: fitness and fatigue from the latest wellness record, or from the record of the date asked for; form computed.
 
 ## Writes
 

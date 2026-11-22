@@ -46,6 +46,7 @@ The limits and defaults every coach skill applies. The athlete's own rules overr
 | Taper | before an A race: volume down 41 to 60% progressively from the average of the last two load weeks, intensity kept, frequency at 80% or more of normal, 1 to 3 weeks | the length follows the race's duration, and the other priorities have their own shape: see "Races" |
 | Fuelling | a session longer than 90 minutes carries a fuelling line (its form is in `coach-format`): carbohydrate per hour, starting within the first 30 minutes, 60 to 90 g an hour on the bike and 40 to 60 g running as a starting point | convention; an athlete rule replaces the figures |
 | Nutrition target | a day's energy, carbohydrate, protein and fat: every figure is in [nutrition.md](nutrition.md) | read it before giving any calorie or macro figure; used by `coach-nutrition` |
+| Prediction | the time the athlete could race today: every figure is in [prediction.md](prediction.md) | read it before giving any predicted time; used by `coach-predict` |
 | Block shape | three load weeks, then one easy week at roughly 60 to 70% of the previous week's load | convention, for when nothing else is known |
 | Gap in training | 1 to 3 days: continue. 4 to 7: treat it as the easy week. 8 to 14: repeat the last load week. 15 or more: step back a phase | convention |
 | Strength | one or two sessions a week when availability includes them; not counted as hard; not the day before a key session | planned as ordinary sessions; a week's key sessions are the ones named in its month plan row |
@@ -125,7 +126,7 @@ The phase comes from the season plan, which `coach-plan-season` drafts. Base fav
 
 ## Load figures
 
-Fitness, fatigue and form are context. Show them; plan from hours, planned load and the rules above.
+Fitness, fatigue and form are context. Show them; plan from hours, planned load and the rules above. The one place they move a figure is a prediction, by the convention in [prediction.md](prediction.md).
 
 ## Readiness
 
