@@ -99,6 +99,8 @@ What goes around it depends on the priority and on how long the race lasts. All 
 | B | race week at about 70% of the previous week's planned load, no hard session in the 2 days before, a few short pickups the day before | easy days, then the plan resumes: 2 after a race under an hour, 4 after one of 2 hours or more, 3 in between |
 | C | trained through: the race takes the place of one hard session that week, and the day before is easy | the day after is easy |
 
+What the last weeks and days before a race hold (the taper by week, race week by day, form in the taper, illness close to a race) is in [race-prep.md](race-prep.md); every skill that plans or changes a taper or a race week reads it.
+
 Month planning counts back from the next A or B race inside 12 weeks. The taper ends on race day, and the block around it is shaped as "Blocks" under "Season" says, so that an easy week does not sit directly before a taper and a load week does not land on race week. Where the season plan gives each week a role, month planning takes the roles from it: see "Season".
 
 ## Season
@@ -126,7 +128,7 @@ The phase comes from the season plan, which `coach-plan-season` drafts. Base fav
 
 ## Load figures
 
-Fitness, fatigue and form are context. Show them; plan from hours, planned load and the rules above. The one place they move a figure is a prediction, by the convention in [prediction.md](prediction.md).
+Fitness, fatigue and form are context. Show them; plan from hours, planned load and the rules above. They move a figure in two places only, each by a convention: a prediction ([prediction.md](prediction.md)) and the depth of a taper ([race-prep.md](race-prep.md)).
 
 ## Readiness
 

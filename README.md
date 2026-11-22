@@ -6,11 +6,11 @@ They run in OpenClaw first and Claude Code second, from the same files. Plans li
 
 ## Status
 
-Early. All thirteen skills exist and each was checked by dry run on invented data: an agent worked through the same situations with and without the skill. None has been through a full week on real data yet, and several API details are still untested. [`spec/unverified.md`](spec/unverified.md) lists what is not yet proven.
+Early. All fourteen skills exist and each was checked by dry run on invented data: an agent worked through the same situations with and without the skill. None has been through a full week on real data yet, and several API details are still untested. [`spec/unverified.md`](spec/unverified.md) lists what is not yet proven.
 
 ## The skills
 
-Ten the athlete calls, by name or in plain words:
+Eleven the athlete calls, by name or in plain words:
 
 | Skill | Ask it | What it does |
 |---|---|---|
@@ -24,6 +24,7 @@ Ten the athlete calls, by name or in plain words:
 | [`coach-plan-season`](skills/coach-plan-season/SKILL.md) | "plan my season", "I added a race" | Drafts the season: phases, and every week as load, easy, taper, race or recovery, counted back from the target races |
 | [`coach-nutrition`](skills/coach-nutrition/SKILL.md) | "what's my calorie target", "how much should I eat today" | Gives the day's nutrition target in kcal, carbohydrate, protein and fat: an estimate while a session is still ahead, final once the training is recorded |
 | [`coach-predict`](skills/coach-predict/SKILL.md) | "predict my 10k", "what's my half-distance triathlon time" | Gives a prediction for a run or a triathlon: a time with a range, the pace or the legs behind it, and what it rests on |
+| [`coach-race`](skills/coach-race/SKILL.md) | "prepare me for my 10k", "it's race week", "which race should be my A" | Prepares one race: checks the plans against it, lays out the taper and race week by day, and hands each change to the skill that owns the plan |
 
 Three shared ones the others call:
 
@@ -57,9 +58,9 @@ The files a skill writes follow the templates in [`skills/coach-format/templates
 
 ## Install
 
-**OpenClaw.** Copy the thirteen folders under `skills/` into your workspace's `skills/` folder. They are picked up without a restart. In Telegram the commands appear with underscores, for example `/coach_setup`.
+**OpenClaw.** Copy the fourteen folders under `skills/` into your workspace's `skills/` folder. They are picked up without a restart. In Telegram the commands appear with underscores, for example `/coach_setup`.
 
-**Claude Code.** Copy the thirteen folders into `~/.claude/skills/`.
+**Claude Code.** Copy the fourteen folders into `~/.claude/skills/`.
 
 Then run `coach-setup`. It proposes which of your existing documents to import from and shows the profile and rules for approval before writing them.
 
@@ -97,7 +98,7 @@ Steps read as minutes@target, joined by `+`; `10x2@300` is ten times two minutes
 
 | Path | What |
 |---|---|
-| `skills/` | The thirteen skills |
+| `skills/` | The fourteen skills |
 | `spec/` | The decisions the skills were built from, and what is still untested |
 | `GLOSSARY.md` | The terms the project uses |
 | `AGENTS.md` | Rules for agents working on this repo |

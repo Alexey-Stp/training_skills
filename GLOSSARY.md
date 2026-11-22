@@ -104,6 +104,10 @@ The athlete's private scripts that turn raw activity data into the figures a ski
 **Approval**:
 The athlete's explicit acceptance of something a skill proposes to write: a draft plan, a plan update, or a change to the athlete profile or athlete rules. Nothing is published by calendar sync before it.
 
+**Race preparation**:
+What is planned between today and a target race: which plan carries the work, what the taper holds, and race week by day.
+_Avoid_: Race strategy (that is pacing on the day)
+
 **Prediction**:
 The time the athlete could race today, given with a range and what it rests on. For a triathlon: each leg, the transitions and the total.
 _Avoid_: Forecast, projection
