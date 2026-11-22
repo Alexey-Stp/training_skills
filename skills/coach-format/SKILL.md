@@ -15,14 +15,14 @@ All paths are relative to the data folder; the `coach-data` skill finds it.
 | File | Path | Written by |
 |---|---|---|
 | Season plan | the path the data index gives | `coach-plan-season` |
-| Month plan | `plan/months/<first Monday of the block>.md` | `coach-plan-month` |
+| Month plan | `plan/months/<first Monday of the block>.md` | `coach-plan-month`, `coach-adjust` |
 | Week plan | `plan/weeks/<Monday>.md` | `coach-plan-week`, `coach-adjust`, `coach-review-week` |
 | Day plan | `plan/days/<date>.md` | `coach-plan-week`, `coach-adjust`, `coach-today`, `coach-review-session`, `coach-nutrition` |
 
 Dates are `YYYY-MM-DD`. Each file follows its template in [templates/](templates/): same headings, same order, same field names. The templates hold invented data; copy the layout, never the values.
 
 - **Status.** Week and month plans carry `DRAFT`, then `APPROVED`, then `CLOSED`. Closed means reviewed. A day plan follows its week. A season plan carries `DRAFT`, then `APPROVED`.
-- **How far ahead.** Season plan: the span `coach-plan-season` gives. Month plan: the current block, plus the next one drafted during the current block's last week. Week plan: the current week, plus next week's draft from Sunday. Day plans: all seven are created when the week is drafted.
+- **How far ahead.** Season plan: the span `coach-plan-season` gives. Month plan: the current block, plus the next one drafted during the current block's last week. Week plan: the current week, plus next week's draft from Sunday, or earlier when `coach-race` prepares a taper. Day plans: all seven are created when the week is drafted.
 - **One file per week**, from the moment it is drafted. The current week is found by date.
 - **Commit** to the workspace's local repository after each write.
 - **Tables** belong in files. A message to the athlete is short and has none.
@@ -126,6 +126,8 @@ Use these terms, with these meanings, in every file and message.
 | Readiness verdict | the daily check's conclusion: go, modify or skip |
 | Week review | the assessment of a finished week against its week plan |
 | Subjective log | the athlete's own scores for a day |
+| Race preparation | what is planned between today and a target race: the plan that carries it, the taper and race week |
+| Openers | the short easy session the day before a race, with a few pickups of 20 to 30 seconds |
 | Prediction | the time the athlete could race today, given with a range and what it rests on; for a triathlon each leg, the transitions and the total |
 | Result | a race or a test with its time and distance; the strongest evidence for a prediction |
 | Nutrition target | the energy, carbohydrate, protein and fat a day calls for; an estimate while a session is still ahead, final once the day's training is recorded |

@@ -15,6 +15,7 @@
     "./skills/coach-plan-month",
     "./skills/coach-plan-season",
     "./skills/coach-nutrition",
-    "./skills/coach-predict"
+    "./skills/coach-predict",
+    "./skills/coach-race"
   ]
 }

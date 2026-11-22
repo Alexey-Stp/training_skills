@@ -27,7 +27,7 @@ Two states, kept apart: a **draft** is written to the files at once; the **calen
    - where a limit depends on a score the athlete gives on the day (a pain score), plan to the latest known score. If that shortens the week, say so under "Why", and say that the sessions can grow through `coach-adjust` if the score improves;
    - following the weekly shape in `ATHLETE-RULES.md`;
    - hard bike and run sessions about 48 hours apart and none the day after the long run, hard swims not on consecutive days, in the sport the focus names apart from the short hard set the other sports keep, within the weekly cap and the hard-swim count;
-   - a race as a planned session on its day, with the days around it shaped by its priority ("Races" in `coach-rules`);
+   - a race as a planned session on its day, with the days around it shaped by its priority ("Races" in `coach-rules`). A taper or race week of an A race is laid out as `race-prep.md` in `coach-rules` says: the cut for the week, the last long sessions, race week by day, rest, and the form row, for which the load state is read from `coach-data`;
    - a brick as two sessions, the ride then the run, each naming the other in its purpose;
    - two sessions on one day in an order the day's usual times allow, the key or hard one first where they do, and a pool session with its travel time when the profile gives one;
    - strength as ordinary sessions, not the day before a key session;
@@ -37,7 +37,7 @@ Two states, kept apart: a **draft** is written to the files at once; the **calen
    - every limit in `coach-rules` and `ATHLETE-RULES.md`: met, with the figure (for the long run: the distance, the longest in the last 30 days, the percentage, its duration and its share of the week's run volume against the ceiling);
    - hard sessions counted by the rule: bike and run against the cap, swims against the hard-swim count;
    - every default: followed, or the departure named with its reason;
-   - the week matches its role in the month plan's row: an easy week has no more load than the row gives and no added hard session; a taper, race or recovery week is shaped as "Races" and "Week roles" under "Season" in `coach-rules` say;
+   - the week matches its role in the month plan's row: an easy week has no more load than the row gives and no added hard session; a taper, race or recovery week is shaped as "Races", `race-prep.md` and "Week roles" under "Season" in `coach-rules` say;
    - sessions add up to the week's targets per sport, in hours and planned load;
    - every day fits its availability.
 6. **Write the draft**, then commit: the week plan with status `DRAFT`, and all seven day plans, in the `coach-format` templates. In a draft the header reads `Calendar sync: draft, nothing published` and each session `Calendar: draft`. Each planned session has its fixed fields and its steps in workout text. "Why this week looks like this" holds the reasoning, every use of judgement (sport split, which sport carries the hard sessions) and every departure. "Checks" holds the answers from step 5.
@@ -81,6 +81,7 @@ Approve this week?
 
 ## Boundaries
 
+- When `coach-race` runs this skill for a taper or race week, the draft is shown in its message and the approval given there is this skill's approval. That week may be drafted before Sunday and before last week is reviewed; the draft says so.
 - The calendar holds only what was approved.
 - Calendar entries the suite did not create are read, and left as they are.
 - The athlete profile is `coach-setup`'s. Garmin is reached only through intervals.icu.

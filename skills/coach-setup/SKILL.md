@@ -76,6 +76,7 @@ A key belongs in its key file and nowhere else. If the athlete sends a key in th
 
 ## Boundaries
 
+- A race, a priority or a goal that the athlete approved in `coach-race` is written with that approval: show the change-log line, and do not ask again.
 - Planned sessions belong to `coach-adjust`; this skill lists the affected ones and hands over.
 - This skill runs when asked or when a coach skill suggests it, never on a schedule.
 - Scheduled jobs are outside this skill. Moving a job to a coach skill is a cut-over step the athlete starts.
