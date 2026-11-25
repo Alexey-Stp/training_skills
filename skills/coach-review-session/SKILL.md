@@ -137,10 +137,10 @@ What goes on the activity in intervals.icu. The page there already shows the num
 - **What went well:** one thing, with the figure or two that show it.
 - **What to work on:** one thing, with its figure, why it matters, and what to do next time in terms the athlete can act on mid-session ("when heart rate reaches 168, ease 5 s/km").
 - **Against last time:** the comparison with the last session of the same kind, where the day plans hold one, and what the two together say.
-- **Zones:** the zones of the message's Zones section, here with minutes and percent, one line for each set of zones. This is the one block of figures the note carries.
+- **Zones:** the zones of the message's Zones section, here with minutes and percent, one line for each set of zones. This is the one block of figures the note carries. A set of zones the description above the note already gives is left out of the note.
 - **Next:** the message's Next line, naming the planned sessions it concerns.
 
-Leave out what the page shows as its headline for the whole activity: duration, distance, averages and maximums, load, fitness and form. A figure for one block, rep or set, and heart-rate drift, may appear where a sentence needs it. Leave out a part that has nothing to say, and a sentence that only reads the zones back. Every sentence is about this activity: it could only have been written under this one.
+Leave out what the page shows as its headline for the whole activity: duration, distance, averages and maximums, load, fitness and form. Leave out, too, whatever the description above the note already states: read it first, and add to it. A figure for one block, rep or set, and heart-rate drift, may appear where a sentence needs it. Leave out a part that has nothing to say, and a sentence that only reads the zones back. Every sentence is about this activity: it could only have been written under this one.
 
 Sample with invented numbers, for the run above:
 
