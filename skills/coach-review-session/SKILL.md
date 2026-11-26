@@ -11,7 +11,7 @@ The review advises. A planned session changes only through `coach-adjust`, after
 
 ## Steps
 
-1. **Load.** Use `coach-data` to find the data folder and refresh. Find the activity, then read the day plan for its date (the planned session it belongs to, the readiness verdict and "How I felt"), and the week and month plan for the context line. Load the rules through `coach-rules`.
+1. **Load.** Use `coach-data` to find the data folder and refresh. Find the activity and read the day plan for its date, in the same turn when the athlete named the day or none (then it is today) (the planned session it belongs to, the readiness verdict and "How I felt"), and the week and month plan for the context line. Load the rules through `coach-rules`.
 2. **Get the figures** from `coach-data`: the analysis of the activity, the load state, and the week summary so far. For a swim, read [swim.md](swim.md) now. An empty stub is not reviewed: `coach-data` handles it, the day plan gets one line under "Session reviews" saying the review is waiting on real figures, and the athlete is told.
 3. **Effort.** If the day plan has no effort score for this activity, the review goes out with `effort not given` and ends with one question asking for effort out of 10. That is the one ask for this activity, whoever asks it. When the answer comes, write it under "How I felt" in the day plan, on the activity in intervals.icu and in the review's load line, and confirm in a line.
 4. **Verdict.** Judge the activity against the planned session's *purpose* and give one of three:
