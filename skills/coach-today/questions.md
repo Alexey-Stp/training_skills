@@ -6,7 +6,7 @@ Part of `coach-today`. Read when the athlete asks about a verdict that was alrea
 
 When the athlete asks why, questions the verdict, or asks for today's session again after a verdict was logged:
 
-1. **Refresh and compare.** Refresh, then compare the inputs with the ones logged.
+1. **Refresh and compare.** Refresh and ask for today's readiness and activities in one call, as `coach-data` says, then compare the inputs with the ones logged.
 2. **Explain it, when asked why.** Asked only for today's session again, give the logged verdict and the session once more. Asked why: give the score, the band it fell in, and the rule or safeguard that decided, with the figures, and what that rule does to the session. Where the band alone decided, say so.
 3. **The verdict stands** unless one of these two holds:
    - **Something new.** A symptom, a pain score, an activity, or an input that arrived or changed at its source since the verdict was logged and before the session started. Name it, run the steps of the daily check again and give the new verdict. A good feeling is logged under "How I felt" and is not something new.

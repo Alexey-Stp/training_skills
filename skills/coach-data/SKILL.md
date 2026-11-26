@@ -13,6 +13,8 @@ How a coach skill finds the athlete's private files and gets its figures. This s
 1. **Find the data index.** The runtime's standing instructions carry one line, `Coach data index: <path to COACH.md>`: the workspace `AGENTS.md` in OpenClaw, the user-level `CLAUDE.md` in Claude Code. Read that `COACH.md`. If there is no line or no file, say so and point to `coach-setup`; stop there.
 2. **Refresh** before reading any figure: run the index's Refresh command.
 3. **Ask the question** by running the index's command for it, with the arguments filled in. Run it exactly as listed.
+
+   Ask in one call: the refresh first, then every question the calling skill needs, chained one after another in that order where the runtime can chain commands. Never run the refresh and a question side by side. Each round of tool calls sends the whole conversation to the model again, so a round saved saves the whole prompt once.
 4. **Fall back** when the index has no command for the question, or the command fails: read the basics from intervals.icu (see [intervals-icu.md](intervals-icu.md)), tell the athlete the figures are basic, and report which command is missing or broken.
 5. **Check each activity** before passing it on. A Garmin-recorded activity with no streams and no detail is an empty stub: follow [garmin-fallback.md](garmin-fallback.md).
 
