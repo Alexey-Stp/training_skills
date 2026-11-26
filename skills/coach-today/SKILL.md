@@ -11,15 +11,10 @@ The verdict advises. The plan and the calendar change only through `coach-adjust
 
 ## Steps
 
-1. **Load the rules**, in parallel in one turn: `coach-data`, the data index (its path is in the runtime's standing instructions) and `coach-rules`.
-2. **Get the day**, everything in parallel in the next turn:
-   - from `coach-data`, one call: the refresh, then readiness for today (one score and its inputs), then yesterday's and today's activities;
-   - the athlete profile, the readiness bands and limits in `ATHLETE-RULES.md`, and the week plan header;
-   - today's day plan, and yesterday's (its verdict with its inputs, "How I felt" and its session reviews);
-   - the day plans from tomorrow to Sunday and this week's row of the month plan, for a key session that has to move;
-   - the illness flags, with one search across the day plans dated in the last 14 days.
-
-   Whether yesterday's activity was hard is in its session review; ask the analysis question only for an activity with no review. A file already read in this conversation is not read again. If sleep and HRV are both missing, there is no score to judge: go to "No data yet".
+1. **Load** in the rounds `coach-data` gives. Read today's day plan, yesterday's day plan (its verdict with its inputs, "How I felt" and its session reviews), the week plan header, the illness flags with one search across the day plans dated in the last 14 days, and the readiness bands and limits in `ATHLETE-RULES.md` (through `coach-rules`). From `coach-data`, yesterday's and today's activities. Once there is a score:
+   - a hard session is planned today: in a third round, the analysis of each of those activities, for safeguard 5, with this week's row of the month plan, which names the key sessions, and the day plans from tomorrow to Sunday, which step 5 needs if a key session or a test has to move;
+   - no hard session is planned and the verdict eases a session: that row and those day plans in one more round.
+2. **Get readiness** for today from `coach-data`, with the questions of step 1: one score and its inputs. If sleep and HRV are both missing, there is no score to judge: go to "No data yet".
 3. **Band.** Map the score to go, modify or skip with the cut-offs in `ATHLETE-RULES.md`. Then apply the HRV trend rule under "Readiness" in `coach-rules`.
 4. **Apply the safeguards**, in this order. The first that fits decides, except that safeguard 2 only sets a floor.
    1. Fever or systemic symptoms reported: **SKIP**, whatever the score. Rest only.
@@ -37,7 +32,7 @@ The verdict advises. The plan and the calendar change only through `coach-adjust
    - SKIP: rest, or 30 minutes very easy. With fever or systemic symptoms: rest.
    - The verdict is for the day. On a day with several sessions, say what happens to each; a session the verdict does not touch stands.
 6. **Check the anchors** of each of today's sessions against the athlete profile, as "Anchors in a plan" in `coach-rules` says. Where they call for something to be said (a session out of date, or figures in watts or pace with no `Anchors:` line), the message gets an anchor note: one line for each anchor, with what those rules give for today's sessions. The note is given once a day: the log holds it, and a later message that day repeats only the offer, in a few words, unless the athlete asks about a target or a later verdict changes the note.
-7. **Log.** Write to today's day plan in one edit, once per day (a later verdict only as [questions.md](questions.md) says): the verdict with the time, its inputs, what it means for each of today's sessions and the anchor note when there is one, under "Readiness verdict"; and anything the athlete said about how they feel under "How I felt". Commit. These two sections are everything this skill writes: no week plan, no other plan file, and no session's duration or targets.
+7. **Log.** Write to today's day plan, once per day (a later verdict only as [questions.md](questions.md) says): the verdict with the time, its inputs, what it means for each of today's sessions and the anchor note when there is one, under "Readiness verdict"; and anything the athlete said about how they feel under "How I felt". Commit. These two sections are everything this skill writes: no week plan, no other plan file, and no session's duration or targets.
 8. **Send the message** in the shape below. When the verdict is MODIFY or SKIP, or an anchor note is there, end with one line offering `coach-adjust`, naming what it would change: the session the verdict eased, the sessions built on the old anchor value or recording none, or all of these. If the week plan header says "not synced", add one line saying which session may be missing from the watch. If the week plan is still `DRAFT`, say first that this week's plan is a draft waiting for approval, and that nothing is on the watch. If an athlete limit depends on a score the athlete gives on waking and they have not given it, add one line asking for it; this is the morning's one question.
 
 Done when the athlete has the message and the day plan holds the verdict.

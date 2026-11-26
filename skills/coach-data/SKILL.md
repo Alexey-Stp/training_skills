@@ -1,6 +1,6 @@
 ---
 name: coach-data
-description: Use at the start of any coach skill, read in one turn with the data index and `coach-rules`, and whenever training figures are needed (readiness, activities, activity analysis, week summary, load state). Finds the athlete's data folder and answers from the analysis layer or intervals.icu.
+description: Use at the start of any coach skill, read in parallel with that skill, the data index and `coach-rules`, and whenever training figures are needed (readiness, activities, activity analysis, week summary, load state). Finds the athlete's data folder and answers from the analysis layer or intervals.icu.
 user-invocable: false
 ---
 
@@ -14,7 +14,7 @@ How a coach skill finds the athlete's private files and gets its figures. This s
 2. **Refresh** before reading any figure: run the index's Refresh command.
 3. **Ask the question** by running the index's command for it, with the arguments filled in. Run it exactly as listed.
 
-   Ask in one call: the refresh first, then every question the calling skill needs, chained one after another in that order where the runtime can chain commands. Never run the refresh and a question side by side.
+   Ask in one call: the refresh first, then every question the calling skill can ask so far, chained one after another in that order where the runtime can chain commands. Never run the refresh and a question side by side. Questions asked later for the same request, such as an activity's analysis, go in one call of their own, with no second refresh; a new request refreshes again.
 4. **Fall back** when the index has no command for the question, or the command fails: read the basics from intervals.icu (see [intervals-icu.md](intervals-icu.md)), tell the athlete the figures are basic, and report which command is missing or broken.
 5. **Check each activity** before passing it on. A Garmin-recorded activity with no streams and no detail is an empty stub: follow [garmin-fallback.md](garmin-fallback.md).
 
@@ -22,17 +22,18 @@ Done when the calling skill has every figure it asked for, each one either real 
 
 ## Loading in two rounds
 
-Each round of tool calls sends the whole conversation to the model again, so a coach skill loads in two:
+Each round of tool calls sends the whole conversation to the model again, so a coach skill loads in two rounds:
 
-1. In parallel in one turn: this skill, the data index and `coach-rules`.
-2. In parallel in the next turn:
-   - the one call of step 3: the refresh, then every question the skill asks in its "Load" and "Get the figures" steps, with the activities list among them whenever an activity's id is needed later;
-   - every file those steps list, the athlete profile and `ATHLETE-RULES.md`, and the files in `coach-rules` that the skill itself names (such as `race-prep.md`);
-   - the files its later steps need for writing, such as `coach-format` and [intervals-icu.md](intervals-icu.md).
+1. The calling skill, this skill, the data index and `coach-rules`, read in parallel.
+2. In parallel, everything whose path or arguments are known by then:
+   - the one call of step 3: the refresh, then each question whose arguments come from the request, the date or a file read in round 1, with "Activities in a date range" among them when an activity's id is needed later;
+   - every file the calling skill or `coach-rules` says to read, at the paths the data index gives, and what its later steps use to write, such as `coach-format` and [intervals-icu.md](intervals-icu.md).
 
-   The refresh does not change plan files, so they are read beside it. A day plan for a date the athlete named or the request implies ("review my run" with no day is today's) is read in this turn, with the week plan; it does not wait for the activity.
+   Plan files are read beside the refresh, since the refresh changes none of them.
 
-One more turn only for what needs an answer first: an activity's analysis, which needs the activity's id, and a file whose name only an answer gives, such as the month plan named in the week plan header. A file already read in this conversation is not read again.
+A third round only for what needs an answer from the second: an activity's analysis, which needs its id, with every analysis the skill needs in one call; a file whose name another file gives; what the skill's steps read only in a case the second round settles; and a write the skill makes before its other steps, such as a score the athlete gave, once its file has been read. A file already read for this request is not read again. A plan file read for an earlier request is read again, since a scheduled job may have changed it; a skill and the data index are not. `coach-setup` writes the data index and loads as its own steps say.
+
+Done when every figure and file the calling skill's steps use is in hand, each round was sent in parallel, and the refresh ran before the first question.
 
 ## The questions
 
