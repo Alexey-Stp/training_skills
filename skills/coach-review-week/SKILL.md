@@ -18,7 +18,7 @@ The review reports. Plans change through `coach-adjust`, the athlete profile thr
 ## Steps
 
 1. **Load.** Use `coach-data` to find the data folder and refresh. Read the week plan with its "Changes", the week's seven day plans (planned sessions, readiness verdicts, "How I felt", session reviews), this week's row in the month plan, and the tests the season plan marks: a note on a week, or a date in a hand-written plan. Load the rules through `coach-rules`.
-2. **Get the figures** from `coach-data`: the week summary and the load state.
+2. **Get the figures** from `coach-data`: the week summary, the load state, and the analysis of each swim, bike and run activity of the week, for its time in zones.
 3. **Compare** what was done against two plans: the week as first approved, and the week as it stood after its "Changes". Say both where they differ.
 4. **Count the sessions.** Each planned session is done, partly done, or missed. A planned session with no activity is missed, and is shown as missed. Missed load stays missed: the review proposes no make-up, this week or next. The one exception, while the week is still running, is the single move the "Missed session" limit in `coach-rules` allows for a key session or a test. If the athlete asks for one, say that it stays missed and that next week is planned on its own terms.
 5. **Totals.** Hours and load per sport against target, run load on its own line, and the share of easy and hard sessions among swim, bike and run, with strength left out of the count and hard swims shown on their own. Count by the rule in `coach-rules` from what was done; where the week summary's counts differ, give the rule's count and name the difference. In single-sport mode, activities in other sports count in total load and are shown as unplanned.
@@ -70,6 +70,6 @@ Suggest: run setup. Run threshold in intervals.icu (4:05) differs from your prof
 
 ## Boundaries
 
-- Every figure comes from the week summary, the load state, the plans or the day plans. One that is missing is named as missing.
+- Every figure comes from the week summary, the load state, an activity's analysis, the plans or the day plans. One that is missing is named as missing.
 - Fitness, fatigue and form are reported, never offered as a target or a forecast of performance.
 - This skill writes two things to the week plan and, at a block's end, two to the month plan. Planned sessions, the calendar and the athlete profile are left as they are.

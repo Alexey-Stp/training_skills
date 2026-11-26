@@ -11,8 +11,10 @@ The verdict advises. The plan and the calendar change only through `coach-adjust
 
 ## Steps
 
-1. **Load.** Use `coach-data` to find the data folder and refresh. Read today's day plan, yesterday's day plan (its verdict with its inputs, "How I felt" and its session reviews), yesterday's and today's activities from `coach-data`, the illness flags in the day plans of the last 14 days, the week plan header, and the readiness bands and limits in `ATHLETE-RULES.md` (through `coach-rules`).
-2. **Get readiness** for today from `coach-data`: one score and its inputs. If sleep and HRV are both missing, there is no score to judge: go to "No data yet".
+1. **Load** in the rounds `coach-data` gives. Read today's day plan, yesterday's day plan (its verdict with its inputs, "How I felt" and its session reviews), the week plan header, the illness flags with one search across the day plans dated in the last 14 days, and the readiness bands and limits in `ATHLETE-RULES.md` (through `coach-rules`). From `coach-data`, yesterday's and today's activities. Once there is a score:
+   - a hard session is planned today: in a third round, the analysis of each of those activities, for safeguard 5, with this week's row of the month plan, which names the key sessions, and the day plans from tomorrow to Sunday, which step 5 needs if a key session or a test has to move;
+   - no hard session is planned and the verdict eases a session: that row and those day plans in one more round.
+2. **Get readiness** for today from `coach-data`, with the questions of step 1: one score and its inputs. If sleep and HRV are both missing, there is no score to judge: go to "No data yet".
 3. **Band.** Map the score to go, modify or skip with the cut-offs in `ATHLETE-RULES.md`. Then apply the HRV trend rule under "Readiness" in `coach-rules`.
 4. **Apply the safeguards**, in this order. The first that fits decides, except that safeguard 2 only sets a floor.
    1. Fever or systemic symptoms reported: **SKIP**, whatever the score. Rest only.
